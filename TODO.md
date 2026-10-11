@@ -34,4 +34,4 @@ materials under the MIT license with a required attribution line (see LICENSE.md
 - [x] SEE_ALSO.md — MIT 6.7960 and MIT 15.773
 - [x] verify_kb.py clean, and its review section read
 - [x] Commit and push
-- [ ] PATCH kbUrl onto the catalog entry
+- [x] PATCH kbUrl onto the catalog entry (https://github.com/chaimantec/cairn-kb-mit-6-s191)
