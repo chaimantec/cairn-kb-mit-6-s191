@@ -21,17 +21,17 @@ materials under the MIT license with a required attribution line (see LICENSE.md
 
 ## Wiki
 - [x] wiki/01-introduction.md
-- [ ] Topic pages (cross-lecture concepts)
-- [ ] INDEX.md table of contents
+- [x] Topic pages (cross-lecture concepts) — what-is-deep-learning, perceptron, activation-functions, neural-network-layers, loss-functions, gradient-descent, backpropagation, regularization (lecture 1 only; extend as lectures land)
+- [x] INDEX.md table of contents
 
 ## Images
 - [x] raw/images/01-introduction/ — 34 native page JPEGs extracted byte-for-byte; embedded in the wiki and slide files
-- [ ] INDEX.md — the chat's image rules; AGENTS.md — the Images conventions and table row; BUILD_LOG.md — what was rendered and why; LICENSE.md — attribution
+- [x] INDEX.md — the chat's image rules; AGENTS.md — the Images conventions and table row; BUILD_LOG.md — what was rendered and why; LICENSE.md — attribution
 
 ## Publish
-- [ ] kb.json — coverage, materials.method, provenance caveats
-- [ ] BUILD_LOG.md — lecture 1 record: notices, audit findings, printed slips, transcript edits
-- [ ] SEE_ALSO.md, if a sibling KB is genuinely relevant
-- [ ] verify_kb.py clean, and its review section read
-- [ ] Commit and push
+- [x] kb.json — coverage, materials.method, provenance caveats
+- [x] BUILD_LOG.md — lecture 1 record: notices, audit findings, printed slips, transcript edits
+- [x] SEE_ALSO.md — MIT 6.7960 and MIT 15.773
+- [x] verify_kb.py clean, and its review section read
+- [x] Commit and push
 - [ ] PATCH kbUrl onto the catalog entry

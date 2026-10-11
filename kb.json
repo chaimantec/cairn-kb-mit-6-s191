@@ -1,0 +1,66 @@
+{
+  "kbVersion": 1,
+  "course": {
+    "code": "MIT 6.S191",
+    "title": "Introduction to Deep Learning",
+    "instructor": "Alexander Amini and Ava Amini",
+    "term": "2026 edition (5-9 January 2026); the catalog also holds the 2018-2025 editions",
+    "catalogId": "ba3b8a5f-6666-4376-baec-be2232de643b",
+    "courseUrl": "https://introtodeeplearning.com/"
+  },
+  "coverage": {
+    "lecturesCovered": 1,
+    "lecturesTotal": 90,
+    "transcripts": 1,
+    "wikiLecturePages": 1,
+    "wikiTopicPages": 8,
+    "note": "Lecture 1 of the 2026 edition only (catalog position 1). The catalog's 90 recordings are the 2026 edition (positions 1-9) followed by the 2018-2025 editions; none of the others is covered."
+  },
+  "license": {
+    "file": "LICENSE.md",
+    "repositoryWide": "MIT",
+    "summary": "The course website licenses all materials under the MIT licence and asks for the attribution '© Alexander Amini and Ava Amini, MIT 6.S191: Introduction to Deep Learning, IntroToDeepLearning.com'. Third-party figures reproduced on the slides remain their owners'; LICENSE.md lists them per image."
+  },
+  "materials": {
+    "primary": "slides",
+    "slideDecks": {
+      "available": 9,
+      "transcribed": 1
+    },
+    "method": "page-images",
+    "figuresAudited": true,
+    "figureAudit": {
+      "decksAudited": 1,
+      "decksTotal": 1,
+      "note": "decksTotal counts transcribed decks; 'available' counts the 2026 edition's nine decks only. Lecture 1's deck was transcribed by Sonnet from its native 1280x720 page JPEGs and audited by a separate Sonnet agent on 14 table-, chart-, number- and code-heavy pages (2, 6, 19, 25, 31, 52, 53, 57, 75, 81, 82, 93, 97, 98): 0 discrepancies. The parent model also checked the images of slides 39 and 106 and a crop of slide 86."
+    },
+    "images": {
+      "lecturesWithImages": 1,
+      "lecturesWithoutImages": [],
+      "lecturesTotal": 1,
+      "files": 34,
+      "megabytes": 1.7,
+      "format": "whole slides, the deck's own 1280x720 page JPEGs extracted byte for byte, named slide-N by PDF page number",
+      "discovery": "inline in wiki/ and raw/slides/; no index file",
+      "byLecture": {
+        "1": 34
+      },
+      "note": "Lecture 1: 34 of 108 pages, every slide with a distinct figure. Not included: logistics, logos, portraits and prize/stock photos, decorative slides, text-only slides, code and tables transcribed exactly, and build steps contained in an included slide; the lists are in BUILD_LOG.md. No other lecture is in this KB, so none has images."
+    }
+  },
+  "provenance": {
+    "builtBy": [
+      "claude-opus-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "caveats": [
+      "Covers lecture 1 of the 2026 edition only: 1 of the catalog's 90 recordings.",
+      "The deck is a flattened PDF with no text layer and no printed slide numbers. Slide N is PDF page N, and everything in raw/slides/ was read visually from 1280x720 page images; there is no higher-resolution source.",
+      "Transcripts are YouTube auto-captions, lightly copy-edited. The verbatim captions are in raw/transcripts/original/.",
+      "Slide images are 1280x720, the deck's native resolution, below the 1400px used in sibling KBs.",
+      "Some slide code is reproduced as printed, including the slide's own slips (slide 82's tf.keras.optimizer, slide 86's update step); the slide file notes each one."
+    ]
+  },
+  "entryPoint": "INDEX.md",
+  "updated": "2026-10-11"
+}

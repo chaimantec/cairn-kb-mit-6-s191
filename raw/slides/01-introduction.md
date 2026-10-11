@@ -341,11 +341,11 @@ $$\hat{y} = g\left(w_0 + \boldsymbol{X}^T \boldsymbol{W}\right)$$
 
 "where:" with column vectors
 
-$$\boldsymbol{X} = \begin{bmatrix} x_1 \\ \vdots \\ x_m \end{bmatrix}$$
+$$\boldsymbol{X} = \begin{bmatrix} x_1 \cr \vdots \cr x_m \end{bmatrix}$$
 
 and
 
-$$\boldsymbol{W} = \begin{bmatrix} w_1 \\ \vdots \\ w_m \end{bmatrix}$$
+$$\boldsymbol{W} = \begin{bmatrix} w_1 \cr \vdots \cr w_m \end{bmatrix}$$
 
 *Figure: yes — perceptron diagram with vectorised equation*
 
@@ -394,12 +394,12 @@ Three columns, each with a title, a plot, equations, and code blocks. Each plot 
    Code blocks: `tf.math.tanh(z)`; `torch.tanh(z)`.
 
 3. "Rectified Linear Unit (ReLU)". Plot: x from -5 to 5, y from 0 to 5.
-   - g(z) blue: 0 for z \lt 0, then a straight line of slope 1 reaching 5 at z = 5.
-   - g'(z) orange/grey: 0 for z \lt 0, then constant 1 for z \gt 0 (step at z = 0, drawn as a faint horizontal line at y = 1).
+   - g(z) blue: 0 for $z \lt 0$, then a straight line of slope 1 reaching 5 at z = 5.
+   - g'(z) orange/grey: 0 for $z \lt 0$, then constant 1 for $z \gt 0$ (step at $z = 0$, drawn as a faint horizontal line at y = 1).
 
    $$g(z) = \max(0, z)$$
 
-   $$g'(z) = \begin{cases} 1, & z \gt 0 \\ 0, & \text{otherwise} \end{cases}$$
+   $g'(z) = 1$ for $z \gt 0$ and $0$ otherwise (printed as a two-case brace: "1, z > 0" / "0, otherwise")
 
    Code blocks: `tf.nn.relu(z)`; `torch.nn.ReLU(z)`.
 
@@ -437,15 +437,15 @@ Build step: same as slide 27 (left plot and caption retained), adding a second p
 
 Diagram: green circle "1" with green arrow labelled 1; blue circle $x_1$ with arrow labelled 3; blue circle $x_2$ with arrow labelled $-2$; all into $\Sigma$, then sigmoid, then $\hat{y}$.
 
-Right text: "We have: $w_0 = 1$ and $\boldsymbol{W} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}$"
+Right text: "We have: $w_0 = 1$ and $\boldsymbol{W} = [3, -2]^T$" (the slide writes $\boldsymbol{W}$ as a column vector)
 
 $$\hat{y} = g\left(w_0 + \boldsymbol{X}^T \boldsymbol{W}\right)$$
 
-$$= g\left(1 + \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}^T \begin{bmatrix} 3 \\ -2 \end{bmatrix}\right)$$
+$$= g\left(1 + \begin{bmatrix} x_1 \cr x_2 \end{bmatrix}^T \begin{bmatrix} 3 \cr -2 \end{bmatrix}\right)$$
 
 $$\hat{y} = g(1 + 3x_1 - 2x_2)$$
 
-A blue curly brace under "$1 + 3x_1 - 2x_2$" labelled "This is just a line in 2D!"
+A blue curly brace under $1 + 3x_1 - 2x_2$ labelled "This is just a line in 2D!"
 
 *Figure: yes — worked perceptron example with weights 1, 3, -2*
 
@@ -457,7 +457,7 @@ Right: equation at top
 
 $$\hat{y} = g(1 + 3x_1 - 2x_2)$$
 
-Below it, a 2D coordinate plane with horizontal axis $x_1$ and vertical axis $x_2$ (tick marks, no numbers). A thick blue dashed line with arrowheads at both ends runs from lower left to upper right, crossing the $x_2$ axis slightly above the origin, labelled along the line "$1 + 3x_1 - 2x_2 = 0$".
+Below it, a 2D coordinate plane with horizontal axis $x_1$ and vertical axis $x_2$ (tick marks, no numbers). A thick blue dashed line with arrowheads at both ends runs from lower left to upper right, crossing the $x_2$ axis slightly above the origin, labelled along the line $1 + 3x_1 - 2x_2 = 0$.
 
 Build step: slides 29 → 30 replaces the right-hand equation text with this plot.
 
@@ -467,9 +467,9 @@ Build step: slides 29 → 30 replaces the right-hand equation text with this plo
 
 ![Slide 31 — The Perceptron: Example](../images/01-introduction/slide-31.jpg)
 
-Build step: same as slide 30, adding an example input. A light-blue dot is plotted in the upper-left quadrant of the plane (left of the $x_2$ axis, above the $x_1$ axis), labelled with the column vector $\begin{bmatrix} -1 \\ 2 \end{bmatrix}$ via an arrow. Under the network diagram, text:
+Build step: same as slide 30, adding an example input. A light-blue dot is plotted in the upper-left quadrant of the plane (left of the $x_2$ axis, above the $x_1$ axis), labelled via an arrow with the column vector $[-1, 2]^T$ (drawn as a column). Under the network diagram, text:
 
-"Assume we have input: $\boldsymbol{X} = \begin{bmatrix} -1 \\ 2 \end{bmatrix}$"
+"Assume we have input: $\boldsymbol{X} = [-1, 2]^T$" (a column vector on the slide)
 
 $$\hat{y} = g(1 + (3 \ast -1) - (2 \ast 2))$$
 
@@ -483,7 +483,7 @@ The decision line label and top equation $\hat{y} = g(1 + 3x_1 - 2x_2)$ remain.
 
 ![Slide 32 — The Perceptron: Example](../images/01-introduction/slide-32.jpg)
 
-Build step: same as slide 30 (the example point and calculation are removed), now with the plane shaded on both sides of the dashed line $1 + 3x_1 - 2x_2 = 0$: the left/upper side is shaded light blue with text "$z \lt 0$" and "$y \lt 0.5$"; the right/lower side is shaded light green with text "$z \gt 0$" and "$y \gt 0.5$". Network diagram and top equation $\hat{y} = g(1 + 3x_1 - 2x_2)$ unchanged.
+Build step: same as slide 30 (the example point and calculation are removed), now with the plane shaded on both sides of the dashed line $1 + 3x_1 - 2x_2 = 0$: the left/upper side is shaded light blue with text $z \lt 0$ and $y \lt 0.5$; the right/lower side is shaded light green with text $z \gt 0$ and $y \gt 0.5$. Network diagram and top equation $\hat{y} = g(1 + 3x_1 - 2x_2)$ unchanged.
 
 *Figure: yes — decision line with shaded half-planes*
 
@@ -505,7 +505,7 @@ Centred diagram: green circle "1" with green arrow $w_0$; blue circles $x_1$, $x
 
 ![Slide 35 — The Perceptron: Simplified](../images/01-introduction/slide-35.jpg)
 
-Simplified diagram: blue circles $x_1$, $x_2$, $x_m$ with blue arrows into a single pink/red circle labelled $z$; from $z$ a blue arrow to the right labelled "$y = g(z)$". Beneath:
+Simplified diagram: blue circles $x_1$, $x_2$, $x_m$ with blue arrows into a single pink/red circle labelled $z$; from $z$ a blue arrow to the right labelled $y = g(z)$. Beneath:
 
 $$z = w_0 + \sum_{j=1}^{m} x_j w_j$$
 
@@ -517,7 +517,7 @@ Build step: bias, weights, and non-linearity circles from slide 34 are collapsed
 
 Because all inputs are densely connected to all outputs, these layers are called **Dense** layers
 
-Diagram: three blue input circles $x_1$, $x_2$, $x_m$; two pink output circles $z_1$ and $z_2$; every input has a blue arrow to both $z_1$ and $z_2$ (fully connected). Output arrows to the right labelled "$y_1 = g(z_1)$" and "$y_2 = g(z_2)$".
+Diagram: three blue input circles $x_1$, $x_2$, $x_m$; two pink output circles $z_1$ and $z_2$; every input has a blue arrow to both $z_1$ and $z_2$ (fully connected). Output arrows to the right labelled $y_1 = g(z_1)$ and $y_2 = g(z_2)$.
 
 $$z_i = w_{0,i} + \sum_{j=1}^{m} x_j w_{j,i}$$
 
@@ -612,13 +612,13 @@ Build step: same as the previous Multi Output Perceptron slide (slide 36), addin
 
 ![Slide 39 — Single Layer Neural Network](../images/01-introduction/slide-39.jpg)
 
-Diagram of a network with three layers of nodes. Inputs (light blue): $x_1$, $x_2$, $x_m$. Hidden (pink/red): $z_1$, $z_2$, $z_3$, $z_{d_1}$ (four nodes). Final Output (purple): $\hat{y}_1$, $\hat{y}_2$. Every input node is connected by a blue arrow to every hidden node (12 arrows), labelled above as $\boldsymbol{W}^{(1)}$; every hidden node is connected to both output nodes (8 arrows), labelled above as $\boldsymbol{W}^{(2)}$. Small curved arrows at each hidden node carry labels $g(z_1)$, $g(z_2)$, $g(z_3)$, $g(z_{d_1})$ (activation applied to each hidden value). Column labels beneath: "Inputs", "Hidden", "Final Output".
+Diagram of a network with three layers of nodes. Inputs (light blue): $x_1$, $x_2$, $x_m$. Hidden (pink/red): $z_1$, $z_2$, $z_3$, $z_{d_1}$ (four nodes). Final Output (purple): $\hat{y}_ 1$, $\hat{y}_ 2$. Every input node is connected by a blue arrow to every hidden node (12 arrows), labelled above as $\boldsymbol{W}^{(1)}$; every hidden node is connected to both output nodes (8 arrows), labelled above as $\boldsymbol{W}^{(2)}$. Small curved arrows at each hidden node carry labels $g(z_1)$, $g(z_2)$, $g(z_3)$, $g(z_{d_1})$ (activation applied to each hidden value). Column labels beneath: "Inputs", "Hidden", "Final Output".
 
 Equations under the hidden and output columns (superscripts $(1)$ and $(2)$ highlighted in yellow):
 
 $$z_i = w_{0,i}^{(1)} + \sum_{j=1}^{m} x_j \thinspace w_{j,i}^{(1)}$$
 
-$$\hat{y}_i = g\left(w_{0,i}^{(2)} + \sum_{j=1}^{d_1} g(z_j) \thinspace w_{j,i}^{(2)}\right)$$
+$$\hat{y}_ i = g\left(w_{0,i}^{(2)} + \sum_{j=1}^{d_1} g(z_j) \thinspace w_{j,i}^{(2)}\right)$$
 
 *Figure: yes — single-hidden-layer neural network diagram (3 inputs, 4 hidden, 2 outputs) with equations*
 
@@ -626,7 +626,7 @@ $$\hat{y}_i = g\left(w_{0,i}^{(2)} + \sum_{j=1}^{d_1} g(z_j) \thinspace w_{j,i}^
 
 ![Slide 40 — Single Layer Neural Network](../images/01-introduction/slide-40.jpg)
 
-Same network, but now the hidden layer is labelled $z_1$, $z_2$, $z_3$, $z_n$ (last node is $z_n$ rather than $z_{d_1}$). Most connections are faded to light grey; only the three arrows from $x_1$, $x_2$, $x_m$ into $z_2$ are drawn bold blue, labelled $w_{1,2}^{(1)}$, $w_{2,2}^{(1)}$, $w_{m,2}^{(1)}$ respectively. The $W^{(1)}$/$W^{(2)}$ labels, column labels and $g(z)$ labels are removed.
+Same network, but now the hidden layer is labelled $z_1$, $z_2$, $z_3$, $z_n$ (last node is $z_n$ rather than $z_{d_1}$). Most connections are faded to light grey; only the three arrows from $x_1$, $x_2$, $x_m$ into $z_2$ are drawn bold blue, labelled $w_{1,2}^{(1)}$, $w_{2,2}^{(1)}$, $w_{m,2}^{(1)}$ respectively. The $W^{(1)}$ and $W^{(2)}$ labels, column labels and $g(z)$ labels are removed.
 
 Equations at the bottom:
 
@@ -636,13 +636,13 @@ $$= w_{0,2}^{(1)} + x_1 \thinspace w_{1,2}^{(1)} + x_2 \thinspace w_{2,2}^{(1)} 
 
 Build step: same network as slide 39, highlighting the connections into hidden node $z_2$ and expanding its equation.
 
-*Figure: yes — single-layer network with the weights into $z_2$ highlighted*
+*Figure: yes — single-layer network with the weights into* $z_2$ *highlighted*
 
 ## Slide 41 — Multi Output Perceptron
 
 ![Slide 41 — Multi Output Perceptron](../images/01-introduction/slide-41.jpg)
 
-Abstracted network diagram with column labels "Inputs", "Hidden", "Output". Inputs: light-blue nodes $x_1$, $x_2$, $x_m$. Hidden: four pink nodes $z_1$, $z_2$, $z_3$, $z_n$. Output: two purple nodes $\hat{y}_1$, $\hat{y}_2$. No individual arrows are drawn; instead a blue-outlined square containing a blue "×" sits between Inputs and Hidden, and another between Hidden and Output (each representing a dense layer / weight multiplication).
+Abstracted network diagram with column labels "Inputs", "Hidden", "Output". Inputs: light-blue nodes $x_1$, $x_2$, $x_m$. Hidden: four pink nodes $z_1$, $z_2$, $z_3$, $z_n$. Output: two purple nodes $\hat{y}_ 1$, $\hat{y}_ 2$. No individual arrows are drawn; instead a blue-outlined square containing a blue "×" sits between Inputs and Hidden, and another between Hidden and Output (each representing a dense layer / weight multiplication).
 
 Two code boxes at upper left (the TensorFlow one at top, the PyTorch one below, partly overlapping the input nodes):
 
@@ -673,19 +673,19 @@ model = nn.Sequential(
 
 ## Slide 42 — Deep Neural Network
 
-Diagram with column labels "Inputs", "Hidden", "Output". Inputs: $x_1$, $x_2$, $x_m$ (blue). Then a blue-outlined box with "×", then "…", then another "×" box; then the hidden column of four pink nodes $z_{k,1}$, $z_{k,2}$, $z_{k,3}$, $z_{k,n_k}$; then "×" box, "…", "×" box; then output nodes $\hat{y}_1$, $\hat{y}_2$ (purple). The ellipses represent many stacked layers.
+Diagram with column labels "Inputs", "Hidden", "Output". Inputs: $x_1$, $x_2$, $x_m$ (blue). Then a blue-outlined box with "×", then "…", then another "×" box; then the hidden column of four pink nodes $z_{k,1}$, $z_{k,2}$, $z_{k,3}$, $z_{k,n_k}$; then "×" box, "…", "×" box; then output nodes $\hat{y}_ 1$, $\hat{y}_ 2$ (purple). The ellipses represent many stacked layers.
 
 Equation at bottom:
 
 $$z_{k,i} = w_{0,i}^{(k)} + \sum_{j=1}^{n_{k-1}} g(z_{k-1,j}) \thinspace w_{j,i}^{(k)}$$
 
-*Figure: yes — deep network schematic with hidden layer $k$ and its equation*
+*Figure: yes — deep network schematic with hidden layer* $k$ *and its equation*
 
 ## Slide 43 — Deep Neural Network
 
 ![Slide 43 — Deep Neural Network](../images/01-introduction/slide-43.jpg)
 
-Same deep network diagram as slide 42 (shifted left and scaled slightly): Inputs $x_1$, $x_2$, $x_m$; "×" box, "…", "×" box; hidden nodes $z_{k,1}$, $z_{k,2}$, $z_{k,3}$, $z_{k,n_k}$; "×" box, "…", "×" box; outputs $\hat{y}_1$, $\hat{y}_2$; labels "Inputs", "Hidden", "Output"; same equation:
+Same deep network diagram as slide 42 (shifted left and scaled slightly): Inputs $x_1$, $x_2$, $x_m$; "×" box, "…", "×" box; hidden nodes $z_{k,1}$, $z_{k,2}$, $z_{k,3}$, $z_{k,n_k}$; "×" box, "…", "×" box; outputs $\hat{y}_ 1$, $\hat{y}_ 2$; labels "Inputs", "Hidden", "Output"; same equation:
 
 $$z_{k,i} = w_{0,i}^{(k)} + \sum_{j=1}^{n_{k-1}} g(z_{k-1,j}) \thinspace w_{j,i}^{(k)}$$
 
@@ -747,7 +747,7 @@ $x_2$ = Hours spent on the final project
 
 ## Slide 46 — Example Problem: Will I pass this class?
 
-Scatter plot with two blue arrow axes (no tick marks or numbers). Vertical axis label (top-left): "$x_2$ = Hours spent on the final project". Horizontal axis label (bottom): "$x_1$ = Number of lectures you attend". Legend box at right: "Legend", green dot = "Pass", red dot = "Fail".
+Scatter plot with two blue arrow axes (no tick marks or numbers). Vertical axis label (top-left): $x_2$ = "Hours spent on the final project". Horizontal axis label (bottom): $x_1$ = "Number of lectures you attend". Legend box at right: "Legend", green dot = "Pass", red dot = "Fail".
 
 Data: 10 points. 7 green (Pass), scattered in the upper and right regions of the plot (roughly: top-left-centre, upper-centre, upper-right, centre-left, right-middle, and two near the bottom-right). 3 red (Fail), clustered at the lower left near the origin.
 
@@ -757,7 +757,7 @@ Data: 10 points. 7 green (Pass), scattered in the upper and right regions of the
 
 ![Slide 47 — Example Problem: Will I pass this class?](../images/01-introduction/slide-47.jpg)
 
-Same scatter plot as slide 46 (axes: $x_1$ = Number of lectures you attend, horizontal; $x_2$ = Hours spent on the final project, vertical; legend green = Pass, red = Fail; 7 green points, 3 red points near the origin). A new purple point is added in the middle of the plot, near the green points, with a "?" to its lower left and a small arrow pointing to it from the column vector $\begin{bmatrix} 4 \\ 5 \end{bmatrix}$.
+Same scatter plot as slide 46 (axes: $x_1$ = Number of lectures you attend, horizontal; $x_2$ = Hours spent on the final project, vertical; legend green = Pass, red = Fail; 7 green points, 3 red points near the origin). A new purple point is added in the middle of the plot, near the green points, with a "?" to its lower left and a small arrow pointing to it from the column vector $[4, 5]^T$ (drawn as a column).
 
 Build step: same as slide 46, adding the unknown purple point labelled "?" and its coordinates $[4, 5]$ as a column vector.
 
@@ -765,9 +765,9 @@ Build step: same as slide 46, adding the unknown purple point labelled "?" and i
 
 ## Slide 48 — Example Problem: Will I pass this class?
 
-Network diagram, left to right: text $x^{(1)} = [4 \thinspace , 5]$ with two black elbow arrows from the "4" to node $x_1$ and from the "5" to node $x_2$. Input nodes $x_1$, $x_2$ (blue); hidden nodes $z_1$, $z_2$, $z_3$ (pink), each input connected to each hidden node by blue arrows (6 arrows); the three hidden nodes each connect by a blue arrow to a single purple output node $\hat{y}_1$. To the right: "Predicted: 0.1".
+Network diagram, left to right: text $x^{(1)} = [4 \thinspace , 5]$ with two black elbow arrows from the "4" to node $x_1$ and from the "5" to node $x_2$. Input nodes $x_1$, $x_2$ (blue); hidden nodes $z_1$, $z_2$, $z_3$ (pink), each input connected to each hidden node by blue arrows (6 arrows); the three hidden nodes each connect by a blue arrow to a single purple output node $\hat{y}_ 1$. To the right: "Predicted: 0.1".
 
-*Figure: yes — 2-3-1 network applied to input $x^{(1)} = [4, 5]$ with predicted 0.1*
+*Figure: yes — 2-3-1 network applied to input* $x^{(1)} = [4, 5]$ *with predicted 0.1*
 
 ## Slide 49 — Example Problem: Will I pass this class?
 
@@ -799,9 +799,9 @@ A purple underline beneath $f(x^{(i)}; \boldsymbol{W})$ is labelled "Predicted";
 
 Left: the data matrix
 
-$$\boldsymbol{X} = \begin{bmatrix} 4, & 5 \\ 2, & 1 \\ 5, & 8 \\ \vdots & \vdots \end{bmatrix}$$
+$$\boldsymbol{X} = \begin{bmatrix} 4, & 5 \cr 2, & 1 \cr 5, & 8 \cr \vdots & \vdots \end{bmatrix}$$
 
-Middle: the same 2-3-1 network (inputs $x_1$, $x_2$; hidden $z_1$, $z_2$, $z_3$; output $\hat{y}_1$) without the input vector text. Right: two column vectors headed $f(x)$ and $y$: $f(x)$ = (0.1, 0.8, 0.6, ⋮) with a purple underline; $y$ = (1, 0, 1, ⋮) with a light-blue underline. Between them, per-row marks: a cross for row 1 (0.1 vs 1), a cross for row 2 (0.8 vs 0), a check mark for row 3 (0.6 vs 1).
+Middle: the same 2-3-1 network (inputs $x_1$, $x_2$; hidden $z_1$, $z_2$, $z_3$; output $\hat{y}_ 1$) without the input vector text. Right: two column vectors headed $f(x)$ and $y$: $f(x)$ = (0.1, 0.8, 0.6, ⋮) with a purple underline; $y$ = (1, 0, 1, ⋮) with a light-blue underline. Between them, per-row marks: a cross for row 1 (0.1 vs 1), a cross for row 2 (0.8 vs 0), a check mark for row 3 (0.6 vs 1).
 
 Bottom:
 
@@ -845,7 +845,7 @@ loss = torch.nn.functional.cross_entropy( predicted, y )
 
 *Mean squared error loss can be used with regression models that output continuous real numbers* (the words "Mean squared error loss" are bold italic)
 
-Same layout as slide 52: data matrix $\boldsymbol{X}$ (rows 4,5 / 2,1 / 5,8 / ⋮) at left, 2-3-1 network (inputs $x_1$, $x_2$; hidden $z_1$, $z_2$, $z_3$; output $\hat{y}_1$) in the middle, and at right two column vectors headed $f(x)$ and $y$: $f(x)$ = (30, 80, 85, ⋮) with purple underline; $y$ = (90, 20, 95, ⋮) with light-blue underline; row marks cross, cross, check. A curly brace under both vectors is labelled "Final Grades (percentage)".
+Same layout as slide 52: data matrix $\boldsymbol{X}$ (rows 4,5 / 2,1 / 5,8 / ⋮) at left, 2-3-1 network (inputs $x_1$, $x_2$; hidden $z_1$, $z_2$, $z_3$; output $\hat{y}_ 1$) in the middle, and at right two column vectors headed $f(x)$ and $y$: $f(x)$ = (30, 80, 85, ⋮) with purple underline; $y$ = (90, 20, 95, ⋮) with light-blue underline; row marks cross, cross, check. A curly brace under both vectors is labelled "Final Grades (percentage)".
 
 Formula:
 
@@ -906,7 +906,7 @@ Above the plot: $\boldsymbol{W}^{\ast} = \underset{\boldsymbol{W}}{\mathrm{argmi
 
 Figure: a 3D surface plot of a loss landscape, rainbow (jet) colormap. Vertical axis labelled $J(w_0, w_1)$ with ticks from -3 to 3; the two horizontal axes are $w_0$ (front-left axis, ticks about 0.1 to 0.9, ranging 0 to 1) and $w_1$ (right axis, ticks 0 to 1 in steps of 0.2). The surface has several hills and valleys: two red peaks (high loss, one at the left-centre top and a larger one at the upper right), a deep purple valley (lowest loss) near the front centre, and cyan/blue-green flat regions at the left and right edges.
 
-*Figure: yes — 3D loss surface $J(w_0, w_1)$ with multiple peaks and valleys*
+*Figure: yes — 3D loss surface* $J(w_0, w_1)$ *with multiple peaks and valleys*
 
 ## Slide 58 — Loss Optimization
 
@@ -1008,9 +1008,9 @@ Build step: same as slide 63, adding the gold highlights on the gradient computa
 
 Chain diagram, left to right: light-blue node $x$, blue arrow labelled $w_1$ to pink node $z_1$, blue arrow labelled $w_2$ (inside a yellow highlight box) to purple node $\hat{y}$, blue arrow to the text $J(\boldsymbol{W})$.
 
-Caption: *How does a small change in one weight (ex. $\boldsymbol{w_2}$) affect the final loss $\boldsymbol{J(W)}$?*
+Caption (italic on the slide): How does a small change in one weight (ex. $\boldsymbol{w_2}$) affect the final loss $\boldsymbol{J(W)}$?
 
-*Figure: yes — one-neuron-per-layer chain $x \to z_1 \to \hat{y} \to J(\boldsymbol{W})$ with weights $w_1$, $w_2$*
+*Figure: yes — one-neuron-per-layer chain* $x \to z_1 \to \hat{y} \to J(\boldsymbol{W})$ *with weights* $w_1$, $w_2$
 
 ## Slide 66 — Computing Gradients: Backpropagation
 
@@ -1022,7 +1022,7 @@ with the $w_2$ in the denominator highlighted in yellow. A thin blue arrow from 
 
 Build step: same as slide 65, replacing the caption with the start of the derivative and the note "Let's use the chain rule!".
 
-*Figure: yes — chain diagram with the derivative $\partial J / \partial w_2$ being set up*
+*Figure: yes — chain diagram with the derivative* $\partial J / \partial w_2$ *being set up*
 
 ## Slide 67 — Computing Gradients: Backpropagation
 
@@ -1036,7 +1036,7 @@ A purple bar sits under the first factor $\frac{\partial J(\boldsymbol{W})}{\par
 
 Build step: same as slide 66, completing the chain rule for $w_2$ with colour-coded links to the diagram.
 
-*Figure: yes — chain diagram with colour-coded segments and chain-rule expansion for $w_2$*
+*Figure: yes — chain diagram with colour-coded segments and chain-rule expansion for* $w_2$
 
 ## Slide 68 — Computing Gradients: Backpropagation
 
@@ -1048,7 +1048,7 @@ with a purple bar under the first factor and a red bar under the second. Two ann
 
 Build step: same as slide 67 but for the earlier weight $w_1$, with notes that the chain rule is applied again.
 
-*Figure: yes — chain diagram with $\partial J / \partial w_1$ being expanded*
+*Figure: yes — chain diagram with* $\partial J / \partial w_1$ *being expanded*
 
 ## Slide 69 — Computing Gradients: Backpropagation
 
@@ -1060,7 +1060,7 @@ Coloured bars beneath the three factors: purple (first), red (second), light blu
 
 Build step: same as slide 68, expanding the chain rule into three factors and colouring the first arrow.
 
-*Figure: yes — chain diagram with three-factor chain rule for $w_1$*
+*Figure: yes — chain diagram with three-factor chain rule for* $w_1$
 
 ## Slide 70 — Computing Gradients: Backpropagation
 
@@ -1362,7 +1362,7 @@ Build step: same as slide 94, with the first block faded to grey and a second bl
 
 - During training, randomly set some activations to 0
 
-Network diagram (fully connected, blue arrows pointing left to right): input layer of 3 light-blue nodes $x_1, x_2, x_3$; first hidden layer of 4 pink/red nodes $z_{1,1}, z_{1,2}, z_{1,3}, z_{1,4}$; second hidden layer of 4 pink/red nodes $z_{2,1}, z_{2,2}, z_{2,3}, z_{2,4}$; output layer of 2 purple nodes $\hat{y}_1, \hat{y}_2$. Every node in a layer is connected to every node in the next layer (all nodes active).
+Network diagram (fully connected, blue arrows pointing left to right): input layer of 3 light-blue nodes $x_1, x_2, x_3$; first hidden layer of 4 pink/red nodes $z_{1,1}, z_{1,2}, z_{1,3}, z_{1,4}$; second hidden layer of 4 pink/red nodes $z_{2,1}, z_{2,2}, z_{2,3}, z_{2,4}$; output layer of 2 purple nodes $\hat{y}_ 1, \hat{y}_ 2$. Every node in a layer is connected to every node in the next layer (all nodes active).
 
 *Figure: yes — fully connected network 3-4-4-2 with all nodes active*
 
@@ -1381,7 +1381,7 @@ tf.keras.layers.Dropout(p=0.5)
 torch.nn.Dropout(p=0.5)
 ```
 
-Network diagram as in slide 96 (3-4-4-2, nodes $x_1..x_3$, $z_{1,1}..z_{1,4}$, $z_{2,1}..z_{2,4}$, $\hat{y}_1, \hat{y}_2$), but with some hidden nodes dropped: $z_{1,1}$, $z_{1,3}$ (first hidden layer) and $z_{2,2}$ (second hidden layer) are drawn faded/near-transparent with no connections. Active nodes $z_{1,2}$, $z_{1,4}$, $z_{2,1}$, $z_{2,3}$, $z_{2,4}$ keep their blue connections to adjacent-layer active nodes.
+Network diagram as in slide 96 (3-4-4-2, nodes $x_1..x_3$, $z_{1,1}..z_{1,4}$, $z_{2,1}..z_{2,4}$, $\hat{y}_ 1, \hat{y}_ 2$), but with some hidden nodes dropped: $z_{1,1}$, $z_{1,3}$ (first hidden layer) and $z_{2,2}$ (second hidden layer) are drawn faded/near-transparent with no connections. Active nodes $z_{1,2}$, $z_{1,4}$, $z_{2,1}$, $z_{2,3}$, $z_{2,4}$ keep their blue connections to adjacent-layer active nodes.
 
 Build step: same network as slide 96, adding two sub-bullets, the code box, and a random dropout mask.
 
@@ -1499,7 +1499,7 @@ Three blue rounded header boxes, each with bullets and a small figure below:
 - **Neural Networks**
   - Stacking Perceptrons to form neural networks
   - Optimization through backpropagation
-  - Figure: compact deep-network diagram: input nodes $x_1$, $x_2$, $x_m$ (light blue), then a blue "x" box, "...", another "x" box, then a column of pink nodes $z_{k,1}$, $z_{k,2}$, $z_{k,3}$, $z_{k,n_k}$, then a blue "x" box, "...", another "x" box, then two purple output nodes $\hat{y}_1$, $\hat{y}_2$. (The small labels are only partly legible.)
+  - Figure: compact deep-network diagram: input nodes $x_1$, $x_2$, $x_m$ (light blue), then a blue "x" box, "...", another "x" box, then a column of pink nodes $z_{k,1}$, $z_{k,2}$, $z_{k,3}$, $z_{k,n_k}$, then a blue "x" box, "...", another "x" box, then two purple output nodes $\hat{y}_ 1$, $\hat{y}_ 2$. (The small labels are only partly legible.)
 - **Training in Practice**
   - Adaptive learning
   - Batching

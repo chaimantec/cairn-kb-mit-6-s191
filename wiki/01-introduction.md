@@ -123,7 +123,7 @@ $$\hat{y} = g\left(w_0 + \sum_{i=1}^{m} x_i w_i\right)$$
 
 ![Slide 22: The Perceptron: Forward Propagation](../raw/images/01-introduction/slide-22.jpg)
 
-*Slide 22 — inputs, weights, sum, non-linearity, output; the green input of 1 carries the bias weight $w_0$.*
+*Slide 22 — inputs, weights, sum, non-linearity, output; the green input of 1 carries the bias weight* $w_0$.
 
 Since $\boldsymbol{X}$ and $\boldsymbol{W}$ are both lists of $m$ numbers, the sum is a dot product, and
 the neuron is written compactly in vector form (slide 23, ≈17:53):
@@ -134,7 +134,7 @@ where $\boldsymbol{X} = [x_1, \dots, x_m]^T$ and $\boldsymbol{W} = [w_1, \dots, 
 
 ![Slide 23: vector form of the perceptron](../raw/images/01-introduction/slide-23.jpg)
 
-*Slide 23 — the same neuron, with the sum rewritten as the dot product $\boldsymbol{X}^T \boldsymbol{W}$.*
+*Slide 23 — the same neuron, with the sum rewritten as the dot product* $\boldsymbol{X}^T \boldsymbol{W}$.
 
 Amini singles this out as the one thing to remember from the class: a neuron is three steps, **dot
 product, add a bias, apply a non-linearity**, and "that equation is the core to so many different
@@ -150,7 +150,7 @@ $$g(z) = \sigma(z) = \frac{1}{1 + e^{-z}}$$
 
 ![Slide 24: the sigmoid activation](../raw/images/01-introduction/slide-24.jpg)
 
-*Slide 24 — the activation function $g$ highlighted in the perceptron equation, with the sigmoid as the example.*
+*Slide 24 — the activation function* $g$ *highlighted in the perceptron equation, with the sigmoid as the example.*
 
 Slide 25 shows three common choices, each with its derivative and its TensorFlow and PyTorch call:
 
@@ -196,7 +196,7 @@ $$\hat{y} = g\big(1 + (3 \ast -1) - (2 \ast 2)\big) = g(-6) \approx 0.002$$
 
 ![Slide 31: The Perceptron: Example](../raw/images/01-introduction/slide-31.jpg)
 
-*Slide 31 — the input $[-1, 2]$ plotted against the decision line $1 + 3x_1 - 2x_2 = 0$, and its output $g(-6) \approx 0.002$.*
+*Slide 31 — the input* $[-1, 2]$ *plotted against the decision line* $1 + 3x_1 - 2x_2 = 0$*, and its output* $g(-6) \approx 0.002$.
 
 A strongly negative pre-activation sends the sigmoid close to zero. In general the line splits the
 plane in two (slide 32, ≈23:16): every input on one side has $z \lt 0$ before the activation and
@@ -204,7 +204,7 @@ $y \lt 0.5$ after a sigmoid, and every input on the other side has $z \gt 0$ and
 
 ![Slide 32: the two half-planes of the decision boundary](../raw/images/01-introduction/slide-32.jpg)
 
-*Slide 32 — the half-planes $z \lt 0$, $y \lt 0.5$ and $z \gt 0$, $y \gt 0.5$ on either side of the line.*
+*Slide 32 — the half-planes* $z \lt 0$, $y \lt 0.5$ *and* $z \gt 0$, $y \gt 0.5$ *on either side of the line.*
 
 This picture works only because the neuron has two parameters; modern networks have billions, and a
 billion-dimensional plot is impossible, so the rest of the lecture builds mathematical intuition
@@ -220,7 +220,7 @@ $$z = w_0 + \sum_{j=1}^{m} x_j w_j, \qquad y = g(z)$$
 
 ![Slide 35: The Perceptron: Simplified](../raw/images/01-introduction/slide-35.jpg)
 
-*Slide 35 — the simplified neuron: the inputs feed one node $z$, and the output is $y = g(z)$.*
+*Slide 35 — the simplified neuron: the inputs feed one node* $z$*, and the output is* $y = g(z)$.
 
 **Multiple outputs.** Two neurons see the same inputs but have their own independent weights, so they
 can produce two different answers (≈25:35). Because every input connects to every output, such layers
@@ -244,11 +244,11 @@ two weight matrices, $\boldsymbol{W}^{(1)}$ from the inputs to the hidden layer 
 $\boldsymbol{W}^{(2)}$ from the hidden layer to the output, of different sizes because the layers have
 different widths (slide 39, ≈27:52–28:38):
 
-$$z_i = w_{0,i}^{(1)} + \sum_{j=1}^{m} x_j w_{j,i}^{(1)}, \qquad \hat{y}_i = g\left(w_{0,i}^{(2)} + \sum_{j=1}^{d_1} g(z_j) w_{j,i}^{(2)}\right)$$
+$$z_i = w_{0,i}^{(1)} + \sum_{j=1}^{m} x_j w_{j,i}^{(1)}, \qquad \hat{y}_ i = g\left(w_{0,i}^{(2)} + \sum_{j=1}^{d_1} g(z_j) w_{j,i}^{(2)}\right)$$
 
 ![Slide 39: Single Layer Neural Network](../raw/images/01-introduction/slide-39.jpg)
 
-*Slide 39 — inputs, hidden layer and outputs, with weight matrices $\boldsymbol{W}^{(1)}$ and $\boldsymbol{W}^{(2)}$.*
+*Slide 39 — inputs, hidden layer and outputs, with weight matrices* $\boldsymbol{W}^{(1)}$ *and* $\boldsymbol{W}^{(2)}$.
 
 Zooming in on one hidden unit, $z_2$, shows it is the same perceptron as before: a dot product of all
 the inputs with that unit's own weights, plus its bias (slide 40, ≈28:38). Unit $z_3$ is computed the
@@ -256,7 +256,7 @@ same way with different weights (≈29:23).
 
 ![Slide 40: the weights into one hidden unit](../raw/images/01-introduction/slide-40.jpg)
 
-*Slide 40 — only the weights into hidden unit $z_2$ are drawn, and its sum is written out term by term.*
+*Slide 40 — only the weights into hidden unit* $z_2$ *are drawn, and its sum is written out term by term.*
 
 Removing all the lines, a fully connected layer is drawn as a box with a "×" in it, and layers are
 stacked with non-linearities between them using `Sequential` in both frameworks (slide 41,
@@ -276,7 +276,7 @@ and the code is the same `Sequential` block with more layers inside (slide 43).
 
 ![Slide 43: Deep Neural Network](../raw/images/01-introduction/slide-43.jpg)
 
-*Slide 43 — the $k$-th hidden layer of a deep network, with the TensorFlow and PyTorch `Sequential` code.*
+*Slide 43 — hidden layer* $k$ *of a deep network, with the TensorFlow and PyTorch `Sequential` code.*
 
 ## 9. Applying a network: "Will I pass this class?" (30:55–33:16)
 
@@ -286,7 +286,7 @@ fail, and "you" are a new point at $(4, 5)$ (slide 47, ≈30:55–31:42).
 
 ![Slide 47: Example Problem: Will I pass this class?](../raw/images/01-introduction/slide-47.jpg)
 
-*Slide 47 — past students as pass (green) and fail (red) points, and the new student at $(4, 5)$.*
+*Slide 47 — past students as pass (green) and fail (red) points, and the new student at* $(4, 5)$.
 
 Fed through a two-input network with one hidden layer of three units, the input $[4, 5]$ comes out as
 0.1: a 10% chance of passing (slide 48, ≈31:42–32:30). The answer is wrong because the network is
@@ -316,7 +316,7 @@ $$J(\boldsymbol{W}) = \frac{1}{n} \sum_{i=1}^{n} \mathcal{L}\left(f\left(x^{(i)}
 
 ![Slide 51: Empirical Loss](../raw/images/01-introduction/slide-51.jpg)
 
-*Slide 51 — a dataset of inputs, the network's predictions $f(x)$ beside the true labels $y$, and their average loss $J(\boldsymbol{W})$.*
+*Slide 51 — a dataset of inputs, the network's predictions* $f(x)$ *beside the true labels* $y$*, and their average loss* $J(\boldsymbol{W})$.
 
 Which $\mathcal{L}$ to use depends on the output (≈34:01–35:33):
 
@@ -355,7 +355,7 @@ point is the loss of that configuration (slide 57, ≈37:03).
 
 ![Slide 57: Loss Optimization](../raw/images/01-introduction/slide-57.jpg)
 
-*Slide 57 — the loss $J(w_0, w_1)$ as a surface over two weights: peaks are bad weights, valleys good ones.*
+*Slide 57 — the loss* $J(w_0, w_1)$ *as a surface over two weights: peaks are bad weights, valleys good ones.*
 
 **Gradient descent** walks down that surface (slides 58–61, ≈37:03–38:34). Start at a random point;
 compute the **gradient**, which says which way is uphill at that one location; step a small amount in
@@ -399,7 +399,7 @@ $$\frac{\partial J(\boldsymbol{W})}{\partial w_2} = \frac{\partial J(\boldsymbol
 
 ![Slide 67: Computing Gradients: Backpropagation](../raw/images/01-introduction/slide-67.jpg)
 
-*Slide 67 — the chain rule for the last weight $w_2$, each factor colour-matched to a link of the chain.*
+*Slide 67 — the chain rule for the last weight* $w_2$*, each factor colour-matched to a link of the chain.*
 
 For the earlier weight $w_1$, the second factor itself needs the chain rule again, through $z_1$
 (slides 68–69, ≈40:55):
@@ -408,7 +408,7 @@ $$\frac{\partial J(\boldsymbol{W})}{\partial w_1} = \frac{\partial J(\boldsymbol
 
 ![Slide 70: repeat for every weight](../raw/images/01-introduction/slide-70.jpg)
 
-*Slide 70 — the three-factor chain rule for $w_1$: "repeat this for every weight in the network using gradients from later layers".*
+*Slide 70 — the three-factor chain rule for* $w_1$*: "repeat this for every weight in the network using gradients from later layers".*
 
 In a deeper network this repeats layer by layer, propagating gradients from the output back to the
 input, which tells how every weight affects the final loss (slide 70, ≈41:41). In theory,
