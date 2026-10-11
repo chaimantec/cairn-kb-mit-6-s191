@@ -9,7 +9,7 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c. The site 
 materials under the MIT license with a required attribution line (see LICENSE.md).
 
 ## Transcripts
-- [ ] 01 Introduction to Deep Learning — video II4giR4vOOo
+- [x] 01 Introduction to Deep Learning — video II4giR4vOOo (auto-captions, already punctuated; light Sonnet copy-edit, verbatim in original/)
 
 ## Crawl
 - [x] Fetch course site index: https://introtodeeplearning.com/ (2026 index only; year archives deferred)
@@ -17,15 +17,15 @@ materials under the MIT license with a required attribution line (see LICENSE.md
 - [x] Write sources.md
 
 ## Slides (raw/slides/)
-- [ ] 01 Introduction — 6S191_MIT_DeepLearning_L1.pdf (number map, Sonnet transcription, figure audit)
+- [x] 01 Introduction — 6S191_MIT_DeepLearning_L1.pdf (108 pages, no text layer, no printed numbers: slide N = page N; three Sonnet agents in parallel; Sonnet audit of 14 pages, 0 discrepancies)
 
 ## Wiki
-- [ ] wiki/01-introduction.md
+- [x] wiki/01-introduction.md
 - [ ] Topic pages (cross-lecture concepts)
 - [ ] INDEX.md table of contents
 
 ## Images
-- [ ] raw/images/01-introduction/ — select, render, embed in the wiki and slide files
+- [x] raw/images/01-introduction/ — 34 native page JPEGs extracted byte-for-byte; embedded in the wiki and slide files
 - [ ] INDEX.md — the chat's image rules; AGENTS.md — the Images conventions and table row; BUILD_LOG.md — what was rendered and why; LICENSE.md — attribution
 
 ## Publish
