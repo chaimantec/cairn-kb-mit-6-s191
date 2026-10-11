@@ -92,4 +92,4 @@ their headings in the slide file; the eight topic pages reuse one to three each.
 - Repeats of an included figure: 84–89 (the slide 61 loss surface beside transcribed algorithm text),
   107 (a review of three earlier figures).
 
-**Cost.** Measured after the build with `measure_run_cost.py`; see the session's report.
+**Cost.** Measured with `measure_run_cost.py`: $8.64 for the whole lecture. The Opus parent cost $6.77 and the five Sonnet agents $1.86 (22%): three slide readers at $0.44–0.52 each, the copy-edit $0.26 and the audit $0.15. Another ~$0.21 of output is logged incompletely and not counted. Reading native 1280×720 page JPEGs instead of PDF page renders is why the deck cost about $1.45 to transcribe.
