@@ -111,3 +111,6 @@ commands, because the right action can be multimodal, such as turning left or ri
   17–21.
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md) previews lab 2, on computer vision and
   facial detection.
+- [Lecture 5 — Reinforcement Learning](05-reinforcement-learning.md), sections 13 and 20: a CNN
+  reading Atari screens as a deep Q network, and lecture 3's autonomous car driven by a policy trained
+  with reinforcement learning in the VISTA simulator.

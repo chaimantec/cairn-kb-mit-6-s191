@@ -131,3 +131,5 @@ perturbation interprets the hidden latent variables; and the model generates new
 ## Where this comes up
 
 - [Lecture 4 — Deep Generative Modeling](04-deep-generative-modeling.md), sections 5–14.
+- [Lecture 5 — Reinforcement Learning](05-reinforcement-learning.md), section 17: a policy over a
+  continuous action that, like a VAE's encoder, outputs a mean and a variance and is sampled.

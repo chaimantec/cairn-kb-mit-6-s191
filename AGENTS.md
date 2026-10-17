@@ -35,8 +35,8 @@ printed slips, which slides were rendered and why) goes in
   catalog position (`01-…`, `10-…`), and give each lecture's page its year. The 2026 decks are
   `https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_LN.pdf`; earlier editions' decks are
   linked from the per-year archive pages (`/2025/index.html`, …), which the crawl has not yet visited.
-- **Decks are flattened images.** The 2026 decks (lectures 1–4, at least) are PyFPDF exports: every page is
-  one 1280×720 JPEG, with **no text layer** and **no printed slide numbers** (the footer's "1/5/26" is
+- **Decks are flattened images.** The 2026 decks (lectures 1–5, at least) are image-only exports (PyFPDF for
+  1–4, macOS Quartz for 5): every page is one 1280×720 JPEG, with **no text layer** and **no printed slide numbers** (the footer's "1/5/26" is
   the lecture date). So `slide_number_map.py` finds nothing and `--verify` does not apply: use slide N =
   PDF page N, and check headings with a plain `1..N` sequence check. Check each new deck's text layer
   and footer before assuming the same. No text layer also means agents cannot grep for URLs or
@@ -54,7 +54,8 @@ printed slips, which slides were rendered and why) goes in
 ## Transcripts
 
 The YouTube captions are auto-generated but already punctuated, so the copy-edit is light: filler and
-false starts out, terms restored against the slide file, `[Student: …]` marks for students, and
+false starts out, terms restored against the slide file, `[Student: …]` marks for students (a turn that runs across an `[MM:SS]` mark is closed before it and
+reopened after it), and
 `[Ed: …]` notes where the captions are unclear or a spoken number differs from a slide (the spoken
 number is kept). An `[Ed: …]` note says what is unclear; it never proposes a name or term the slides do
 not support. Every change is listed in the file's header. Verify by script against `original/`:
@@ -95,6 +96,7 @@ in `BUILD_LOG.md`.
 | 2 Recurrent Neural Networks, Transformers, and Attention (2026) | 33 of 83 pages | page JPEGs of `6S191_MIT_DeepLearning_L2.pdf` |
 | 3 Convolutional Neural Networks (2026) | 33 of 70 pages | page JPEGs of `6S191_MIT_DeepLearning_L3.pdf` |
 | 4 Deep Generative Modeling (2026) | 39 of 84 pages | page JPEGs of `6S191_MIT_DeepLearning_L4.pdf` |
+| 5 Reinforcement Learning (2026) | 19 of 58 pages | page JPEGs of `6S191_MIT_DeepLearning_L5.pdf` |
 
 ## Conventions
 

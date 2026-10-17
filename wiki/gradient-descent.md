@@ -94,7 +94,22 @@ and because a batch is computed in parallel they bring large speed-ups on GPUs (
 sizes are usually tens or hundreds — 32 is common — while large language models use millions; the
 batch size is the dial between accuracy and cost (≈47:05–48:38).
 
+## Updating a policy
+
+Lecture 5 trains a [policy-gradient](policy-gradients.md) network with the same update, written with
+weights $w$ and no learning rate, under the heading "Gradient descent update"
+([lecture 5](05-reinforcement-learning.md), slide 46, ≈46:58):
+
+$$w' = w - \nabla \mathbf{loss}$$
+
+$$w' = w + \nabla \log P(a_t|s_t)\thinspace R_t$$
+
+With the loss $-\log P(a_t|s_t)\thinspace R_t$, a step down the loss is a step up the log-likelihood of
+actions that earned high reward. The boxed term, the gradient of the policy itself, is the "policy
+gradient" that names the method.
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 11, 13 and 14.
 - [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), sections 4 and 6: an RNN's three weight matrices are learned by gradient descent, with gradients from backpropagation through time; gradient clipping keeps exploding gradients in check.
+- [Lecture 5 — Reinforcement Learning](05-reinforcement-learning.md), section 19: the gradient-descent update of a policy network.

@@ -157,3 +157,28 @@ every one is the course line above. Third-party material on them, as credited on
 Not included from lecture 4, among others: slide 42 (a repeat of slide 6's face grids, with the same
 credit), slide 80's video still of the course's synthesized-voice demo (captioned "Original (Amini)"
 and "Synthesized (Obama)", with a "CANNYAI" logo), and the full-slide pictures of slides 82–84.
+
+Each image in `raw/images/05-reinforcement-learning/`, named `slide-N.jpg`, is page N of the lecture 5
+deck,
+[`6S191_MIT_DeepLearning_L5.pdf`](https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L5.pdf),
+extracted unmodified in the same way. 19 of the deck's 58 pages are included: slides 6, 10, 17, 22, 26,
+30–33, 37–40, 42–45, 48 and 56. Attribution for every one is the course line above. Third-party material
+on them, as credited on the slides:
+
+- **Slides 26, 30, 32 and 33** credit "Mnih+ *Nature* 2015.": slide 32's network diagram and slide 33's
+  chart of Atari results are reproduced from that work.
+- **Slide 42** credits "Williams *Reinforcement Learning* 1992." for the training algorithm beside its
+  trajectory drawing (slides 43–45 repeat the algorithm without the credit).
+- **Slide 48** credits "Amini+ *IEEE RA-L* 2020.", the lecturer's own work on the VISTA simulator, for its
+  grid of simulated driving frames.
+- **Slide 56** credits "Silver+ *Science* 2016." for the AlphaGo pipeline.
+- The Atari Breakout game frames on **slides 22, 26, 30, 31 and 37–40** show a game that belongs to its
+  owners; only slides 26 and 30 among them carry a credit (the Mnih+ line). Slide 6's apple drawings carry
+  no credit.
+
+Not included from lecture 5, among others: the robotic-hand picture of slide 2 and slide 3's images for
+robotics, game play (a Go board and the StarCraft II logo) and language modeling; the Breakout video
+stills of slides 23–24; the video stills of slides 47 and 49 (credited "Amini+ *IEEE RA-L* 2020."); slide
+51's Go photograph (credited "Silver+ *Science* 2016; Silver+ *Nature* 2017."); slide 52's Go board and
+table (credited "Source: Wikipedia.", the table transcribed in `raw/slides/`); and slide 58's T-shirt
+photograph.

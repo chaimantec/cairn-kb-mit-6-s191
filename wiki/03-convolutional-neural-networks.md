@@ -646,6 +646,9 @@ side" (≈54:03–54:49).
 
 *Slide 65 — one convolutional branch per camera and for the map, concatenated into fully connected layers that output a mixture over steering commands.*
 
+The same car returns in [lecture 5](05-reinforcement-learning.md) (section 20), driven by a policy
+trained with reinforcement learning entirely in the VISTA simulator.
+
 ## 21. Summary (54:49–55:36)
 
 CNNs are an "incredibly general-purpose" operation, working on 2D images and on one-dimensional

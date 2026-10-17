@@ -16,6 +16,7 @@ slide file or transcript it concerns. The rules every build follows are in
 | 2 Recurrent Neural Networks, Transformers, and Attention (2026) | [Lecture 2](#lecture-2--recurrent-neural-networks-transformers-and-attention-2026--built-2026-10-17), 2026-10-17 |
 | 3 Convolutional Neural Networks (2026) | [Lecture 3](#lecture-3--convolutional-neural-networks-2026--built-2026-10-18), 2026-10-18 |
 | 4 Deep Generative Modeling (2026) | [Lecture 4](#lecture-4--deep-generative-modeling-2026--built-2026-10-18), 2026-10-18 |
+| 5 Reinforcement Learning (2026) | [Lecture 5](#lecture-5--reinforcement-learning-2026--built-2026-10-18), 2026-10-18 |
 
 ## Lecture 1 — Introduction to Deep Learning (2026) — built 2026-10-11
 
@@ -493,3 +494,116 @@ each one 1280×720 JPEG, no text layer (PyFPDF, created 2026-01-04), footer "1/6
 - [x] verify_kb.py clean, and its review section read
 - [x] Commit and push (3dbc42f)
 - [x] Move this section to BUILD_LOG.md
+
+## Lecture 5 — Reinforcement Learning (2026) — built 2026-10-18
+
+**Pointers.** Catalog position 5, video `1ij3dweHu-0` (59:19), delivered 7 January 2026 by Alexander
+Amini. Deck <https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L5.pdf>, 58 pages, downloaded in
+the lecture 1 crawl (same size as on the server, 3,380,103 bytes; Last-Modified 2026-08-17). The title
+slide reads "Deep Reinforcement Learning", "Alexander Amini", "January 7, 2026"; the catalog title is
+"Reinforcement Learning", which the wiki and slide file use as their heading (as lecture 3 does). PDF
+metadata: author "A. Amini, A.P. Amini. MIT 6.S191", producer "macOS Version 26.1 (Build 25B78) Quartz
+PDFContext" — not PyFPDF, unlike lectures 1–4 — created 2026-01-07.
+
+**Deck format and numbering.** Despite the different exporter, the same format: every page is one
+1280×720 JPEG (DCTDecode, so the stream is the JPEG file), no text layer, no two pages identical. A strip
+of the bottom 10% of pages 2, 8, 15, 22, 29, 36, 43, 50, 57 and 58 showed the standard footer with
+"1/7/26" and no slide number (the credit "Mnih+ *Nature* 2015." beside it on 29); 50 is a blue section
+divider and 58 black. Slide N = PDF page N, checked with a plain 1..58 heading sequence.
+
+**Licence.** No per-slide licence notices. Footer credits: "Mnih+ *Nature* 2015." (25–30, 32, 33),
+"Williams *Reinforcement Learning* 1992." (42, 46), "Amini+ *IEEE RA-L* 2020." (47–49), "Silver+ *Science*
+2016; Silver+ *Nature* 2017." (51), "Source: Wikipedia." (52), "Silver+ *Science* 2016." (53–56).
+Uncredited third-party imagery: slide 2's robotic hand, slide 3's pictures (a car scene, robotic arms, a
+Go board, the StarCraft II logo, a chat illustration), the Atari Breakout frames of 22–31 and 36–40 and
+the summary (57), slide 47's mountain-road video still, and 58's T-shirt photograph. LICENSE.md lists
+what is in the images.
+
+**Slide transcription.** The 58 page JPEGs were extracted with `get_image_info(xrefs=True)` and read by
+two Sonnet agents in parallel (1–29 and 30–58; the second read page 29 for build-step context), each
+appending as it went; the parent merged the parts and wrote the header, section table and Images note.
+The second reader first numbered its entries one too high and renumbered them before finishing; the
+1..58 heading check passed. 47 slides are tagged `*Figure: yes*`. Parent edits: slide 52's exponents
+written as LaTeX; 42 formulas that stood alone inside quotes unquoted and five whole quoted lines that
+began with a formula unquoted; ten `*Figure: yes*` lines split around their math; three
+`\operatorname{argmax}_ {a}` subscripts spaced; slide 17's discount-factor line rephrased — until
+`check_math.mjs` reported 0 errors and 0 warnings.
+
+**Figure audit.** A separate Sonnet agent checked slides 7, 15, 17, 18, 19, 22, 26, 28, 30, 31, 32, 33, 37,
+38, 39, 40, 42, 46, 48, 52, 53 and 56 against the page JPEGs with enlarged crops. Nothing described was
+absent from its page. Exact: slide 7's faded captions; the formulas of 15, 17–19, 28 and 30 (norm bars,
+square, primes); 31's values; slide 33's 49 game labels and their order, its axis, line and arrow;
+slide 42's labels, including the $a_3$ of the third; 46's loss and update; every cell of slide 52's
+table, with its "n x n" header. Discrepancies on **6 pages**, all fixed: slide 32's second convolution
+block (two sub-columns of seven, not "five"); slide 33's "~" before Seaquest, Bowling and Private Eye
+were error-bar caps, the grey bar exceeds the blue on four games (Double Dunk, Tennis, Kung-Fu Master,
+Centipede), not "a few … most clearly Double Dunk", and the legend is two rotated rectangles; slides 37
+and 40's braces sit below their expressions, and both titles have two spaces after the colon; slide
+38's axis has arrowheads at both ends and the Stay bar is a quarter of Left's height; slide 48's frame
+list had 17 descriptions for 18 frames. Also adopted: slide 42's trajectory bends right before left.
+The auditor read Road Runner as "closer to 222%"; the parent's crop reads 232%, kept with a note that
+the middle digit is blurred. The parent looked at the images of slides 33 (the chart, values as now
+transcribed) and 46 (the policy-gradient loss and both update lines, exactly as transcribed, upright P
+and bold **loss** included).
+
+**Printed slips and as-printed oddities**, all reproduced as printed:
+
+- Slide 42 labels its third trajectory point $(s_2, a_3, r_2)$; the wiki notes the break in pattern.
+- Slides 17 and 18 write the discounted return two ways, $\gamma^{i} r_i$ summed from $i = t$ and
+  $r_t + \gamma r_{t+1} + \cdots$; the wiki notes from the formulas alone that they differ by $\gamma^{t}$.
+- Slide 33 puts 29 games on the "Surpass human-level" side of its line, seven of them under 100%
+  (Enduro 97% to H.E.R.O. 76%), and states no threshold; the wiki says so from the chart's own numbers.
+- Slide 7 is a frame caught mid-animation, its faded supervised caption reading "This is an apple."
+  where slides 4–6 print "This thing is an apple."; slides 21 and 35 fade one panel each.
+- Slide 10's second definition and slide 19's policy sentence have no full stop, and 19 prints a plain
+  "s"; slide 52's header prints "n x n" where its rows print "×"; slides 22–24 print "Example:" with two
+  spaces after the colon, and slides 37 and 40 their titles.
+- Slide 51 credits "Silver+ *Science* 2016; Silver+ *Nature* 2017.", slides 53–56 "Silver+ *Science* 2016."
+
+**Spoken vs printed.** The data as "triplets" of states, actions and rewards (≈3:56) against slide 6's
+"state-action pairs"; the Q-loss as an "absolute value" (≈26:58) against slide 30's squared norm; the
+captions' "23 or zero" (≈27:44) against slide 31's 20, 3 and 0; the target's $Q(s', a')$ called "the
+actual reward" and "probably a misnomer" (≈33:52–34:39); human level surpassed "on over 50%" of the
+games (≈31:35) against slide 33's 29 of 49; "the first time any autonomous vehicle was ever trained
+end-to-end in simulation" (≈51:35) against slide 49's "First full-scale autonomous vehicle trained using
+RL entirely in simulation"; and Breakout's "two actions" corrected aloud to three (≈20:03–20:48). The
+wiki gives both sides and lists them in a "Spoken versus printed" section.
+
+**Transcript.** YouTube auto-captions, already punctuated. Copy-edited by a Sonnet agent against the slide
+file: 74 "uh"/"um", the `>>` marks, stutters and false starts removed ("You train this using policy grade
+You train this using gradient descent"); "RFT" to R of T (45:26), "breakout" to Breakout (30:47). 38
+`[Student: …]` marks: the lecture has about twenty questions and an audience poll. Kept with [Ed] notes:
+"23 or zero" (27:44, citing slide 31's 20, 3 and 0) and "the last lecture that we saw with VAEs that I
+have a gave" (38:31, unclear; lecture 4 was given by Ava Amini). The parent removed a third [Ed] note the
+agent added unasked at 18:31, which proposed that "the Q function is what is being discussed" where the
+captions say "R of T"; normalized the agent's "R of t" to the captions' "R of T"; and closed and reopened
+four student turns that the agent had left open across a mark (21:35, 40:50, 55:25, 56:56), which went
+into AGENTS.md as a general rule. Checks re-run by the parent: 77 of 77 `[MM:SS]` marks identical, number
+inventory identical, per-paragraph word ratio 0.90–1.00.
+
+**Coverage gaps.** The preference-alignment passage on language models (53:53–54:39) has no slide beyond
+slide 3's panel. The learning-from-scratch slide shown in answer to a question (54:39–55:25), with its
+green baselines and Stockfish, is not in the published deck. The Breakout, mountain-road, VISTA and
+deployment videos (23, 24, 47–49) are played, not described; slide 33's chart and slide 52's table are
+summarized aloud, not read.
+
+**Images.** 19 of 58 pages, copied byte for byte from the deck's own JPEGs (1.1 MB): 6, 10, 17, 22, 26,
+30, 31, 32, 33, 37, 38, 39, 40, 42, 43, 44, 45, 48, 56. All 19 are embedded in
+`wiki/05-reinforcement-learning.md` by hand, in the passage citing each, and under their headings in the
+slide file (by `embed_slide_images.py`); the three new topic pages reuse 6. Not rendered, and why:
+
+- Title, text, equation and section-divider slides: 1, 18, 19, 20, 21, 34, 35, 46, 50.
+- Build steps wholly contained in an included slide: 4–5 (→6), 8–9 (→10), 11–16 (→17; their
+  equations are transcribed), 25 (→26), 27–29 (→30), 53–55 (→56).
+- A frame caught mid-animation: 7 (slide 6 with two columns fading).
+- Repeats of an included figure: 36 (31 without the return arrow), 41 (17's loop beside the case-study
+  text).
+- Video stills: 23 and 24 (the two Breakout policies), 47 (a car on a mountain road), 49 (the deployed
+  car; its text is transcribed). Slide 48's still is kept: its grid of simulated frames is the content.
+- Decorative, application and stock pictures: 2, 3, 51 (a Go photograph).
+- A table transcribed cell by cell: 52 (its Go board diagram is generic).
+- The summary (57) and announcements (58).
+
+**AGENTS.md lessons** (general form): a student turn that runs across an `[MM:SS]` mark is closed before
+it and reopened after it. The deck-format bullet now records that lecture 5's deck came from a different
+exporter in the same image-only format.

@@ -40,12 +40,19 @@ hierarchy through its depth. In a convolutional network the layers learn edges a
 ears and noses, then facial structure (slide 50, ≈37:49; see
 [convolutional neural networks](convolutional-neural-networks.md)).
 
-## Supervised and unsupervised learning
+## Supervised, unsupervised and reinforcement learning
 
 The networks of lectures 1–3 learn by **supervised learning**: from pairs $(x, y)$ of data and label,
 they learn a function mapping $x \rightarrow y$. In **unsupervised learning** there are only the data
 $x$, and the goal is to learn their hidden or underlying structure ([lecture 4](04-deep-generative-modeling.md),
 slides 3–4, ≈2:25–3:57). [Generative modeling](generative-modeling.md) is the course's way into it.
+
+**Reinforcement learning** has neither labels nor a pre-collected dataset: an agent acts in an
+environment, its data — states, actions and rewards — are collected while it learns, and the goal is to
+"Maximize future rewards over many time steps" ([lecture 5](05-reinforcement-learning.md), slides 4–6,
+≈0:52 and ≈2:24–4:42). Lecture 5's apple example puts the three side by side: "This thing is an apple",
+"This thing is like the other thing", and "Eat this thing because it will keep you alive". See
+[reinforcement learning](reinforcement-learning.md).
 
 ## Why now?
 
@@ -67,4 +74,6 @@ recognition to 1995. Their recent dominance comes from three things (≈14:03–
   hand-engineered versus learned visual features, and the hierarchy a CNN learns.
 - [Lecture 4 — Deep Generative Modeling](04-deep-generative-modeling.md), section 2: supervised versus
   unsupervised learning.
+- [Lecture 5 — Reinforcement Learning](05-reinforcement-learning.md), section 2: reinforcement
+  learning as the third class of learning problems.
 - The building block every later idea rests on is the [perceptron](perceptron.md).

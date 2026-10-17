@@ -99,6 +99,24 @@ $$\arg\min_{G} \max_{D} \mathbb{E}_ {\mathbf{z},\mathbf{x}}\left[\log D(G(\mathb
 The formula is reproduced as slide 72 prints it; the lecture 4 page discusses how its terms are read
 (section 18).
 
+## Losses for reinforcement learning
+
+In [reinforcement learning](reinforcement-learning.md) there are no labels either; the targets come from
+rewards the agent observes by acting. A [deep Q network](q-learning.md) is trained to match a target
+built from the reward $r$, the discount factor $\gamma$ and the best Q-value in the next state, with the
+**Q-loss** ([lecture 5](05-reinforcement-learning.md), slide 30, ≈26:12–27:44):
+
+$$\mathcal{L} = \mathbb{E}\left[ \left\Vert \left(r + \gamma \max_{a'} Q(s', a')\right) - Q(s,a) \right\Vert^2 \right]$$
+
+Aloud, the lecture describes it as the absolute value of the difference between target and prediction.
+A [policy-gradient](policy-gradients.md) network is trained instead with the negative log-likelihood of
+the action $a_t$ it took in state $s_t$, weighted by the total discounted reward $R_t$ that followed
+(slide 46, ≈45:26–46:58):
+
+$$\mathbf{loss} = -\log P(a_t|s_t)\thinspace R_t$$
+
+so that actions followed by high rewards become more likely and those followed by low rewards less so.
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 9–11.
@@ -107,3 +125,5 @@ The formula is reproduced as slide 72 prints it; the lecture 4 page discusses ho
   softmax outputs for classification, and a likelihood loss for probabilistic control.
 - [Lecture 4 — Deep Generative Modeling](04-deep-generative-modeling.md), sections 6, 8–9 and 18:
   the reconstruction loss, the VAE's regularization term, and the GAN's min-max objective.
+- [Lecture 5 — Reinforcement Learning](05-reinforcement-learning.md), sections 11 and 19: the
+  Q-loss and the policy-gradient loss.

@@ -6,14 +6,15 @@ from the foundations of neural networks — the single neuron, training by gradi
 backpropagation — up to recent advances in large language models. Course site:
 <https://introtodeeplearning.com/>.
 
-**Coverage: lectures 1–4 only.** This knowledge base covers **lectures 1–4 of the 2026 edition**:
+**Coverage: lectures 1–5 only.** This knowledge base covers **lectures 1–5 of the 2026 edition**:
 "Introduction to Deep Learning" (Alexander Amini) and "Recurrent Neural Networks, Transformers, and
 Attention" (Ava Amini), both delivered 5 January 2026, and "Convolutional Neural Networks" (Alexander
 Amini; the deck's title is "Deep Computer Vision") and "Deep Generative Modeling" (Ava Amini), both
-delivered 6 January 2026. The Cairn catalog for this course lists 90 recordings — the 2026 edition's
+delivered 6 January 2026, and "Reinforcement Learning" (Alexander Amini; the deck's title is "Deep
+Reinforcement Learning"), delivered 7 January 2026. The Cairn catalog for this course lists 90 recordings — the 2026 edition's
 lectures (positions 1–9) followed by the 2018–2025 editions — and none of the others is in this KB yet.
-Do not cite it as the whole course: for any other lecture (reinforcement learning, language models,
-diffusion models and the rest), say it is not covered. Vision transformers, which lecture 2 says
+Do not cite it as the whole course: for any other lecture (language models, diffusion models and the
+rest), say it is not covered. Vision transformers, which lecture 2 says
 lecture 3 will cover, are not discussed in lecture 3.
 
 ## How to use this knowledge base
@@ -27,15 +28,17 @@ lecture 3 will cover, are not discussed in lecture 3.
 
 ## Images
 
-All four lectures have slide images: **34 for lecture 1**, **33 for lecture 2**, **33 for lecture
-3** and **39 for lecture 4**. Each is embedded where it is used: in the lecture page
+All five lectures have slide images: **34 for lecture 1**, **33 for lecture 2**, **33 for lecture
+3**, **39 for lecture 4** and **19 for lecture 5**. Each is embedded where it is used: in the lecture page
 ([lecture 1](wiki/01-introduction.md), [lecture 2](wiki/02-rnns-transformers-attention.md),
-[lecture 3](wiki/03-convolutional-neural-networks.md), [lecture 4](wiki/04-deep-generative-modeling.md))
+[lecture 3](wiki/03-convolutional-neural-networks.md), [lecture 4](wiki/04-deep-generative-modeling.md),
+[lecture 5](wiki/05-reinforcement-learning.md))
 beside the passage that cites the slide, in some topic pages, and under the matching `## Slide N`
 heading of the slide transcription ([lecture 1](raw/slides/01-introduction.md),
 [lecture 2](raw/slides/02-rnns-transformers-attention.md),
 [lecture 3](raw/slides/03-convolutional-neural-networks.md),
-[lecture 4](raw/slides/04-deep-generative-modeling.md)).
+[lecture 4](raw/slides/04-deep-generative-modeling.md),
+[lecture 5](raw/slides/05-reinforcement-learning.md)).
 They are whole slides, every one that carries a distinct figure; slides without an image are text, code
 or tables the transcription reproduces exactly, logistics, logos, stock photographs, video stills,
 repeats of a rendered figure, or build steps contained in a rendered slide. No other lecture is in this KB, so no other lecture has images.
@@ -80,12 +83,20 @@ repeats of a rendered figure, or build steps contained in a rendered slide. No o
   and completeness, the reparametrization trick, latent perturbation, disentanglement and β-VAEs; GANs:
   generator and discriminator, the number-line intuition, the min-max objective, distribution
   transformers and latent interpolation; CycleGAN for images and speech; diffusion models deferred.
+- [Lecture 5 — Reinforcement Learning](wiki/05-reinforcement-learning.md) — the whole lecture in order:
+  learning in dynamic environments; supervised, unsupervised and reinforcement learning (the apple
+  example); agent, environment, actions and action space, states, rewards, the return and discounting;
+  the Q-function and the policy; value versus policy learning; the Atari Breakout A-or-B puzzle; deep Q
+  networks, the training target and the Q-loss; DQN on 49 Atari games; downsides of Q-learning; policy
+  gradients, discrete and continuous action spaces and a Gaussian policy; the self-driving training
+  algorithm, the policy-gradient loss and update, exploration versus exploitation; why real-world
+  training needs simulation (VISTA); AlphaGo; preference alignment of language models.
 
 ### Topics
 
 - [What is deep learning?](wiki/what-is-deep-learning.md) — AI, machine learning and deep learning
   defined and nested; learned hierarchical features versus hand-engineered ones, including lecture 3's
-  case for vision; supervised versus unsupervised learning; why now (big data, hardware, software) and
+  case for vision; supervised, unsupervised and reinforcement learning; why now (big data, hardware, software) and
   the 1952–1995 timeline.
 - [The perceptron](wiki/perceptron.md) — the single neuron: weighted sum, bias, non-linearity, the
   vector form $\hat{y} = g(w_0 + \boldsymbol{X}^T \boldsymbol{W})$, and the worked example showing a
@@ -100,10 +111,11 @@ repeats of a rendered figure, or build steps contained in a rendered slide. No o
   $J(\boldsymbol{W})$, binary cross-entropy for probabilities and mean squared error for continuous
   outputs; per-time-step losses summed over a sequence; softmax over many classes, and the
   negative-log-likelihood loss of lecture 3's driving model; losses without labels: the autoencoder's
-  reconstruction loss, the VAE's two terms and the GAN's min-max objective.
+  reconstruction loss, the VAE's two terms and the GAN's min-max objective; the Q-loss and the
+  policy-gradient loss of reinforcement learning.
 - [Gradient descent, learning rates and mini-batches](wiki/gradient-descent.md) — loss optimization,
   the gradient descent algorithm, choosing the learning rate, adaptive optimizers (SGD, Adam, Adadelta,
-  Adagrad, RMSProp), stochastic and mini-batch gradient descent.
+  Adagrad, RMSProp), stochastic and mini-batch gradient descent; the policy-gradient update.
 - [Backpropagation](wiki/backpropagation.md) — computing the gradient with the chain rule, worked on a
   one-neuron-per-layer network, why it propagates backwards, backpropagation through time for RNNs, and
   the reparametrization trick for backpropagating through a VAE's sampling step.
@@ -137,6 +149,16 @@ repeats of a rendered figure, or build steps contained in a rendered slide. No o
 - [Generative adversarial networks](wiki/generative-adversarial-networks.md) — generator against
   discriminator, the number-line intuition, the min-max objective as printed, training instability,
   GANs as distribution transformers, and CycleGAN.
+- [Reinforcement learning](wiki/reinforcement-learning.md) — the third learning paradigm: agent,
+  environment, actions, states and rewards; the return and the discount factor; the Q-function and the
+  policy; value versus policy learning; exploration versus exploitation; simulation and VISTA; Atari,
+  self-driving, Go and AlphaGo, and the preference alignment of language models.
+- [Q-learning and deep Q networks](wiki/q-learning.md) — the Q-function and the argmax policy, the
+  Breakout puzzle, the two DQN architectures, the target, prediction and Q-loss, acting, DQN on Atari,
+  and Q-learning's downsides (discrete actions only, no stochastic policies).
+- [Policy gradients](wiki/policy-gradients.md) — a network that outputs a distribution over actions
+  and samples from it; continuous actions with a Gaussian policy; the five-step training algorithm; the
+  loss $-\log P(a_t|s_t)\thinspace R_t$ and the policy-gradient update; exploration; training in simulation.
 
 ## Raw materials
 
@@ -144,13 +166,15 @@ repeats of a rendered figure, or build steps contained in a rendered slide. No o
   and a prose description of every figure: [lecture 1](raw/slides/01-introduction.md) (108 slides),
   [lecture 2](raw/slides/02-rnns-transformers-attention.md) (83 slides),
   [lecture 3](raw/slides/03-convolutional-neural-networks.md) (70 slides),
-  [lecture 4](raw/slides/04-deep-generative-modeling.md) (84 slides).
+  [lecture 4](raw/slides/04-deep-generative-modeling.md) (84 slides),
+  [lecture 5](raw/slides/05-reinforcement-learning.md) (58 slides).
 - [`raw/transcripts/`](raw/transcripts/) — the lecture transcripts, copy-edited from YouTube captions,
   with `[MM:SS]` paragraph marks and `[Ed: …]` notes where the captions are unclear or differ from a
   slide: [lecture 1](raw/transcripts/01-introduction.md),
   [lecture 2](raw/transcripts/02-rnns-transformers-attention.md),
   [lecture 3](raw/transcripts/03-convolutional-neural-networks.md),
-  [lecture 4](raw/transcripts/04-deep-generative-modeling.md). The verbatim captions are in
+  [lecture 4](raw/transcripts/04-deep-generative-modeling.md),
+  [lecture 5](raw/transcripts/05-reinforcement-learning.md). The verbatim captions are in
   `raw/transcripts/original/`.
 - [`raw/images/`](raw/images/) — the slide images described above.
 - [`sources.md`](sources.md) — every document the course site links, with its canonical URL. The PDFs

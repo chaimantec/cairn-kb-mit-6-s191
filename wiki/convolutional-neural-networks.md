@@ -174,3 +174,5 @@ suits any two-dimensional, spatial input; a convolution over patches of a one-di
 - [Lecture 3 — Convolutional Neural Networks](03-convolutional-neural-networks.md), sections 4–16.
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md): the dense layers, activation
   functions and training that a CNN reuses.
+- [Lecture 5 — Reinforcement Learning](05-reinforcement-learning.md), section 13: the deep Q
+  network that plays Atari from screen pixels is a CNN, two convolution layers then two fully connected.
