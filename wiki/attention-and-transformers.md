@@ -78,7 +78,9 @@ Attention is very parallelizable, and several heads can be stacked in one networ
 different pattern of importance — in the lecture's image example, one head picks out Iron Man, another
 a building, another something in the background (slide 79, ≈53:22–54:09). Transformers built this way
 power language models such as BERT and GPT, protein structure models for biological sequences, and
-vision transformers in computer vision (slide 80, ≈54:54).
+vision transformers in computer vision (slide 80, ≈54:54). Lecture 2 says vision transformers come up in
+lecture 3, but [lecture 3](03-convolutional-neural-networks.md) as delivered is about convolutional
+networks and does not mention them.
 
 ## Where this comes up
 

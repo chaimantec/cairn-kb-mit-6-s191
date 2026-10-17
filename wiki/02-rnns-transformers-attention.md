@@ -522,8 +522,9 @@ intuition to ground the idea, but that stacking heads is very practical for buil
 
 The architecture has spread well beyond language (slide 80, ≈54:54): transformer language models such
 as BERT and GPT; biological sequences such as proteins and DNA, with protein structure models; and
-computer vision, where vision transformers have become "perhaps the dominant architecture", the
-subject of lecture 3 (not yet in this knowledge base).
+computer vision, where vision transformers have become "perhaps the dominant architecture", which she
+says lecture 3 will cover. [Lecture 3](03-convolutional-neural-networks.md), as delivered, covers
+convolutional neural networks and does not mention vision transformers.
 
 ![Slide 80: Self-Attention Applied](../raw/images/02-rnns-transformers-attention/slide-80.jpg)
 

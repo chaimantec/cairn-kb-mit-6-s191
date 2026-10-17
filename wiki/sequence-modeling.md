@@ -82,7 +82,17 @@ does not go into a particular tokenizer.
 The general point holds beyond language: whatever the data modality, you have to find a way to map it
 into numerical input the network can process (≈27:46).
 
+## Convolutions over sequences
+
+Architectures are matched to data modalities: convolutions to two-dimensional, spatial input, RNNs and
+sequence models to sequential input ([lecture 3](03-convolutional-neural-networks.md), ≈39:23). But the
+line is not strict. Convolving patches along one dimension of a sequence — "that's also a valid sequence
+model" — and the same ideas extend to 3D, for volumetric scans (≈39:23–40:56). See
+[convolutional neural networks](convolutional-neural-networks.md).
+
 ## Where this comes up
 
 - [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md),
   sections 1, 2 and 5.
+- [Lecture 3 — Convolutional Neural Networks](03-convolutional-neural-networks.md), section 15: a student
+  question on whether CNNs can be used for language.

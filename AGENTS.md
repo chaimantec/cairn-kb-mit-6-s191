@@ -35,7 +35,7 @@ printed slips, which slides were rendered and why) goes in
   catalog position (`01-…`, `10-…`), and give each lecture's page its year. The 2026 decks are
   `https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_LN.pdf`; earlier editions' decks are
   linked from the per-year archive pages (`/2025/index.html`, …), which the crawl has not yet visited.
-- **Decks are flattened images.** The 2026 decks (lectures 1 and 2, at least) are PyFPDF exports: every page is
+- **Decks are flattened images.** The 2026 decks (lectures 1–3, at least) are PyFPDF exports: every page is
   one 1280×720 JPEG, with **no text layer** and **no printed slide numbers** (the footer's "1/5/26" is
   the lecture date). So `slide_number_map.py` finds nothing and `--verify` does not apply: use slide N =
   PDF page N, and check headings with a plain `1..N` sequence check. Check each new deck's text layer
@@ -67,7 +67,10 @@ are transcribed individually with a "Build step:" line. Code is reproduced as pr
 slide's own typos, with a note when the deck contradicts itself. Fill-in blanks printed as `___` pair with math
 subscripts into italics on github.com: write them `\_\_\_` in any paragraph that also holds math. Figure descriptions are audited by a
 separate Sonnet agent against the page JPEGs (with enlarged crops), targeting tables, charts, worked
-numbers and code; the parent then looks at two rendered images itself.
+numbers and code; the parent then looks at two rendered images itself. Readers and auditors both tend
+to normalize slips in printed formulas and code (an unclosed parenthesis, mixed straight and curly
+quotes) and report "exact", so tell both to keep such slips, and read the formulas and code on the
+parent's two images character by character.
 
 ### Images
 
@@ -85,6 +88,7 @@ in `BUILD_LOG.md`.
 | --- | --- | --- |
 | 1 Introduction to Deep Learning (2026) | 34 of 108 pages | page JPEGs of `6S191_MIT_DeepLearning_L1.pdf` |
 | 2 Recurrent Neural Networks, Transformers, and Attention (2026) | 33 of 83 pages | page JPEGs of `6S191_MIT_DeepLearning_L2.pdf` |
+| 3 Convolutional Neural Networks (2026) | 33 of 70 pages | page JPEGs of `6S191_MIT_DeepLearning_L3.pdf` |
 
 ## Conventions
 

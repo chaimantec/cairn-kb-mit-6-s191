@@ -14,6 +14,7 @@ slide file or transcript it concerns. The rules every build follows are in
 | --- | --- |
 | 1 Introduction to Deep Learning (2026) | [Lecture 1](#lecture-1--introduction-to-deep-learning-2026--built-2026-10-11), 2026-10-11 |
 | 2 Recurrent Neural Networks, Transformers, and Attention (2026) | [Lecture 2](#lecture-2--recurrent-neural-networks-transformers-and-attention-2026--built-2026-10-17), 2026-10-17 |
+| 3 Convolutional Neural Networks (2026) | [Lecture 3](#lecture-3--convolutional-neural-networks-2026--built-2026-10-18), 2026-10-18 |
 
 ## Lecture 1 — Introduction to Deep Learning (2026) — built 2026-10-11
 
@@ -244,3 +245,109 @@ footers): slide N = page N.
 - [x] verify_kb.py clean, and its review section read
 - [x] Commit and push
 - [x] Move this section to BUILD_LOG.md
+
+## Lecture 3 — Convolutional Neural Networks (2026) — built 2026-10-18
+
+**Pointers.** Catalog position 3, video `pqIcoskUuWs` (56:46), delivered 6 January 2026 by Alexander
+Amini. Deck <https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L3.pdf>, 70 pages, linked from
+the 2026 schedule on the course index (downloaded in the lecture 1 crawl; same size as on the server,
+whose Last-Modified is 2026-08-17). The schedule lists it as Lecture 3, "Deep Computer Vision", showing
+"Apr. 13, 2026" with "Jan. 6, 2026" commented out; the title slide reads "Deep Computer Vision",
+"Alexander Amini", "January 6, 2026". The PDF metadata gives author "A. Amini, A.P. Amini. MIT 6.S191",
+producer PyFPDF 1.7.2 and creation date 2026-01-04.
+
+**Deck format and numbering.** As lectures 1–2: every page is a single 1280×720 JPEG with no text layer,
+and no two pages are identical. A stacked strip of the bottom 10% of pages 2, 10, 20, 30, 40, 50, 60 and
+69 showed the standard footer with "1/6/26" at bottom right and no slide number, with citations beside
+the date on 10 (Levin), 30 (Rohrer), 40 (Karn) and 50 (Lee+ *ICML* 2009). Slide 2 has no footer and 69 is
+black. Decision: slide N = PDF page N, checked with a plain 1..70 heading sequence.
+
+**Licence.** No per-slide licence notices. Third-party credits printed on the slides: "Boston Dynamics; P.
+Isola 6.869" (4), "Amini+ *ICRA* 2019." (6, 64–66), "Esteva+ *Nature* 2017, McKinney+ *Nature* 2020, Wang+
+*Sci. Rep.* 2020." (7), "Google Project Guideline" (8), "Levin *Image Processing & Computer Vision*."
+(10–12), "Li/Johnson/Yeung C231n." (16–17), "Lee+ *ICML* 2009." (18, 50), "Rohrer *How do CNNs work?*"
+(27–30), "Karn *Intuitive CNNs*" (31–40, 48), "McKinney+ *Nature* 2020." (57), "Girshick+ *CVPR* 2014."
+(61), "Ren+ *IEEE* 2016." (62), "Long+ *CVPR* 2015." (63). Uncredited third-party imagery: the street
+photograph (3), the portrait photographs (14, 41), the taxi photographs (58–60), the collage (67).
+LICENSE.md lists what is in the images.
+
+**Slide transcription.** The 70 page JPEGs were extracted with `get_image_info(xrefs=True)` and read by
+two Sonnet agents in parallel (1–35, 36–70, the second reading page 35 for build-step context), each
+appending as it went; the parent merged the parts and wrote the header, section table and an Images
+note. 64 slides are tagged `*Figure: yes*`. Parent edits: two identifications the slides do not print
+were removed ("the 'Lenna' test image" on slide 14, "an Eames lounge chair" on slide 16); slide 10's
+pixel-count estimate was replaced by a pointer to slide 12's 16×12 matrix; `\,` became `\thinspace`, an
+inline `bmatrix` (whose `&` GitHub double-escapes) and a quoted `"$1$` became plain text, and the three
+dollar signs on slide 70 were spelled out, until `check_math.mjs` reported 0 errors and 0 warnings.
+
+**Figure audit.** A separate Sonnet agent checked slides 12, 13, 16, 27, 29, 30, 36, 40, 41, 46, 47, 49,
+53, 54, 57, 61, 63, 65 and 68 against the page JPEGs with enlarged crops. Exact: all 192 cells of slide
+12's matrix, both 9×9 grids of slide 27, the three kernels of slide 41, slide 46's formula, slide 49,
+slide 63's five resolution labels and slide 65's equations; slide 47 does print "path connected". It
+found discrepancies on **6 pages**, all fixed: slide 12's caveat about uncertain 5/6 digits was unfounded;
+slide 29's X image is 9×9, not 8×8; the green box on slide 53 encloses three lines, not two, and the
+mini-diagram boxes on 53–54 exclude the input; slide 53 opens each `'relu’` with a straight quote and
+closes it with a curly one; slide 57 has five reader diamonds per panel, not four, and only panel b
+labels its y-axis; slide 61 has no dots below its last box. The parent recomputed all nine entries of
+the worked feature map (slides 31–40) from the transcribed image and filter, looked at a crop of slide 53
+(the quotes), and at the images of slides 57 (chart) and 65 (diagram), which matched. A crop of slide
+65's loss showed it printed "L = −log(P(θ|I, M)", with one closing parenthesis: the reader had balanced
+it and the auditor reported it exact. The general lesson went into AGENTS.md.
+
+**Printed slips and as-printed oddities**, all reproduced as printed:
+
+- Slide 47: "Locations in input image that a node is path connected to" (presumably "patch").
+- Slides 53–54 pass `filter_size=` where slide 47's code uses `kernel_size`; slide 54 imports only
+  `torch` but calls `nn.Sequential`, and its comment "first and second convolutional layer" sits above
+  the first block only; slide 53 mixes straight and typographic quotes (`'relu’`, `‘softmax’`).
+- Slide 65's loss closes only one of its two parentheses.
+- Slide 62 is the first build of the Faster R-CNN diagram; the deck does not continue it.
+- Slide 68's summary lists ImageNet and image captioning, neither of which the lecture discusses.
+
+**Spoken vs printed.** Amini gives pixel brightness as "ranging from zero to one" (≈4:43); slide 12
+prints [0,255]. The captions have the 4×4 filter "defined by 14 numbers" twice (≈17:04); slide 25 prints
+16 weights and he says "these 16 numbers" at 17:50. Aloud, region proposals come from heuristics such as
+thresholding (≈50:15); slide 62 describes a learned region proposal network. He names neither R-CNN nor
+Faster R-CNN; the slides do. Lecture 2 (≈54:54) says vision transformers will be covered in lecture 3;
+neither this deck nor this talk mentions them, which INDEX.md, kb.json, the lecture 2 page and the
+attention page now say. The wiki gives both sides wherever they differ.
+
+**Transcript.** YouTube auto-captions, already punctuated. Copy-edited by a Sonnet agent against the
+slide file: filler, stutters and `>>` marks removed; "non- linearity" to non-linearity, "down sampling" /
+"up sampling" to downsampling / upsampling, "sub classification" to subclassification, "pull" to pool
+(37:49). 55:36: "Albus' lecture" restored to Ava's, with an [Ed] note citing lecture 4's title slide
+("Deep Generative Modeling", "Ava Amini", "January 6, 2026"), which the parent opened to confirm. "14
+numbers" kept with an [Ed] note; "Steps are the building blocks" (7:46) kept with an [Ed] note, to which
+the parent added slide 14's "Door, Windows, Steps"; "MIT Toyota collaboration" kept as captioned. Student
+turns marked at 24:44 (one question not in the captions, with an [Ed] note, and the overlap question),
+25:30, 35:29, 37:02, 38:35/39:23 (partly garbled, [Ed] note) and 42:29/43:15. Checks re-run by the
+parent: 74 of 74 `[MM:SS]` marks identical, number inventory identical, per-paragraph word ratio
+0.86–1.08.
+
+**Coverage gaps the deck cannot fill, and slides not narrated.** The question-and-answer passages
+(24:44–26:16, 35:29–37:02, 38:35–40:56, 42:29–43:15) have no slides. Slides 8 (accessibility), 66 (video)
+and 67 (collage) are shown without being described, and slide 65's equations and slide 63's code are not
+read aloud; the wiki says so where it uses them.
+
+**Images.** 33 of 70 pages, copied byte for byte from the deck's own JPEGs (2.4 MB): 3, 6, 12, 13, 16, 20,
+22, 24, 25, 27, 28, 29, 30, 32, 40, 41, 44, 47, 48, 49, 50, 51, 52, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65.
+All 33 are embedded in `wiki/03-convolutional-neural-networks.md` by hand, in the passage citing each,
+and under their headings in the slide file (by `embed_slide_images.py`); the two new topic pages reuse
+six each. Not rendered, and why:
+
+- Title, summary, lab and announcement slides: 1, 68, 69, 70.
+- Photographs and collages that add nothing to the text: 2 (an eye, behind the quote), 4, 5, 7, 8, 14
+  (three photographs whose feature lists are transcribed), 67.
+- Section dividers: 9, 19, 26, 43, 55.
+- Build steps wholly contained in an included slide: 10–11 (→12), 15 (→16), 17 (16 with one chevron
+  highlighted), 21 (→22), 23 (→24), 31 (→32), 33–39 (the filter positions between 32 and 40; every
+  number is transcribed), 45–46 (25's diagram, with text and a formula transcribed exactly).
+- Repeats of an included figure: 18 (the feature grids of 50, which adds the layer labels), 42 (25's
+  diagram and list).
+- Code transcribed exactly, beside a small copy of slide 51's diagram: 53, 54.
+- A video still of slide 6's car: 66.
+
+**Left open.** With `gh` authenticated, `verify_kb.py`'s GitHub check now flags 9 `$$` blocks nested in
+list items in lecture 1's files (`raw/slides/01-introduction.md` lines 380–400 and 587,
+`wiki/01-introduction.md` lines 327, 333 and 467): GitHub renders them as inline math. They predate this
+run; TODO.md carries the fix.

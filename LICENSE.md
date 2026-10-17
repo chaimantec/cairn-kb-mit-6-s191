@@ -102,3 +102,30 @@ Not included from lecture 2, among others: the stock-photo collage of slide 7, s
 of two tweets by individuals (their text is transcribed in `raw/slides/`), and the thumbnail wall of
 slide 67. The "H. Suresh, 6.S191 2018." credit on slides 32–34, 38, 39 and 58 is on slides that are not
 included.
+
+Each image in `raw/images/03-convolutional-neural-networks/`, named `slide-N.jpg`, is page N of the
+lecture 3 deck,
+[`6S191_MIT_DeepLearning_L3.pdf`](https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L3.pdf),
+extracted unmodified in the same way. 33 of the deck's 70 pages are included: slides 3, 6, 12, 13, 16,
+20, 22, 24, 25, 27–30, 32, 40, 41, 44, 47–52 and 56–65. Attribution for every one is the course line
+above. Third-party material on them, as credited on the slides:
+
+- **Slide 12** credits "Levin *Image Processing & Computer Vision*." for its pixel-grid portrait (the
+  same portrait, uncredited, is on slide 13).
+- **Slide 16** credits "Li/Johnson/Yeung C231n." for its grid of example photographs.
+- **Slides 27–30** credit "Rohrer *How do CNNs work?*" for the X example.
+- **Slides 32, 40 and 48** credit "Karn *Intuitive CNNs*" for the worked convolution and the ReLU
+  feature maps.
+- **Slide 50** credits "Lee+ *ICML* 2009." for its learned-feature visualizations.
+- **Slide 57** reproduces two plots and two mammograms from "International evaluation of an AI system for
+  breast cancer screening", credited "McKinney+ *Nature* 2020."
+- **Slide 61** credits "Girshick+ *CVPR* 2014." (R-CNN), **slide 62** "Ren+ *IEEE* 2016." (Faster
+  R-CNN), and **slide 63** "Long+ *CVPR* 2015." (fully convolutional networks).
+- **Slides 6, 64 and 65** credit "Amini+ *ICRA* 2019.", the lecturer's own work on the self-driving car.
+- **Slide 3**'s street photograph, **slide 41**'s portrait photograph and the taxi photographs of
+  **slides 58–60** carry no credit on the slides.
+
+Not included from lecture 3, among others: the photographs and collages of slides 2, 4, 5, 7, 8 and
+67 (credited on the slides to Boston Dynamics and P. Isola 6.869; Esteva+ *Nature* 2017,
+McKinney+ *Nature* 2020 and Wang+ *Sci. Rep.* 2020; and Google Project Guideline), and slide 66's video
+still.

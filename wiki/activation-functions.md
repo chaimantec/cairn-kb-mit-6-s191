@@ -54,7 +54,17 @@ sigmoid layer followed by a pointwise multiplication as a gate that lets informa
 and slide 48 lists the choice of activation function as one of three places to address vanishing
 gradients.
 
+## In convolutional networks
+
+A convolutional neural network applies a non-linearity after every convolution, usually ReLU, because
+data is highly non-linear ([lecture 3](03-convolutional-neural-networks.md), slide 48, ≈33:12–33:58).
+Applied to a feature map, ReLU works pixel by pixel: it replaces every negative value by zero and keeps
+positive values as they are, which Amini also describes as a threshold at zero. Slide 48 gives the layers
+as `tf.keras.layers.ReLU` and `torch.nn.ReLU`. See
+[convolutional neural networks](convolutional-neural-networks.md).
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), section 6.
 - [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), sections 4, 6 and 7.
+- [Lecture 3 — Convolutional Neural Networks](03-convolutional-neural-networks.md), sections 11 and 13.

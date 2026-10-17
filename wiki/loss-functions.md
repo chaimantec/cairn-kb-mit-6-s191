@@ -60,7 +60,23 @@ has a loss at every time step, $L_0, L_1, L_2, \dots$; these are summed into a s
 the whole sequence ([lecture 2](02-rnns-transformers-attention.md), slide 26, ≈19:15). That summed loss is
 what backpropagation through time differentiates.
 
+## Many classes: softmax
+
+When the output is one of several classes, the network gives a probability for each, through a
+**softmax** over its final outputs $y_i$ ([lecture 3](03-convolutional-neural-networks.md), slide 52,
+≈38:35):
+
+$$\text{softmax}(y_i) = \frac{e^{y_i}}{\sum_j e^{y_j}}$$
+
+and is trained with a classification loss, "just like we saw yesterday" (≈38:35). Lecture 3 does not
+write that loss out. Its one written loss is for the self-driving model of slide 65, which outputs a
+probability distribution $P(\theta \mid I, M)$ over the control $\theta$, given camera image $I$ and map
+$M$. It is trained to minimize $L = -\log(P(\theta \mid I, M))$, the negative log of the probability it
+assigns (slide 65; the slide prints the formula with one closing parenthesis).
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 9–11.
 - [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), sections 4 and 6.
+- [Lecture 3 — Convolutional Neural Networks](03-convolutional-neural-networks.md), sections 15 and 20:
+  softmax outputs for classification, and a likelihood loss for probabilistic control.

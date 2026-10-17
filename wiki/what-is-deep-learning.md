@@ -31,6 +31,15 @@ mid-level parts such as eyes, noses and ears, and those into high-level structur
 (slide 18, ≈13:16–14:03). This mirrors how a person might reason from first principles about whether
 an image contains a face.
 
+[Lecture 3](03-convolutional-neural-networks.md) makes the same argument for vision (slides 14–18,
+≈7:00–11:39). Classification is done by detecting lower-level features and composing them, but defining
+those features by hand fails because images vary so much: in viewpoint, illumination, scale,
+deformation, background clutter, occlusion, and within a class. Humans "are just not very good at
+clearly defining what those lower-level features should be" (≈10:05). A network instead learns the
+hierarchy through its depth. In a convolutional network the layers learn edges and dark spots, then eyes,
+ears and noses, then facial structure (slide 50, ≈37:49; see
+[convolutional neural networks](convolutional-neural-networks.md)).
+
 ## Why now?
 
 The building blocks are decades old. Lecture 1's timeline (slide 19) dates stochastic gradient descent
@@ -47,4 +56,6 @@ recognition to 1995. Their recent dominance comes from three things (≈14:03–
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 1, 2 and 4: the pace of
   the field, the definitions, and why deep learning works now.
+- [Lecture 3 — Convolutional Neural Networks](03-convolutional-neural-networks.md), sections 3 and 15:
+  hand-engineered versus learned visual features, and the hierarchy a CNN learns.
 - The building block every later idea rests on is the [perceptron](perceptron.md).
