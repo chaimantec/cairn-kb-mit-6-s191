@@ -9,12 +9,12 @@
     "courseUrl": "https://introtodeeplearning.com/"
   },
   "coverage": {
-    "lecturesCovered": 1,
+    "lecturesCovered": 2,
     "lecturesTotal": 90,
-    "transcripts": 1,
-    "wikiLecturePages": 1,
-    "wikiTopicPages": 8,
-    "note": "Lecture 1 of the 2026 edition only (catalog position 1). The catalog's 90 recordings are the 2026 edition (positions 1-9) followed by the 2018-2025 editions; none of the others is covered."
+    "transcripts": 2,
+    "wikiLecturePages": 2,
+    "wikiTopicPages": 11,
+    "note": "Lectures 1 and 2 of the 2026 edition only (catalog positions 1-2). The catalog's 90 recordings are the 2026 edition (positions 1-9) followed by the 2018-2025 editions; none of the others is covered."
   },
   "license": {
     "file": "LICENSE.md",
@@ -25,27 +25,28 @@
     "primary": "slides",
     "slideDecks": {
       "available": 9,
-      "transcribed": 1
+      "transcribed": 2
     },
     "method": "page-images",
     "figuresAudited": true,
     "figureAudit": {
-      "decksAudited": 1,
-      "decksTotal": 1,
-      "note": "decksTotal counts transcribed decks; 'available' counts the 2026 edition's nine decks only. Lecture 1's deck was transcribed by Sonnet from its native 1280x720 page JPEGs and audited by a separate Sonnet agent on 14 table-, chart-, number- and code-heavy pages (2, 6, 19, 25, 31, 52, 53, 57, 75, 81, 82, 93, 97, 98): 0 discrepancies. The parent model also checked the images of slides 39 and 106 and a crop of slide 86."
+      "decksAudited": 2,
+      "decksTotal": 2,
+      "note": "decksTotal counts transcribed decks; 'available' counts the 2026 edition's nine decks only. Both decks were transcribed by Sonnet from their native 1280x720 page JPEGs and audited by a separate Sonnet agent with enlarged crops. Lecture 1: 14 table-, chart-, number- and code-heavy pages, 0 discrepancies; the parent also checked slides 39 and 106 and a crop of slide 86. Lecture 2: 18 diagram-, equation-, code- and heat-map pages (7, 8, 24, 26, 27, 28, 36, 44, 53, 54, 56, 63, 72, 75-77, 79, 80), 2 small discrepancies fixed (a code-indentation note on slide 28, an ellipsis that is not on slide 63); the parent also checked slides 77 and 79."
     },
     "images": {
-      "lecturesWithImages": 1,
+      "lecturesWithImages": 2,
       "lecturesWithoutImages": [],
-      "lecturesTotal": 1,
-      "files": 34,
-      "megabytes": 1.7,
+      "lecturesTotal": 2,
+      "files": 67,
+      "megabytes": 3.7,
       "format": "whole slides, the deck's own 1280x720 page JPEGs extracted byte for byte, named slide-N by PDF page number",
       "discovery": "inline in wiki/ and raw/slides/; no index file",
       "byLecture": {
-        "1": 34
+        "1": 34,
+        "2": 33
       },
-      "note": "Lecture 1: 34 of 108 pages, every slide with a distinct figure. Not included: logistics, logos, portraits and prize/stock photos, decorative slides, text-only slides, code and tables transcribed exactly, and build steps contained in an included slide; the lists are in BUILD_LOG.md. No other lecture is in this KB, so none has images."
+      "note": "Lecture 1: 34 of 108 pages; lecture 2: 33 of 83 pages; in each, every slide with a distinct figure. Not included: logistics, logos, portraits and prize/stock photos, decorative slides, text-only slides, code and tables transcribed exactly, and build steps contained in an included slide; the lists are in BUILD_LOG.md. No other lecture is in this KB, so none has images."
     }
   },
   "provenance": {
@@ -54,13 +55,14 @@
       "claude-sonnet-5-5"
     ],
     "caveats": [
-      "Covers lecture 1 of the 2026 edition only: 1 of the catalog's 90 recordings.",
-      "The deck is a flattened PDF with no text layer and no printed slide numbers. Slide N is PDF page N, and everything in raw/slides/ was read visually from 1280x720 page images; there is no higher-resolution source.",
+      "Covers lectures 1 and 2 of the 2026 edition only: 2 of the catalog's 90 recordings.",
+      "The decks are flattened PDFs with no text layer and no printed slide numbers. Slide N is PDF page N, and everything in raw/slides/ was read visually from 1280x720 page images; there is no higher-resolution source.",
       "Transcripts are YouTube auto-captions, lightly copy-edited. The verbatim captions are in raw/transcripts/original/.",
       "Slide images are 1280x720, the deck's native resolution, below the 1400px used in sibling KBs.",
-      "Some slide code is reproduced as printed, including the slide's own slips (slide 82's tf.keras.optimizer, slide 86's update step); the slide file notes each one."
+      "Some slide code is reproduced as printed, including the slides' own slips (lecture 1: slide 82's tf.keras.optimizer, slide 86's update step; lecture 2: slide 27 writes matrix products with *, slide 28's 'from tf.keras.layers import SimpleRNN'); the slide files note each one.",
+      "Lecture 2's slides and lecturer call the scaled dot product of query and key the 'cosine similarity', and give its denominator only as 'scaling'; the wiki reports this as the course states it."
     ]
   },
   "entryPoint": "INDEX.md",
-  "updated": "2026-10-11"
+  "updated": "2026-10-18"
 }

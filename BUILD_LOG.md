@@ -8,6 +8,13 @@ needed to answer questions**: every fact a learner needs is on the wiki page,
 slide file or transcript it concerns. The rules every build follows are in
 [`AGENTS.md`](AGENTS.md).
 
+## Index
+
+| Lecture | Run |
+| --- | --- |
+| 1 Introduction to Deep Learning (2026) | [Lecture 1](#lecture-1--introduction-to-deep-learning-2026--built-2026-10-11), 2026-10-11 |
+| 2 Recurrent Neural Networks, Transformers, and Attention (2026) | [Lecture 2](#lecture-2--recurrent-neural-networks-transformers-and-attention-2026--built-2026-10-17), 2026-10-17 |
+
 ## Lecture 1 — Introduction to Deep Learning (2026) — built 2026-10-11
 
 **Pointers.** Catalog position 1, video `II4giR4vOOo` (56:16), delivered 5 January 2026 by Alexander
@@ -92,4 +99,126 @@ their headings in the slide file; the eight topic pages reuse one to three each.
 - Repeats of an included figure: 84–89 (the slide 61 loss surface beside transcribed algorithm text),
   107 (a review of three earlier figures).
 
-**Cost.** Measured with `measure_run_cost.py`: $8.64 for the whole lecture. The Opus parent cost $6.77 and the five Sonnet agents $1.86 (22%): three slide readers at $0.44–0.52 each, the copy-edit $0.26 and the audit $0.15. Another ~$0.21 of output is logged incompletely and not counted. Reading native 1280×720 page JPEGs instead of PDF page renders is why the deck cost about $1.45 to transcribe.
+**Cost.** Measured with `measure_run_cost.py`: \$8.64 for the whole lecture. The Opus parent cost \$6.77 and the five Sonnet agents \$1.86 (22%): three slide readers at \$0.44–0.52 each, the copy-edit \$0.26 and the audit \$0.15. Another ~\$0.21 of output is logged incompletely and not counted. Reading native 1280×720 page JPEGs instead of PDF page renders is why the deck cost about \$1.45 to transcribe.
+
+### Run checklist (moved verbatim from TODO.md)
+
+#### Transcripts
+- [x] 01 Introduction to Deep Learning — video II4giR4vOOo (auto-captions, already punctuated; light Sonnet copy-edit, verbatim in original/)
+
+#### Crawl
+- [x] Fetch course site index: https://introtodeeplearning.com/ (2026 index only; year archives deferred)
+- [x] Download linked PDFs and slides (gitignored; 9 decks + the AAAI lab paper)
+- [x] Write sources.md
+
+#### Slides (raw/slides/)
+- [x] 01 Introduction — 6S191_MIT_DeepLearning_L1.pdf (108 pages, no text layer, no printed numbers: slide N = page N; three Sonnet agents in parallel; Sonnet audit of 14 pages, 0 discrepancies)
+
+#### Wiki
+- [x] wiki/01-introduction.md
+- [x] Topic pages (cross-lecture concepts) — what-is-deep-learning, perceptron, activation-functions, neural-network-layers, loss-functions, gradient-descent, backpropagation, regularization (lecture 1 only; extend as lectures land)
+- [x] INDEX.md table of contents
+
+#### Images
+- [x] raw/images/01-introduction/ — 34 native page JPEGs extracted byte-for-byte; embedded in the wiki and slide files
+- [x] INDEX.md — the chat's image rules; AGENTS.md — the Images conventions and table row; BUILD_LOG.md — what was rendered and why; LICENSE.md — attribution
+
+#### Publish
+- [x] kb.json — coverage, materials.method, provenance caveats
+- [x] BUILD_LOG.md — lecture 1 record: notices, audit findings, printed slips, transcript edits
+- [x] SEE_ALSO.md — MIT 6.7960 and MIT 15.773
+- [x] verify_kb.py clean, and its review section read
+- [x] Commit and push
+- [x] PATCH kbUrl onto the catalog entry (https://github.com/chaimantec/cairn-kb-mit-6-s191)
+
+## Lecture 2 — Recurrent Neural Networks, Transformers, and Attention (2026) — built 2026-10-17
+
+**Pointers.** Catalog position 2, video `d02VkQ9MP44` (57:34), delivered 5 January 2026 by Ava Amini.
+Deck <https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L2.pdf>, 83 pages, linked from the
+2026 schedule on the course index (downloaded in the lecture 1 crawl). The title slide reads "Deep
+Sequence Modeling", "Ava Amini", "January 5, 2026". The PDF metadata gives author "A. Amini, A.P. Amini.
+MIT 6.S191", producer PyFPDF 1.7.2 and creation date 2026-01-04.
+
+**Deck format and numbering.** As lecture 1: every page is a single 1280×720 JPEG with no text layer.
+A stacked strip of the bottom 10% of pages 2, 10, 20, 30, 45, 60, 75 and 82 showed the standard footer
+with "1/5/26" at bottom right and no slide number; slide 75's strip also showed "Vaswani+, NeurIPS
+2017." beside the date. Slides 2–5 (the blue ball slides) have no footer. Decision: slide N = PDF page
+N, checked with a plain 1..83 heading sequence.
+
+**Licence.** No per-slide licence notices. Third-party credits printed on the slides: "H. Suresh, 6.S191
+2018." (32–34, 38, 39, 58), "Mozer *Complex Systems* 1989." (44), "Huawei." (56), "Socher+, EMNLP 2013."
+(57), "Vaswani+, NeurIPS 2017." (72, 75–78), and slide 80's citations (Devlin et al. NAACL 2019, Brown
+et al. NeurIPS 2020, Jumper et al. Nature 2021, Lin et al. Science 2023, Dosovitskiy et al. ICLR 2020).
+Uncredited third-party imagery: tweets (8, 58), Iron Man stills (66, 79), a YouTube results page with
+third-party thumbnails (68–69), stock photographs (7, 67). LICENSE.md lists what is in the images.
+
+**Slide transcription.** The 83 page JPEGs were extracted with `get_image_info(xrefs=True)` and read by
+three Sonnet agents in parallel (1–28, 29–56, 57–83), the second and third reading one page of overlap
+for build-step context and every agent appending as it went; the parent merged the parts and wrote the
+header and section table. 67 slides are tagged `*Figure: yes*`. Parent edits: slide 7's "Build step"
+line rewritten (it replaces slide 6's waveform rather than adding to it); `}_` subscripts spaced, math
+moved out of the italic Figure lines, the fill-in blanks `___` on slides 51–53 escaped (they paired with
+math underscores into italics on GitHub), `$x_0$/$x_1$` and `"$i$-th index"` reworded, until
+`check_math.mjs` reported 0 errors and 0 warnings.
+
+**Figure audit.** A separate Sonnet agent checked slides 7, 8, 24, 26, 27, 28, 36, 44, 53, 54, 56, 63,
+72, 75, 76, 77, 79 and 80 against the page JPEGs with enlarged crops, including the build-step claims
+(reading pages 6, 23, 25, 43, 52, 62) and a cell-by-cell 7×7 table of slide 75's attention heat map,
+which matched the transcription exactly. It found **2 discrepancies**, both fixed: slide 28's note said
+the second line of each snippet is indented, but in the PyTorch snippet it is the first (the code block
+itself was right); slide 63's description put "…" in the output and input bars, which on the page are
+empty gaps (only the yellow grid prints "···"). The parent then looked at the images of slides 77 (the
+attention-head block diagram) and 79 (three attention heads on the Iron Man still); both matched.
+
+**Printed slips and as-printed oddities**, all reproduced as printed:
+
+- Slides 26, 43 and 44 label the last column's loss $L_3$ while its input and output are $x_t$ and
+  $\hat{y}_ t$. The wiki notes it once.
+- Slide 27 writes the RNN cell's matrix products with `*` (`self.W_hh * self.h + self.W_xh * x`).
+- Slide 28 prints `from tf.keras.layers import SimpleRNN`, which is not a valid import path as written,
+  with inconsistent indentation in both snippets.
+- Slide 57 gives `tf.nn.softmax_cross_entropy_with_logits(y, predicted)` as the sentiment loss, the same
+  line lecture 1's slide 52 gives for binary cross-entropy.
+- Slide 69: "Return the values highest attention" (no "with").
+- Slides 73–74: the scaled dot product is "Also known as the 'cosine similarity'", and the lecturer says
+  the same (≈50:16); the denominator is printed only as "scaling". The wiki attributes both and adds no
+  correction.
+- Slide 77 prints the equation without slide 76's "= A(Q,K,V)".
+- Slide 54's lead sentence ends "within each recurrent unit with", followed by the gate diagram.
+
+**Spoken vs printed.** Aloud, Amini counts representing words as numbers as "design criteria number
+one" (≈27:46); the slide list (30, 40) has four criteria without it, ending with "share parameters". She
+says the state is initialized to "0000 0" (≈15:23), slide 18 prints `[0, 0, 0, 0]`. She describes slide
+68's "MIT 6.S191 (2020)" result as a video "from six years ago". The wiki gives both where they differ.
+
+**Transcript.** YouTube auto-captions, already punctuated. Copy-edited by a Sonnet agent against the
+slide file: filler, stutters and `>>` marks removed; "6S191", "fet forward", "paralyzable", "attention
+waiting", "soft max", "dotproduct" and run-together compounds restored; student turns marked at 23:56
+(two, the second partly garbled, with an [Ed] note) and 33:57 ("Is H0 considered a parameter?").
+Spoken-only proper nouns, not printed in the deck and restored from obvious stutters: "Jurgen Schmidhub
+Schmidh Huber" → Jürgen Schmidhuber (36:15) and "France Schubert" → Franz Schubert, "unfinished
+symphony" → Unfinished Symphony (37:02). "John" at 56:26 is kept without a surname, with an [Ed] note
+that slide 83 thanks John Werner and Link Ventures; "as you meant earlier" is marked unclear. Checks
+re-run by the parent: 75 of 75 `[MM:SS]` marks identical, number inventory identical, per-paragraph
+word ratio 0.92–1.02.
+
+**Coverage gaps the deck cannot fill, and slides not narrated.** The Schubert sample (≈37:02–37:50) is
+audio only. Slides 50–53 (the clouds/France examples) and 57–58 (sentiment classification) are shown but
+not discussed aloud; the wiki says so.
+
+**Images.** 33 of 83 pages, copied byte for byte from the deck's own JPEGs (1.9 MB): 3, 5, 8, 10, 11, 13,
+15, 17, 24, 26, 29, 36, 42, 44, 48, 53, 54, 56, 57, 61, 64, 66, 68, 69, 71, 72, 73, 74, 75, 76, 77, 79, 80.
+All 33 are embedded in `wiki/02-rnns-transformers-attention.md`, in the passage citing each, and under
+their headings in the slide file (by `embed_slide_images.py`); the new and extended topic pages reuse
+one to three each. Not rendered, and why:
+
+- Title, summary, lab and reception slides: 1, 81, 82, 83.
+- Stock or decorative imagery that adds nothing to the text: 6 (an audio waveform), 7 (a stock-photo
+  collage), 38 (clip-art hearts), 39 (burger icons), 67 (a wall of thumbnails).
+- Section dividers and text-only slides: 9, 16, 31, 32, 33, 34, 37, 41, 49, 50, 55, 65.
+- Code transcribed exactly, beside slide 17's recurrent-cell diagram: 18, 19, 20, 27, 28.
+- The design-criteria list beside the same cell diagram: 30, 40.
+- Build steps wholly contained in an included slide: 2 (→3), 4 (→5), 12 (→13), 14 (→15), 21–23 (→24),
+  25 (→26), 35 (→36), 43 (→44), 45–47 (→48), 51–52 (→53), 59–60 (→61), 62 (61's diagram with a
+  text list), 63 (→64), 70 (→71), 78 (77's diagram with a closing line).
+- Slide 58: two tweets by individuals, transcribed in full, beside slide 57's diagram.

@@ -58,3 +58,4 @@ layers make a deep network. See [neural network layers](neural-network-layers.md
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 5, 7 and 8.
+- [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), section 3: the perceptron revisited (slide 10) as the starting point for [recurrent neural networks](recurrent-neural-networks.md).

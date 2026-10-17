@@ -74,3 +74,31 @@ course line above. Third-party material on them, as credited on the slides:
 Not included, among others: the slides of course logistics, sponsor logos, staff portraits and prize
 photographs (8–16), the stock photographs on slides 4–5, and slide 6's screenshot of an X post by Paul
 Couvert (@itsPaulAi), whose text and benchmark table are transcribed in `raw/slides/` instead.
+
+Each image in `raw/images/02-rnns-transformers-attention/`, named `slide-N.jpg`, is page N of the
+lecture 2 deck,
+[`6S191_MIT_DeepLearning_L2.pdf`](https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L2.pdf),
+extracted unmodified in the same way. 33 of the deck's 83 pages are included: slides 3, 5, 8, 10, 11,
+13, 15, 17, 24, 26, 29, 36, 42, 44, 48, 53, 54, 56, 57, 61, 64, 66, 68, 69, 71–77, 79 and 80.
+Attribution for every one is the course line above. Third-party material on them, as credited on the
+slides:
+
+- **Slide 8** includes a screenshot of a 2018 tweet about the course by Ivar Hagendoorn
+  (@IvarHagendoorn), a photograph of a baseball pitcher and a translation icon, without further credit.
+- **Slide 44** credits "Mozer *Complex Systems* 1989." for backpropagation through time.
+- **Slide 56** carries the credit "Huawei." beside its video thumbnail.
+- **Slide 57** credits "Socher+, EMNLP 2013."
+- **Slides 66 and 79** use a still of the Marvel character Iron Man, uncredited on the slides; the
+  character and image belong to their owners.
+- **Slides 68 and 69** show a YouTube search results page with third-party video thumbnails (a sea
+  turtle video and a Kobe Bryant video) beside the course's own 2020 lecture.
+- **Slides 72 and 75–77** credit "Vaswani+, NeurIPS 2017."
+- **Slide 80** shows an image of an avocado-shaped armchair, a protein-structure rendering and a
+  patch-gridded photograph of a puppy, with these citations printed under the three panels: Devlin et
+  al., NAACL 2019; Brown et al., NeurIPS 2020; Jumper et al., Nature 2021; Lin et al., Science 2023;
+  Dosovitskiy et al., ICLR 2020. The slide does not say who made each image.
+
+Not included from lecture 2, among others: the stock-photo collage of slide 7, slide 58's screenshots
+of two tweets by individuals (their text is transcribed in `raw/slides/`), and the thumbnail wall of
+slide 67. The "H. Suresh, 6.S191 2018." credit on slides 32–34, 38, 39 and 58 is on slides that are not
+included.

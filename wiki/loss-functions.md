@@ -53,6 +53,14 @@ $$J(\boldsymbol{W}) = \frac{1}{n} \sum_{i=1}^{n} \left(y^{(i)} - f\left(x^{(i)};
 The slides give one-line implementations of each in TensorFlow and PyTorch; they are reproduced in
 the [slide transcription](../raw/slides/01-introduction.md) under slides 52 and 53.
 
+## Losses over sequences
+
+A [recurrent neural network](recurrent-neural-networks.md) makes a prediction at every time step, so it
+has a loss at every time step, $L_0, L_1, L_2, \dots$; these are summed into a single total loss $L$ for
+the whole sequence ([lecture 2](02-rnns-transformers-attention.md), slide 26, ≈19:15). That summed loss is
+what backpropagation through time differentiates.
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 9–11.
+- [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), sections 4 and 6.

@@ -66,3 +66,4 @@ its outputs meaningless (lecture 1, ≈32:30). Training needs a [loss function](
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 8 and 9.
+- [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), section 3: a dense layer collapsed into one block and applied at each time step (slides 11–13), the first step towards [recurrent neural networks](recurrent-neural-networks.md).

@@ -97,3 +97,4 @@ batch size is the dial between accuracy and cost (≈47:05–48:38).
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 11, 13 and 14.
+- [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), sections 4 and 6: an RNN's three weight matrices are learned by gradient descent, with gradients from backpropagation through time; gradient clipping keeps exploding gradients in check.

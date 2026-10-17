@@ -44,6 +44,22 @@ parameter for every data point, which is the motivation for mini-batches (slide 
 `tf.GradientTape` records the forward pass and returns the gradient of the loss with respect to the
 weights (slides 63–64).
 
+## Through time: training recurrent networks
+
+[Lecture 2](02-rnns-transformers-attention.md) (section 6, ≈30:04–33:57) applies the same algorithm to
+[recurrent neural networks](recurrent-neural-networks.md). An RNN makes a prediction, and so has a
+loss, at every time step, and the total loss is their sum. Errors are back-propagated through each
+time step and then across time steps, from the current position back to the beginning of the sequence:
+**backpropagation through time (BPTT)** (slides 43–44). Because each step back multiplies by the same
+state-to-state weight matrix $\boldsymbol{W}_ {hh}$ again, the gradient can explode (many values above
+1; the remedy is gradient clipping) or vanish (many values below 1), which makes long-term dependencies
+hard to learn (slides 46–49).
+
+![Slide 44: RNNs: Backpropagation Through Time](../raw/images/02-rnns-transformers-attention/slide-44.jpg)
+
+*Lecture 2, slide 44 — backpropagation through time: the backward pass (red) runs from each loss back through the chain of states.*
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 11–14.
+- [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), section 6.

@@ -44,6 +44,17 @@ What each is good for, as lecture 1 puts it (≈18:40–19:26):
 
 The note at the bottom of slide 25 is the unifying point: all activation functions are non-linear.
 
+## In recurrent networks
+
+[Lecture 2](02-rnns-transformers-attention.md) uses the hyperbolic tangent in the RNN's state update,
+$h_t = \tanh(\boldsymbol{W}_ {hh}^T h_{t-1} + \boldsymbol{W}_ {xh}^T x_t)$, where $h_t$ is the hidden
+state and $x_t$ the input at time step $t$ (slide 24, ≈17:43; see
+[recurrent neural networks](recurrent-neural-networks.md)). Its gated cells, such as the LSTM, use a
+sigmoid layer followed by a pointwise multiplication as a gate that lets information through (slide 54),
+and slide 48 lists the choice of activation function as one of three places to address vanishing
+gradients.
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), section 6.
+- [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), sections 4, 6 and 7.

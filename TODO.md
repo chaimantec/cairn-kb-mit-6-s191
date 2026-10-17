@@ -3,35 +3,25 @@
 Catalog id `ba3b8a5f-6666-4376-baec-be2232de643b`. Course site: <https://introtodeeplearning.com/>.
 The catalog holds 90 lectures: positions 1–9 are the 2026 offering, 10–90 earlier offerings
 (2018–2025), whose decks live in the site's per-year archives (`/2025/index.html` …). The 2026
-decks are `slides/6S191_MIT_DeepLearning_LN.pdf`. Scope of this build: lecture 1 only.
+decks are `slides/6S191_MIT_DeepLearning_LN.pdf`. Lecture 1 is built (see BUILD_LOG.md); this run adds lecture 2.
 
 Images are opted in: every figure-bearing slide, rendered per Step 1c. The site licenses all
 materials under the MIT license with a required attribution line (see LICENSE.md).
 
-## Transcripts
-- [x] 01 Introduction to Deep Learning — video II4giR4vOOo (auto-captions, already punctuated; light Sonnet copy-edit, verbatim in original/)
+## Run 2 — lecture 2 (Recurrent Neural Networks, Transformers, and Attention, 2026)
 
-## Crawl
-- [x] Fetch course site index: https://introtodeeplearning.com/ (2026 index only; year archives deferred)
-- [x] Download linked PDFs and slides (gitignored; 9 decks + the AAAI lab paper)
-- [x] Write sources.md
+Catalog position 2, video d02VkQ9MP44 (57:34). Deck `slides/6S191_MIT_DeepLearning_L2.pdf`: 83 pages,
+each one 1280×720 JPEG, no text layer, footer "1/5/26" with no slide number (checked on a strip of 8
+footers): slide N = page N.
 
-## Slides (raw/slides/)
-- [x] 01 Introduction — 6S191_MIT_DeepLearning_L1.pdf (108 pages, no text layer, no printed numbers: slide N = page N; three Sonnet agents in parallel; Sonnet audit of 14 pages, 0 discrepancies)
-
-## Wiki
-- [x] wiki/01-introduction.md
-- [x] Topic pages (cross-lecture concepts) — what-is-deep-learning, perceptron, activation-functions, neural-network-layers, loss-functions, gradient-descent, backpropagation, regularization (lecture 1 only; extend as lectures land)
-- [x] INDEX.md table of contents
-
-## Images
-- [x] raw/images/01-introduction/ — 34 native page JPEGs extracted byte-for-byte; embedded in the wiki and slide files
-- [x] INDEX.md — the chat's image rules; AGENTS.md — the Images conventions and table row; BUILD_LOG.md — what was rendered and why; LICENSE.md — attribution
-
-## Publish
-- [x] kb.json — coverage, materials.method, provenance caveats
-- [x] BUILD_LOG.md — lecture 1 record: notices, audit findings, printed slips, transcript edits
-- [x] SEE_ALSO.md — MIT 6.7960 and MIT 15.773
+- [x] Verbatim captions → raw/transcripts/original/02-rnns-transformers-attention.md (75 marks)
+- [x] raw/slides/02-rnns-transformers-attention.md — three Sonnet readers (1–28, 29–56, 57–83), merged, header (67 figure slides)
+- [x] Figure audit (Sonnet) of chart-, table-, code- and equation-heavy pages; parent checks two images (18 pages, 2 small discrepancies fixed; parent checked 77 and 79)
+- [x] raw/transcripts/02-rnns-transformers-attention.md — Sonnet copy-edit; marks, numbers, ratios checked (75/75, identical, 0.92–1.02)
+- [x] raw/images/02-rnns-transformers-attention/ — native page JPEGs of figure slides, embedded (33 of 83, 1.9 MB)
+- [x] wiki/02-rnns-transformers-attention.md
+- [x] Topic pages: new (sequence modeling, RNNs, attention/transformers…) and extended (backpropagation, …)
+- [x] INDEX.md, AGENTS.md image table, LICENSE.md, sources.md, kb.json, BUILD_LOG.md
 - [x] verify_kb.py clean, and its review section read
 - [x] Commit and push
-- [x] PATCH kbUrl onto the catalog entry (https://github.com/chaimantec/cairn-kb-mit-6-s191)
+- [ ] Move this section to BUILD_LOG.md

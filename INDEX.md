@@ -6,11 +6,13 @@ from the foundations of neural networks — the single neuron, training by gradi
 backpropagation — up to recent advances in large language models. Course site:
 <https://introtodeeplearning.com/>.
 
-**Coverage: lecture 1 only.** This knowledge base covers **lecture 1 of the 2026 edition**
-("Introduction to Deep Learning", Alexander Amini, 5 January 2026). The Cairn catalog for this course
-lists 90 recordings — the 2026 edition's lectures (positions 1–9) followed by the 2018–2025 editions —
-and none of the others is in this KB yet. Do not cite it as the whole course: for any other lecture,
-say it is not covered.
+**Coverage: lectures 1 and 2 only.** This knowledge base covers **lectures 1 and 2 of the 2026
+edition**: "Introduction to Deep Learning" (Alexander Amini) and "Recurrent Neural Networks,
+Transformers, and Attention" (Ava Amini), both delivered 5 January 2026. The Cairn catalog for this
+course lists 90 recordings — the 2026 edition's lectures (positions 1–9) followed by the 2018–2025
+editions — and none of the others is in this KB yet. Do not cite it as the whole course: for any other
+lecture (convolutional networks, generative models, reinforcement learning, language models and the
+rest), say it is not covered.
 
 ## How to use this knowledge base
 
@@ -23,11 +25,14 @@ say it is not covered.
 
 ## Images
 
-Lecture 1 has **34 slide images**, embedded where they are used: in [the lecture page](wiki/01-introduction.md)
-beside the passage that cites each slide, in the topic pages, and under the matching `## Slide N`
-heading of [the slide transcription](raw/slides/01-introduction.md). They are whole slides, every one
-that carries a distinct figure; slides without an image are text, code or tables the transcription
-reproduces exactly, logistics, logos, or build steps contained in a later rendered slide.
+Both lectures have slide images: **34 for lecture 1** and **33 for lecture 2**. Each is embedded where
+it is used: in the lecture page ([lecture 1](wiki/01-introduction.md),
+[lecture 2](wiki/02-rnns-transformers-attention.md)) beside the passage that cites the slide, in some
+topic pages, and under the matching `## Slide N` heading of the slide transcription
+([lecture 1](raw/slides/01-introduction.md), [lecture 2](raw/slides/02-rnns-transformers-attention.md)).
+They are whole slides, every one that carries a distinct figure; slides without an image are text, code
+or tables the transcription reproduces exactly, logistics, logos, stock photographs, or build steps
+contained in a later rendered slide. No other lecture is in this KB, so no other lecture has images.
 
 - **Use an image path you have actually read in a file. Never construct one from the pattern**, and
   never assume a slide has an image because a neighbouring slide does. Reading an image path returns
@@ -45,6 +50,13 @@ reproduces exactly, logistics, logos, or build steps contained in a later render
   example; dense layers to deep networks in TensorFlow and PyTorch; "Will I pass this class?";
   loss, empirical loss, cross-entropy and MSE; gradient descent; backpropagation; learning rates and
   optimizers; mini-batches; overfitting, dropout and early stopping.
+- [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](wiki/02-rnns-transformers-attention.md)
+  — the whole lecture in order: why sequences (the ball example); one-to-one, many-to-one, one-to-many
+  and many-to-many tasks; building recurrence from the perceptron; the RNN recurrence relation, state
+  update and output equations, unrolling, and TensorFlow/PyTorch code; next-word prediction and the
+  design criteria (embeddings, variable length, long-term dependencies, order); backpropagation through
+  time, exploding and vanishing gradients, LSTMs; music generation; the limitations of RNNs;
+  self-attention with query, key and value; attention heads and transformers.
 
 ### Topics
 
@@ -55,28 +67,41 @@ reproduces exactly, logistics, logos, or build steps contained in a later render
   vector form $\hat{y} = g(w_0 + \boldsymbol{X}^T \boldsymbol{W})$, and the worked example showing a
   neuron's decision boundary is a line.
 - [Activation functions](wiki/activation-functions.md) — why networks need non-linearity; sigmoid, tanh
-  and ReLU with their derivatives, ranges and TensorFlow/PyTorch calls.
+  and ReLU with their derivatives, ranges and TensorFlow/PyTorch calls; tanh in the RNN state update and
+  sigmoid gates.
 - [Neural network layers and deep networks](wiki/neural-network-layers.md) — dense (fully connected)
   layers, weight matrices, a hidden layer, stacking into deep networks, and `Dense`/`Linear` and
   `Sequential` code.
 - [Loss functions](wiki/loss-functions.md) — the loss of a prediction, the empirical loss
   $J(\boldsymbol{W})$, binary cross-entropy for probabilities and mean squared error for continuous
-  outputs.
+  outputs; per-time-step losses summed over a sequence.
 - [Gradient descent, learning rates and mini-batches](wiki/gradient-descent.md) — loss optimization,
   the gradient descent algorithm, choosing the learning rate, adaptive optimizers (SGD, Adam, Adadelta,
   Adagrad, RMSProp), stochastic and mini-batch gradient descent.
 - [Backpropagation](wiki/backpropagation.md) — computing the gradient with the chain rule, worked on a
-  one-neuron-per-layer network, and why it propagates backwards.
+  one-neuron-per-layer network, why it propagates backwards, and backpropagation through time for RNNs.
+- [Sequence modeling](wiki/sequence-modeling.md) — sequential data, the four input/output shapes of
+  sequence tasks, the design criteria a sequence model must meet (worked through next-word prediction),
+  and embeddings: vocabulary, indexing, one-hot versus learned.
+- [Recurrent neural networks](wiki/recurrent-neural-networks.md) — the internal state and recurrence
+  relation $h_t = f_W(x_t, h_{t-1})$, the state-update and output equations, unrolling across time,
+  backpropagation through time, exploding and vanishing gradients, gradient clipping, LSTMs and gates,
+  and the three limitations of RNNs.
+- [Attention and transformers](wiki/attention-and-transformers.md) — why drop recurrence; attention as
+  search (query, key, value); self-attention in four steps (positional encoding, Q/K/V, scaled
+  dot-product and softmax, weighting the values); attention heads, multiple heads and transformers.
 - [Overfitting and regularization](wiki/regularization.md) — underfitting versus overfitting,
   regularization, dropout (including the per-mini-batch question from class) and early stopping.
 
 ## Raw materials
 
 - [`raw/slides/`](raw/slides/) — every slide of each transcribed deck, with its text, equations, code
-  and a prose description of every figure: [lecture 1](raw/slides/01-introduction.md) (108 slides).
+  and a prose description of every figure: [lecture 1](raw/slides/01-introduction.md) (108 slides),
+  [lecture 2](raw/slides/02-rnns-transformers-attention.md) (83 slides).
 - [`raw/transcripts/`](raw/transcripts/) — the lecture transcripts, copy-edited from YouTube captions,
   with `[MM:SS]` paragraph marks and `[Ed: …]` notes where the captions are unclear or differ from a
-  slide: [lecture 1](raw/transcripts/01-introduction.md). The verbatim captions are in
+  slide: [lecture 1](raw/transcripts/01-introduction.md),
+  [lecture 2](raw/transcripts/02-rnns-transformers-attention.md). The verbatim captions are in
   `raw/transcripts/original/`.
 - [`raw/images/`](raw/images/) — the slide images described above.
 - [`sources.md`](sources.md) — every document the course site links, with its canonical URL. The PDFs
