@@ -742,3 +742,26 @@ why:
 **AGENTS.md lessons** (general form): send every count a transcription states to the audit; where the talk
 points at a detail of a figure, check the slide file describes it. The deck-format bullet now covers
 lecture 6.
+
+**Cost.** Measured with `measure_run_cost.py` after the lecture push: \$9.90 for the whole lecture. The Opus parent cost \$7.55 (73 calls, ending at 206k context) and the five Sonnet agents \$2.34 (24%): three slide readers at \$0.37, \$0.43 and \$0.56, the audit \$0.50 and the copy-edit \$0.48. Another ~\$0.13 of output is logged incompletely and not counted. The closing bookkeeping commit is not included.
+
+#### Run checklist (moved verbatim from TODO.md)
+
+_Run 6 — lecture 6 (Language Models and New Frontiers, 2026)_
+
+Catalog position 6, video ev7cLSd-ySE (56:17). Deck `slides/6S191_MIT_DeepLearning_L6.pdf`: 81 pages,
+each one 1280×720 JPEG (DCTDecode), no text layer (PyFPDF 1.7.2, created 2026-01-10), footer "1/7/26"
+with no slide number (checked on a strip of 12 footers; 9 is a blue page, 80 a film still, 81 black;
+pages 80–81 repeat 78–79 byte for byte): slide N = page N.
+
+- [x] Verbatim captions → raw/transcripts/original/06-language-models-new-frontiers.md (73 marks)
+- [x] raw/slides/06-language-models-new-frontiers.md — three Sonnet readers (1–27, 28–54, 55–81), merged, header (61 figure slides)
+- [x] Figure audit (Sonnet) of chart-, table-, equation-, code- and diagram-heavy pages; parent checks two images (25 pages; fixes on 12, 23, 28, 54; parent: images of 41 and 75, crop of 30, which added 30's green ear)
+- [x] raw/transcripts/06-language-models-new-frontiers.md — Sonnet copy-edit; marks, numbers, ratios checked (73/73, identical, 0.93–1.00)
+- [x] raw/images/06-language-models-new-frontiers/ — native page JPEGs of figure slides, embedded (24 of 81, 1.6 MB)
+- [x] wiki/06-language-models-new-frontiers.md
+- [x] Topic pages, new and extended (new: limitations-of-deep-learning, diffusion-models, large-language-models; extended: generative-modeling, sequence-modeling, loss-functions, gradient-descent, regularization, what-is-deep-learning, computer-vision, generative-adversarial-networks, autoencoders-and-vaes, attention-and-transformers, reinforcement-learning; lecture 2, 4 and 5 pages)
+- [x] INDEX.md, AGENTS.md image table, LICENSE.md, sources.md, kb.json, BUILD_LOG.md (sources.md already listed the deck)
+- [x] verify_kb.py clean, and its review section read (13 github math errors in new captions fixed first)
+- [x] Commit and push (409b8bf)
+- [x] Move this section to BUILD_LOG.md
