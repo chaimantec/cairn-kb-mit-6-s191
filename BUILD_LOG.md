@@ -471,3 +471,25 @@ new topic pages reuse 13. Not rendered, and why:
 **AGENTS.md lessons** (general form): frames caught mid-animation are transcribed as they are; `[Ed]`
 notes never propose a name the slides do not support; a suspect printed formula is questioned on the
 wiki only from the course's own material.
+
+**Cost.** Measured with `measure_run_cost.py` after the lecture push: \$8.78 for the whole lecture. The Opus parent cost \$6.60 (65 calls, ending at 189k context) and the five Sonnet agents \$2.18 (25%): three slide readers at \$0.52, \$0.53 and \$0.47, the audit \$0.48 and the copy-edit \$0.19. Another ~\$0.11 of output is logged incompletely and not counted. The closing bookkeeping commit is not included.
+
+#### Run checklist (moved verbatim from TODO.md)
+
+_Run 4 — lecture 4 (Deep Generative Modeling, 2026)_
+
+Catalog position 4, video R8V8CbuxryI (49:36). Deck `slides/6S191_MIT_DeepLearning_L4.pdf`: 84 pages,
+each one 1280×720 JPEG, no text layer (PyFPDF, created 2026-01-04), footer "1/6/26" with no slide number
+(checked on a strip of 10 footers; 80 and 84 are black): slide N = page N.
+
+- [x] Verbatim captions → raw/transcripts/original/04-deep-generative-modeling.md (64 marks)
+- [x] raw/slides/04-deep-generative-modeling.md — three Sonnet readers (1–28, 28–56, 56–84), merged, header (77 figure slides)
+- [x] Figure audit (Sonnet) of chart-, equation-, code- and diagram-heavy pages; parent checks two images (22 pages; fixes on 28, 29, 62, 74, 76, 80; parent: images of 70 and 29, crop of 77)
+- [x] raw/transcripts/04-deep-generative-modeling.md — Sonnet copy-edit; marks, numbers, ratios checked (64/64, identical, 0.91–1.01)
+- [x] raw/images/04-deep-generative-modeling/ — native page JPEGs of figure slides, embedded (39 of 84, 2.3 MB)
+- [x] wiki/04-deep-generative-modeling.md
+- [x] Topic pages, new and extended (new: generative-modeling, autoencoders-and-vaes, generative-adversarial-networks; extended: loss-functions, backpropagation, regularization, what-is-deep-learning; lecture 3 page)
+- [x] INDEX.md, AGENTS.md image table, LICENSE.md, sources.md, kb.json, BUILD_LOG.md (sources.md already listed the deck)
+- [x] verify_kb.py clean, and its review section read
+- [x] Commit and push (3dbc42f)
+- [x] Move this section to BUILD_LOG.md
