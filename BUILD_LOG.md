@@ -607,3 +607,25 @@ slide file (by `embed_slide_images.py`); the three new topic pages reuse 6. Not 
 **AGENTS.md lessons** (general form): a student turn that runs across an `[MM:SS]` mark is closed before
 it and reopened after it. The deck-format bullet now records that lecture 5's deck came from a different
 exporter in the same image-only format.
+
+**Cost.** Measured with `measure_run_cost.py` after the lecture push: \$9.38 for the whole lecture. The Opus parent cost \$7.17 (75 calls, ending at 195k context) and the four Sonnet agents \$2.21 (24%): two slide readers at \$0.43 and \$0.42, the audit \$0.73 and the copy-edit \$0.63. Another ~\$0.22 of output is logged incompletely and not counted. The closing bookkeeping commit is not included.
+
+#### Run checklist (moved verbatim from TODO.md)
+
+_Run 5 — lecture 5 (Reinforcement Learning, 2026)_
+
+Catalog position 5, video 1ij3dweHu-0 (59:19). Deck `slides/6S191_MIT_DeepLearning_L5.pdf`: 58 pages,
+each one 1280×720 JPEG (DCTDecode), no text layer (macOS Quartz PDFContext, created 2026-01-07), footer
+"1/7/26" with no slide number (checked on a strip of 10 footers; 50 is a blue page, 58 black): slide N = page N.
+
+- [x] Verbatim captions → raw/transcripts/original/05-reinforcement-learning.md (77 marks)
+- [x] raw/slides/05-reinforcement-learning.md — two Sonnet readers (1–29, 30–58), merged, header (47 figure slides)
+- [x] Figure audit (Sonnet) of chart-, equation-, code- and diagram-heavy pages; parent checks two images (22 pages; fixes on 32, 33, 37, 38, 40, 48, plus 42 detail; parent: images of 33 and 46, crop of 33)
+- [x] raw/transcripts/05-reinforcement-learning.md — Sonnet copy-edit; marks, numbers, ratios checked (77/77, identical, 0.90–1.00)
+- [x] raw/images/05-reinforcement-learning/ — native page JPEGs of figure slides, embedded (19 of 58, 1.1 MB)
+- [x] wiki/05-reinforcement-learning.md
+- [x] Topic pages, new and extended (new: reinforcement-learning, q-learning, policy-gradients; extended: what-is-deep-learning, loss-functions, gradient-descent, computer-vision, convolutional-neural-networks, autoencoders-and-vaes; lecture 3 page)
+- [x] INDEX.md, AGENTS.md image table, LICENSE.md, sources.md, kb.json, BUILD_LOG.md (sources.md already listed the deck)
+- [x] verify_kb.py clean, and its review section read
+- [x] Commit and push (54ba1ea)
+- [x] Move this section to BUILD_LOG.md
