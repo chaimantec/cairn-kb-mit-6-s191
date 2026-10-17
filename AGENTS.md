@@ -35,12 +35,14 @@ printed slips, which slides were rendered and why) goes in
   catalog position (`01-…`, `10-…`), and give each lecture's page its year. The 2026 decks are
   `https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_LN.pdf`; earlier editions' decks are
   linked from the per-year archive pages (`/2025/index.html`, …), which the crawl has not yet visited.
-- **Decks are flattened images.** The 2026 decks (lectures 1–3, at least) are PyFPDF exports: every page is
+- **Decks are flattened images.** The 2026 decks (lectures 1–4, at least) are PyFPDF exports: every page is
   one 1280×720 JPEG, with **no text layer** and **no printed slide numbers** (the footer's "1/5/26" is
   the lecture date). So `slide_number_map.py` finds nothing and `--verify` does not apply: use slide N =
   PDF page N, and check headings with a plain `1..N` sequence check. Check each new deck's text layer
   and footer before assuming the same. No text layer also means agents cannot grep for URLs or
   citations, and the PDF raster test for "has a figure" is meaningless (every page is a raster).
+  Some pages are frames caught mid-animation (two labels printed over each other, a panel half faded
+  out); transcribe them as they are, saying so, rather than reconstructing either state.
 - **Read the native page JPEGs, not PDF page renders.** Extract each page's embedded JPEG
   (`page.get_image_info(xrefs=True)` — not `get_images()`, which lists the shared resource dictionary,
   i.e. every image in the deck, on every page). They are ~1.2k tokens each to an agent, and they are
@@ -54,7 +56,8 @@ printed slips, which slides were rendered and why) goes in
 The YouTube captions are auto-generated but already punctuated, so the copy-edit is light: filler and
 false starts out, terms restored against the slide file, `[Student: …]` marks for students, and
 `[Ed: …]` notes where the captions are unclear or a spoken number differs from a slide (the spoken
-number is kept). Every change is listed in the file's header. Verify by script against `original/`:
+number is kept). An `[Ed: …]` note says what is unclear; it never proposes a name or term the slides do
+not support. Every change is listed in the file's header. Verify by script against `original/`:
 identical `[MM:SS]` sequence, identical number inventory once `[Ed: …]` notes are removed, and every
 paragraph's word ratio within 0.72–1.10 (notes and marks removed).
 
@@ -70,7 +73,9 @@ separate Sonnet agent against the page JPEGs (with enlarged crops), targeting ta
 numbers and code; the parent then looks at two rendered images itself. Readers and auditors both tend
 to normalize slips in printed formulas and code (an unclosed parenthesis, mixed straight and curly
 quotes) and report "exact", so tell both to keep such slips, and read the formulas and code on the
-parent's two images character by character.
+parent's two images character by character. When a printed formula looks wrong, say so on the wiki only
+from the course's own material — another slide, the lecturer's reading, or arithmetic on the formula
+itself — never by quoting the standard form from outside the course.
 
 ### Images
 
@@ -89,6 +94,7 @@ in `BUILD_LOG.md`.
 | 1 Introduction to Deep Learning (2026) | 34 of 108 pages | page JPEGs of `6S191_MIT_DeepLearning_L1.pdf` |
 | 2 Recurrent Neural Networks, Transformers, and Attention (2026) | 33 of 83 pages | page JPEGs of `6S191_MIT_DeepLearning_L2.pdf` |
 | 3 Convolutional Neural Networks (2026) | 33 of 70 pages | page JPEGs of `6S191_MIT_DeepLearning_L3.pdf` |
+| 4 Deep Generative Modeling (2026) | 39 of 84 pages | page JPEGs of `6S191_MIT_DeepLearning_L4.pdf` |
 
 ## Conventions
 

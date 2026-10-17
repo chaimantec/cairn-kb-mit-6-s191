@@ -40,6 +40,13 @@ hierarchy through its depth. In a convolutional network the layers learn edges a
 ears and noses, then facial structure (slide 50, ≈37:49; see
 [convolutional neural networks](convolutional-neural-networks.md)).
 
+## Supervised and unsupervised learning
+
+The networks of lectures 1–3 learn by **supervised learning**: from pairs $(x, y)$ of data and label,
+they learn a function mapping $x \rightarrow y$. In **unsupervised learning** there are only the data
+$x$, and the goal is to learn their hidden or underlying structure ([lecture 4](04-deep-generative-modeling.md),
+slides 3–4, ≈2:25–3:57). [Generative modeling](generative-modeling.md) is the course's way into it.
+
 ## Why now?
 
 The building blocks are decades old. Lecture 1's timeline (slide 19) dates stochastic gradient descent
@@ -58,4 +65,6 @@ recognition to 1995. Their recent dominance comes from three things (≈14:03–
   the field, the definitions, and why deep learning works now.
 - [Lecture 3 — Convolutional Neural Networks](03-convolutional-neural-networks.md), sections 3 and 15:
   hand-engineered versus learned visual features, and the hierarchy a CNN learns.
+- [Lecture 4 — Deep Generative Modeling](04-deep-generative-modeling.md), section 2: supervised versus
+  unsupervised learning.
 - The building block every later idea rests on is the [perceptron](perceptron.md).

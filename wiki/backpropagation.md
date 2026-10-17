@@ -59,7 +59,24 @@ hard to learn (slides 46–49).
 
 *Lecture 2, slide 44 — backpropagation through time: the backward pass (red) runs from each loss back through the chain of states.*
 
+## Through a sampling step: the reparametrization trick
+
+A variational autoencoder ([lecture 4](04-deep-generative-modeling.md); see
+[autoencoders and VAEs](autoencoders-and-vaes.md)) samples its latent variables $z$ in the middle of the
+network, and "we cannot backpropagate gradients through sampling layers!" (lecture 4, slide 34, ≈28:47).
+The fix rewrites the sample as a deterministic function of the encoder's outputs, a mean vector $\mu$
+and a standard deviation vector $\sigma$, plus noise $\varepsilon$ that is not learned (slide 35,
+≈28:47–29:34):
+
+$$z = \mu + \sigma \odot \varepsilon, \quad \varepsilon \sim \mathcal{N}(0, 1)$$
+
+In the computation graph, $z$ becomes a deterministic node and the randomness a separate input, so the
+gradients $\frac{\partial f}{\partial z}$ and $\frac{\partial f}{\partial \phi}$ flow back to the
+encoder's weights $\phi$ (slides 36–37, ≈29:34–30:20).
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 11–14.
 - [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), section 6.
+- [Lecture 4 — Deep Generative Modeling](04-deep-generative-modeling.md), section 11: backpropagating
+  through a sampled latent variable.

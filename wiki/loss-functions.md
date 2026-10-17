@@ -74,9 +74,36 @@ probability distribution $P(\theta \mid I, M)$ over the control $\theta$, given 
 $M$. It is trained to minimize $L = -\log(P(\theta \mid I, M))$, the negative log of the probability it
 assigns (slide 65; the slide prints the formula with one closing parenthesis).
 
+## Losses without labels: generative models
+
+[Lecture 4](04-deep-generative-modeling.md) trains networks with no labels at all. An
+[autoencoder](autoencoders-and-vaes.md) compares its input $x$ with its own reconstruction $\hat{x}$,
+for images pixel by pixel (lecture 4, slide 15, ≈13:59–14:46):
+
+$$\mathcal{L}(x, \hat{x}) = \Vert x - \hat{x} \Vert^2$$
+
+A variational autoencoder, whose encoder (weights $\phi$) and decoder (weights $\theta$) are both
+trained, adds a second term (slide 24, ≈20:13–20:59):
+
+$$\mathcal{L}(\phi, \theta, x) = (\text{reconstruction loss}) + (\text{regularization term})$$
+
+The regularization term is a distance between the distribution the encoder infers over the latent
+variables and a fixed Normal prior, which slide 29 names the KL-divergence (≈21:47–24:08).
+
+A [generative adversarial network](generative-adversarial-networks.md) has no single loss to minimize.
+Its generator $G$ and discriminator $D$ share one objective that $D$ maximizes and $G$ minimizes, so
+training is a min-max game (slides 70–72, ≈40:23–41:58):
+
+$$\arg\min_{G} \max_{D} \mathbb{E}_ {\mathbf{z},\mathbf{x}}\left[\log D(G(\mathbf{z})) + \log\left(1 - D(\mathbf{x})\right)\right]$$
+
+The formula is reproduced as slide 72 prints it; the lecture 4 page discusses how its terms are read
+(section 18).
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 9–11.
 - [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), sections 4 and 6.
 - [Lecture 3 — Convolutional Neural Networks](03-convolutional-neural-networks.md), sections 15 and 20:
   softmax outputs for classification, and a likelihood loss for probabilistic control.
+- [Lecture 4 — Deep Generative Modeling](04-deep-generative-modeling.md), sections 6, 8–9 and 18:
+  the reconstruction loss, the VAE's regularization term, and the GAN's min-max objective.

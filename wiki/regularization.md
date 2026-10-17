@@ -56,6 +56,17 @@ beyond it, gains on the training data no longer carry over to the test data (≈
 
 *Lecture 1, slide 106 — training (green) and testing (blue) loss: stop at the testing minimum, between under-fitting and over-fitting.*
 
+## Regularizing a latent space
+
+[Lecture 4](04-deep-generative-modeling.md) uses "regularization" for something related but different:
+a term in a variational autoencoder's loss that keeps the distribution of its latent variables close to
+a Normal prior. Without it the network is unregularized, free to give each input a pointed distribution
+or a far-off mean, and to "cheat" by memorizing the data in clustered regions; with it the latent space
+stays continuous and complete, so that it can be sampled (lecture 4, slides 27–32, ≈21:47–27:14). See
+[autoencoders and VAEs](autoencoders-and-vaes.md).
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), section 15.
+- [Lecture 4 — Deep Generative Modeling](04-deep-generative-modeling.md), sections 9–10: the
+  regularization term of a VAE.

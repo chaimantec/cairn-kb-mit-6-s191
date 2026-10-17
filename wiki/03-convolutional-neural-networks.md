@@ -663,8 +663,9 @@ In today's lab (slide 69, "Lab 2: Facial Detection Systems") students build thei
 facial detection system, and learn to debias them, "because one big problem is that you want to make sure
 that your features that you're learning cover a full spectrum of the distribution of your data"
 (≈55:36). Next comes Ava Amini's lecture on generative modeling, about generating new things rather than
-predicting (≈55:36–56:22; slide 70: "Lecture 4: Generative Modeling starting soon!"). Lecture 4 is not
-yet in this knowledge base.
+predicting (≈55:36–56:22; slide 70: "Lecture 4: Generative Modeling starting soon!"). That is
+[lecture 4](04-deep-generative-modeling.md), which returns to the debiasing lab and the role a VAE plays
+in it (its section 14).
 
 ## Related pages
 

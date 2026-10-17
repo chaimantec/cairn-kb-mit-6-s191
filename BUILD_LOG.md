@@ -15,6 +15,7 @@ slide file or transcript it concerns. The rules every build follows are in
 | 1 Introduction to Deep Learning (2026) | [Lecture 1](#lecture-1--introduction-to-deep-learning-2026--built-2026-10-11), 2026-10-11 |
 | 2 Recurrent Neural Networks, Transformers, and Attention (2026) | [Lecture 2](#lecture-2--recurrent-neural-networks-transformers-and-attention-2026--built-2026-10-17), 2026-10-17 |
 | 3 Convolutional Neural Networks (2026) | [Lecture 3](#lecture-3--convolutional-neural-networks-2026--built-2026-10-18), 2026-10-18 |
+| 4 Deep Generative Modeling (2026) | [Lecture 4](#lecture-4--deep-generative-modeling-2026--built-2026-10-18), 2026-10-18 |
 
 ## Lecture 1 — Introduction to Deep Learning (2026) — built 2026-10-11
 
@@ -373,3 +374,100 @@ footers; some footers carry citations at bottom right): slide N = page N.
 - [x] verify_kb.py clean, and its review section read
 - [x] Commit and push (4fe25bf)
 - [x] Move this section to BUILD_LOG.md
+
+## Lecture 4 — Deep Generative Modeling (2026) — built 2026-10-18
+
+**Pointers.** Catalog position 4, video `R8V8CbuxryI` (49:36), delivered 6 January 2026 by Ava Amini.
+Deck <https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L4.pdf>, 84 pages, downloaded in the
+lecture 1 crawl (same size as on the server, 4,566,713 bytes; Last-Modified 2026-08-17). The title slide
+reads "Deep Generative Modeling", "Ava Amini", "January 6, 2026". PDF metadata: author "A. Amini, A.P.
+Amini. MIT 6.S191", producer PyFPDF 1.7.2, created 2026-01-04.
+
+**Deck format and numbering.** As lectures 1–3: every page is one 1280×720 JPEG, no text layer, no two
+pages identical. A strip of the bottom 10% of pages 2, 10, 20, 30, 40, 50, 60, 70, 80 and 84 showed the
+standard footer with "1/6/26" and no slide number (credits beside it on 2, 10, 30, 40 and 50); 80 and 84
+have no footer. Slide N = PDF page N, checked with a plain 1..84 heading sequence.
+
+**Licence.** No per-slide licence notices. Footer credits: "Google Gemini" (2), "Amini/Soleimany+
+*AAAI/AIES* 2019." (6, 42), "Amini+ *IROS* 2018." (7), "Plato, *Republic.*" (10–11), "Kingma+ *ICLR*
+2014." (21–29, 33–39), "Joseph Rocca." (30–32), "Kingma+ *ICLR* 2014; Chen+ *NeurIPS* 2018." (40),
+"Higgins+ *ICLR* 2017." (41), "Goodfellow+ *NeurIPS* 2014." (50), "Brock+ *ICLR* 2019." (76), "Zhu+ *ICCV*
+2017." (78). Uncredited third-party imagery: slide 5's photographs, slide 8's ChatGPT screenshot,
+paintings and molecules, the digits of 13–17, the face photograph C of slide 2, slide 74–76's birds,
+slide 79's waveforms, slide 80's video still and logo, and the pictures of 82–84. LICENSE.md lists what
+is in the images.
+
+**Slide transcription.** The 84 page JPEGs were extracted with `get_image_info(xrefs=True)` and read by
+three Sonnet agents in parallel (1–28, 29–56, 57–84; the second and third read the preceding page for
+build-step context), each appending as it went; the parent merged the parts and wrote the header,
+section table and Images note. 77 slides are tagged `*Figure: yes*`. Parent edits: slide 31's build-step
+line, which spoke of "this agent's pages", rewritten; a stray `\ ` removed from slide 41's formula;
+slide 84's three dollar signs spelled out; "generated-looking" removed from slide 82 and a skin-tone
+description from slide 83's blurred face; 54 quoted inline formulas unquoted, four `\mathbb{E}_{`
+spaced, and two "Data:" lines on slides 3–4 rephrased, until `check_math.mjs` reported 0 errors and 0
+warnings.
+
+**Figure audit.** A separate Sonnet agent checked slides 5, 7, 17, 23, 28, 29, 31, 35, 36, 37, 41, 55, 56,
+57, 62, 70, 72, 74, 76, 79, 80 and 84 against the page JPEGs with enlarged crops. Nothing described was
+absent from its page. Exact: slide 17's first and last ground-truth rows; slide 23's upright z and x;
+slide 29's KL expansion; slides 35–37; slide 41's formula, β values and 5×7 grids; slides 70 and 72's
+objective; slide 84's text; the bar heights of 55–57 (within about 0.05). Discrepancies on **6 pages**,
+all fixed: the transcription's "too small to read" on the scatter-plot ticks of 28–29 was false (both
+axes −4 to 4; 12 colour blocks, 0 at the bottom) and slide 29 said "ten" colours while listing twelve;
+slide 62's generator-panel order made explicit; slide 74's N is upright, not italic; slide 76's two
+noise points sit near the right edge, and the last strip image is not on grass; slide 80's play button
+and logo. The parent looked at the images of slides 70 (the GAN objective, exactly as transcribed, with
+the first term labelled "Fake") and 29 (the KL expansion, exactly as transcribed, leading minus and
+unsquared $\sigma_j$ included), and at a crop of slide 77, whose N is italic (unlike 74's).
+
+**Printed slips and as-printed oddities**, all reproduced as printed:
+
+- Slide 29: the KL expansion $-\frac{1}{2}\sum_{j=0}^{k-1}(\sigma_j + \mu_j^2 - 1 - \log\sigma_j)$ is never
+  positive (each bracket is at least zero); the wiki says so from the formula alone.
+- Slide 31 is a frame caught mid-transition, its not-regularized panel half faded; slide 41 prints
+  "Standard VAE loss:" and "β-VAE loss:" on top of each other and an empty red box before $D_{KL}$.
+- Slides 70–72 print $\log D(G(\mathbf{z})) + \log(1 - D(\mathbf{x}))$, the first term labelled "Fake";
+  read as the lecturer reads it, $D$ is the probability of fake, while slides 54–68 plot P(real).
+- Slide 4 changes slide 3's "Learn some hidden" to "Learn the hidden"; slide 41's loss lists
+  $(\theta, \phi; \ldots)$ where slide 24 has $(\phi, \theta, x)$; slides 69–71 alternate "instances"
+  and "images"; slides 35–37 spell "Reparametrizing", slide 45 "Reparameterization".
+- Slide 84 is lecture 3's closing announcement slide (its slide 70), "Lecture 4: Generative Modeling
+  starting soon!".
+
+**Spoken vs printed.** "90% of the distribution" (≈7:02) against slide 7's "95% of Driving Data"; "a mean
+and a variance" (≈18:40) against slide 22's "standard deviation vector"; the KL-divergence is named only
+on slide 29; diffusion models in "tomorrow's lecture six" (≈31:54) against slide 82's "Lectures 6 and 7".
+Slides 40–41 (disentanglement, β-VAE) are not narrated. The wiki gives both sides and lists them in a
+"Spoken versus printed" section.
+
+**Transcript.** YouTube auto-captions, already punctuated. Copy-edited by a Sonnet agent against the
+slide file: filler, stutters and `>>` marks removed; "slate and space" to latent space (20:59),
+"reparameterization" to the slides' reparametrization (33:26), "cycle GAN" to CycleGAN (45:49). Student
+question marked at 30:20; the 46:37 synthesized-voice clip bracketed with [Ed] notes. Kept with [Ed]
+notes: "discriminative encoder" (35:46, citing slide 50), "the principle of adversarial in again"
+(41:58), "you can and about" (43:29). The agent's note at 7:47 called the captions' "Dolly" "probably
+DALL-E"; the parent rewrote it to say only that it is unclear and the slides name no image model (the
+general lesson went into AGENTS.md). Checks re-run by the parent: 64 of 64 `[MM:SS]` marks identical,
+number inventory identical, per-paragraph word ratio 0.91–1.01.
+
+**Coverage gaps.** The student question (30:20–31:54) has no slide. Slides 40–41 are shown but not
+narrated; slide 80's video is played, not described; slide 29's expansion is not read aloud.
+
+**Images.** 39 of 84 pages, copied byte for byte from the deck's own JPEGs (2.3 MB): 2, 5, 6, 7, 8, 9,
+10, 15, 16, 17, 22, 26, 27, 29, 30, 31, 32, 34, 35, 36, 37, 39, 40, 41, 49, 50, 55, 57, 60, 62, 64, 68,
+70, 72, 74, 76, 77, 78, 79. All 39 are embedded in `wiki/04-deep-generative-modeling.md` by hand, in the
+passage citing each, and under their headings in the slide file (by `embed_slide_images.py`); the three
+new topic pages reuse 13. Not rendered, and why:
+
+- Title, text-only, summary and section-divider slides: 1, 3, 4, 12, 18, 19, 48.
+- Build steps wholly contained in an included slide: 13–14 (→15), 21 (→22), 23–25 (→26–27), 28 (→27's
+  labels, 29's plot), 33 (→34), 51–54 and 56 (→55, 57), 58–59 (→60), 61 (→62), 63 (→64), 65–67 (→68),
+  71 (→72's diagram; its formula is transcribed), 75 (a second noise sample; its bird is in 76's strip).
+- Repeats of an included figure: 11 (10 with a line of text), 20 (16's diagram), 38 (34's), 42 (6's
+  grids), 43–47 (the summary list over 16's diagram), 69 and 73 (50's diagram), 81 (9's diagrams).
+- A video still: 80 (the synthesized-voice demo).
+- Decorative and announcement slides: 82 (the diffusion teaser's landscape), 83, 84.
+
+**AGENTS.md lessons** (general form): frames caught mid-animation are transcribed as they are; `[Ed]`
+notes never propose a name the slides do not support; a suspect printed formula is questioned on the
+wiki only from the course's own material.
