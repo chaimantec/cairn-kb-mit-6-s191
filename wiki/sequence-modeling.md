@@ -90,9 +90,20 @@ line is not strict. Convolving patches along one dimension of a sequence — "th
 model" — and the same ideas extend to 3D, for volumetric scans (≈39:23–40:56). See
 [convolutional neural networks](convolutional-neural-networks.md).
 
+## Next-token prediction at scale
+
+[Lecture 6](06-language-models-new-frontiers.md) returns to next-word prediction as the task behind large
+language models, now called **next-token prediction**: web-scale text is split into chunks called
+**tokens**, each with a numerical ID that is embedded and fed to the model, and the model is trained to
+predict the next token of each sequence (slides 70–71, ≈44:52–47:08). The output is a probability for
+every token in the vocabulary, so the task is a classification and the loss a cross-entropy, and the text
+supplies its own labels (≈47:54–48:40). See [large language models](large-language-models.md).
+
 ## Where this comes up
 
 - [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md),
   sections 1, 2 and 5.
 - [Lecture 3 — Convolutional Neural Networks](03-convolutional-neural-networks.md), section 15: a student
   question on whether CNNs can be used for language.
+- [Lecture 6 — Language Models and New Frontiers](06-language-models-new-frontiers.md), sections 22–23:
+  tokens and next-token prediction in large language models.

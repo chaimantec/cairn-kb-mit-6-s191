@@ -535,7 +535,8 @@ convolutional neural networks and does not mention vision transformers.
 Slide 81 summarizes: RNNs are well suited to sequence modeling tasks; they model sequences through a
 recurrence relation; they are trained with backpropagation through time; they power music generation,
 classification, machine translation and more; self-attention models sequences without recurrence; and
-self-attention is the basis for many large language models — "stay tuned!" (≈55:41). Lab 1 (slide 82)
+self-attention is the basis for many large language models — "stay tuned!" (≈55:41; lecture 6 covers
+[large language models](large-language-models.md), though not their architecture). Lab 1 (slide 82)
 is deep learning in Python and music generation with RNNs, in Google Colab. The final hour each day, 3 to
 4 pm, is office hours for questions and the software labs, and the kickoff social is at 5:00 pm at 1
 Kendall Square (≈56:26–57:14; slide 83 thanks John Werner and Link Ventures for hosting).

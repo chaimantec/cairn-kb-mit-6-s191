@@ -15,7 +15,8 @@ set of latent variables and learn by reconstructing their input. **Variational a
 make that latent space probabilistic, which needs a regularization term with a Normal prior and the
 reparametrization trick to train. **Generative adversarial networks (GANs)** skip the latent model
 and train a generator against a discriminator until the generator's samples cannot be told from real
-data. Diffusion models are left for later lectures (slide 82).
+data. Diffusion models are left for later lectures (slide 82); [lecture 6](06-language-models-new-frontiers.md)
+covers them.
 
 Timestamps such as (≈23:21) point into the [transcript](../raw/transcripts/04-deep-generative-modeling.md);
 "slide N" is page N of the PDF (the deck prints no slide numbers). See also the topic pages
@@ -367,7 +368,7 @@ absolutely — that is another paradigm for generative modeling, suited to when 
 about a fixed feature representation and your goal really is sample generation. You define noise or
 variability in the transformation of input directly to reconstructed output and train on that signal.
 This is closely related to the principles of diffusion models, introduced more recently and covered in
-"tomorrow's lecture six" (≈31:08–31:54). The general lesson: what you want from the network informs
+"tomorrow's lecture six" (≈31:08–31:54; see [diffusion models](diffusion-models.md)). The general lesson: what you want from the network informs
 the architecture. VAEs are the choice when you care about the latent space — a compressed set of
 variables to use as a representation and to sample from (≈31:54).
 
@@ -632,7 +633,7 @@ These foundations set the stage for what came after. Generations are now of very
 as the opening faces showed, and not only for images but for video, text and other modalities
 (≈47:22–48:08). Lecture 6 will cover the newer frameworks that use noise to do reconstruction and
 have unlocked a new level of generation quality (≈48:08): slide 82 announces **diffusion models**,
-"...more to come in Lectures 6 and 7!".
+"...more to come in Lectures 6 and 7!" (see [lecture 6](06-language-models-new-frontiers.md), sections 13–20).
 
 The lecture closes on logistics (≈48:08–48:54): the software labs, with entry into the lab
 competitions as a perk, and course t-shirts at the end of the next day's class. Slide 83 is Lab 2,

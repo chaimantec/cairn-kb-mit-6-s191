@@ -86,3 +86,5 @@ networks and does not mention them.
 
 - [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md),
   sections 10–13.
+- [Large language models](large-language-models.md): lecture 6 covers how LLMs are trained and used,
+  without discussing the architecture inside them.

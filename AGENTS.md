@@ -35,8 +35,8 @@ printed slips, which slides were rendered and why) goes in
   catalog position (`01-…`, `10-…`), and give each lecture's page its year. The 2026 decks are
   `https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_LN.pdf`; earlier editions' decks are
   linked from the per-year archive pages (`/2025/index.html`, …), which the crawl has not yet visited.
-- **Decks are flattened images.** The 2026 decks (lectures 1–5, at least) are image-only exports (PyFPDF for
-  1–4, macOS Quartz for 5): every page is one 1280×720 JPEG, with **no text layer** and **no printed slide numbers** (the footer's "1/5/26" is
+- **Decks are flattened images.** The 2026 decks (lectures 1–6, at least) are image-only exports (PyFPDF for
+  1–4 and 6, macOS Quartz for 5): every page is one 1280×720 JPEG, with **no text layer** and **no printed slide numbers** (the footer's "1/5/26" is
   the lecture date). So `slide_number_map.py` finds nothing and `--verify` does not apply: use slide N =
   PDF page N, and check headings with a plain `1..N` sequence check. Check each new deck's text layer
   and footer before assuming the same. No text layer also means agents cannot grep for URLs or
@@ -71,7 +71,9 @@ are transcribed individually with a "Build step:" line. Code is reproduced as pr
 slide's own typos, with a note when the deck contradicts itself. Fill-in blanks printed as `___` pair with math
 subscripts into italics on github.com: write them `\_\_\_` in any paragraph that also holds math. Figure descriptions are audited by a
 separate Sonnet agent against the page JPEGs (with enlarged crops), targeting tables, charts, worked
-numbers and code; the parent then looks at two rendered images itself. Readers and auditors both tend
+numbers, code and every count the file states; the parent then looks at two rendered images itself. Where
+the talk points at a detail of a figure (a student's answer, "notice the…"), check that the slide file
+describes that detail: readers give a figure's gist and miss the detail under discussion. Readers and auditors both tend
 to normalize slips in printed formulas and code (an unclosed parenthesis, mixed straight and curly
 quotes) and report "exact", so tell both to keep such slips, and read the formulas and code on the
 parent's two images character by character. When a printed formula looks wrong, say so on the wiki only
@@ -97,6 +99,7 @@ in `BUILD_LOG.md`.
 | 3 Convolutional Neural Networks (2026) | 33 of 70 pages | page JPEGs of `6S191_MIT_DeepLearning_L3.pdf` |
 | 4 Deep Generative Modeling (2026) | 39 of 84 pages | page JPEGs of `6S191_MIT_DeepLearning_L4.pdf` |
 | 5 Reinforcement Learning (2026) | 19 of 58 pages | page JPEGs of `6S191_MIT_DeepLearning_L5.pdf` |
+| 6 Language Models and New Frontiers (2026) | 24 of 81 pages | page JPEGs of `6S191_MIT_DeepLearning_L6.pdf` |
 
 ## Conventions
 

@@ -182,3 +182,35 @@ stills of slides 23–24; the video stills of slides 47 and 49 (credited "Amini+
 51's Go photograph (credited "Silver+ *Science* 2016; Silver+ *Nature* 2017."); slide 52's Go board and
 table (credited "Source: Wikipedia.", the table transcribed in `raw/slides/`); and slide 58's T-shirt
 photograph.
+
+Each image in `raw/images/06-language-models-new-frontiers/`, named `slide-N.jpg`, is page N of the
+lecture 6 deck,
+[`6S191_MIT_DeepLearning_L6.pdf`](https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L6.pdf),
+extracted unmodified in the same way. 24 of the deck's 81 pages are included: slides 14, 18, 22, 26,
+28–31, 34, 42, 49–51, 53, 54, 61, 64–66, 69, 71, 72, 75 and 76. Attribution for every one is the course
+line above. Third-party material on them, as credited on the slides:
+
+- **Slides 18 and 22** credit "Zhang+ *ICLR* 2017.": the randomized-label experiment and its accuracy
+  chart. Slide 18's four photographs (two dogs, bananas, a tree) carry no other credit.
+- **Slide 29** credits "U. Muller, 6.S191 2018." for the crossed-out cartoon; the alchemist painting beside
+  it carries no credit.
+- **Slides 30 and 31** credit "P. Isola 6.869." for the colorization example and the dog photographs.
+- **Slide 34** credits "Despois "Adversarial examples" 2017." for the temple images and the perturbation.
+- **Slide 42** credits "Athalye+ *ICML* 2018." for the 24 photographs of the 3D-printed turtle.
+- **Slides 51 and 54** credit "Sohl-Dickstein+ *ICML* 2015; Ho+ *NeurIPS* 2020." and "Ho+ *NeurIPS*
+  2020." for the diffusion process. The photograph of a domed building that slides 49, 51, 53 and 54 noise
+  step by step, the dog of slide 61 and the generated "Two cats doing research" of slide 49 carry no credit.
+- **Slide 64** credits "Ramesh+ *arXiv* 2022" and **slide 65** "OpenAI. Ramesh+ *arXiv* 2022" for their
+  generated images.
+- **Slide 66** cites "Hoogeboom+ *ICML* 2022, Jing+ *NeurIPS* 2022, and more…" for its molecules and
+  "Anand+ *arXiv* 2022, Watson+ *Nature* 2023, Ingraham+ *Nature* 2023, Wu+ *Nature Comm.* 2024, Alamdari+
+  *bioRxiv* 2024, and more …" for its protein structures.
+- **Slide 75** credits "Wei+ TMLR 2022." for its three charts of emergent abilities, and **slide 76**
+  "Google AI blog." for its tree illustration.
+
+Not included from lecture 6, among others: the prize photographs of slides 4–5, the guest lecturers'
+portraits and company logos of slide 7, the staff photographs of slide 8, slide 10's collage of news
+articles, slide 11's brain image, slide 32's ABC News coverage of an autopilot crash (credited "ABC
+News.", with photographs marked "COURTESY OF TESLA" and "GOOGLE STREET VIEW"), slide 33's photographs,
+slide 43's news headlines, slide 68's ChatGPT screenshot and OpenAI logo, the film still of slides 78 and
+80, and the T-shirt photographs of slides 2, 79 and 81.

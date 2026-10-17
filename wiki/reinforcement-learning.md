@@ -118,7 +118,10 @@ which a policy-gradient agent was trained and then deployed directly on a real c
   chess and other games (≈54:39–55:25).
 - **Language models**: after imitation by next-word prediction, LLMs face a preference-alignment problem;
   the thumbs up and thumbs down users give a chatbot train "a reward model" that a reinforcement learning
-  algorithm then maximizes (≈53:53–54:39). Lecture 5 says this is covered later in the course.
+  algorithm then maximizes (≈53:53–54:39). Lecture 5 says this is covered later in the course;
+  [lecture 6](06-language-models-new-frontiers.md) covers training by next-token prediction and says only
+  that base models are then tuned and refined to act as chatbots (≈49:25; see
+  [large language models](large-language-models.md)).
 
 ## Where this comes up
 

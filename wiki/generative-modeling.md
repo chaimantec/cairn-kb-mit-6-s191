@@ -88,7 +88,7 @@ actually trying to do with the neural network you build, and how does that infor
 choice?" (≈31:54). A student's question (≈30:20) points to a third paradigm — inject the noise in
 the transformation from input to output and sample there, when sample generation is all that
 matters — which Amini relates to **diffusion models**. Those are announced for later lectures ("more
-to come in Lectures 6 and 7", slide 82) and are not in this knowledge base.
+to come in Lectures 6 and 7", slide 82), and lecture 6 covers them: see [diffusion models](diffusion-models.md).
 
 Generation quality is now "very, very, very high fidelity", across images, video, text and other
 modalities (≈47:22–48:08) — high enough that, in lecture 4's opening poll, two of three faces were
@@ -99,3 +99,5 @@ generated and the room could not tell which one was real (slide 2, ≈0:51–2:2
 - [Lecture 4 — Deep Generative Modeling](04-deep-generative-modeling.md), sections 1–5, 12 and 21.
 - [Lecture 3 — Convolutional Neural Networks](03-convolutional-neural-networks.md), section 22: the
   facial detection and debiasing lab.
+- [Lecture 6 — Language Models and New Frontiers](06-language-models-new-frontiers.md), sections 13–20: the
+  limitations of VAEs and GANs, and diffusion models.

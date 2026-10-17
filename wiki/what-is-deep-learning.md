@@ -22,6 +22,10 @@ The three terms nest inside one another ([lecture 1](01-introduction.md), slide 
 
 *Lecture 1, slide 7 — artificial intelligence ⊃ machine learning ⊃ deep learning.*
 
+[Lecture 6](06-language-models-new-frontiers.md) adds a level inside deep learning: **large language
+models**, "Very, very large neural networks trained on very, very large sets of text" (slide 69,
+≈44:07). See [large language models](large-language-models.md).
+
 ## Why learn features instead of engineering them?
 
 Traditional machine learning relies on features designed by hand, which lecture 1 calls "time
@@ -66,6 +70,11 @@ recognition to 1995. Their recent dominance comes from three things (≈14:03–
 3. **Software**: improved techniques, new models, and toolboxes such as TensorFlow and PyTorch that
    democratize building, training and deploying models.
 
+It was not always so. Lecture 6's slide 14 draws AI's popularity as waves: "Birth" in 1956, "Inflated
+Hype" in 1974, "AI winter I" in 1980, "New Hopes" in 1987, "AI winter II" in 1993, then "Explosive
+Growth". There were times when these models were under heavy scrutiny from the scientific community, and
+like any technology, deep learning goes through waves of growth and of criticism (≈10:58–12:33).
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 1, 2 and 4: the pace of
@@ -76,4 +85,6 @@ recognition to 1995. Their recent dominance comes from three things (≈14:03–
   unsupervised learning.
 - [Lecture 5 — Reinforcement Learning](05-reinforcement-learning.md), section 2: reinforcement
   learning as the third class of learning problems.
+- [Lecture 6 — Language Models and New Frontiers](06-language-models-new-frontiers.md), sections 2, 4 and 21:
+  data to decision and back, AI's waves of hype, and LLMs as a class of deep learning.
 - The building block every later idea rests on is the [perceptron](perceptron.md).

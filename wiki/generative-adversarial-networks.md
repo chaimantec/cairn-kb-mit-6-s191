@@ -98,3 +98,6 @@ Alexander Amini's voice into "the Obama style voice" (slide 80, ≈45:49–46:37
 ## Where this comes up
 
 - [Lecture 4 — Deep Generative Modeling](04-deep-generative-modeling.md), sections 15–21.
+- [Lecture 6 — Language Models and New Frontiers](06-language-models-new-frontiers.md), section 13: mode collapse,
+  generating out of distribution and training difficulty as limitations that motivate
+  [diffusion models](diffusion-models.md).

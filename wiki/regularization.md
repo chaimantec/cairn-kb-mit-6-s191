@@ -65,8 +65,20 @@ or a far-off mean, and to "cheat" by memorizing the data in clustered regions; w
 stays continuous and complete, so that it can be sampled (lecture 4, slides 27–32, ≈21:47–27:14). See
 [autoencoders and VAEs](autoencoders-and-vaes.md).
 
+## Capacity: fitting random labels
+
+[Lecture 6](06-language-models-new-frontiers.md) shows how far overfitting can go. The universal
+approximation theorem says one layer can approximate any continuous function, with the caveat that "The
+resulting model may not generalize" (slides 12–13, ≈10:12). And deep networks trained on ImageNet with
+labels reassigned at random still reach perfect training accuracy, while test accuracy falls as the labels
+become more random: "Modern deep networks can perfectly fit to random data" (slides 16–22, credited
+"Zhang+ *ICLR* 2017.", ≈13:20–15:40). Fitting the training set says nothing, by itself, about
+generalization. See [limitations of deep learning](limitations-of-deep-learning.md).
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), section 15.
 - [Lecture 4 — Deep Generative Modeling](04-deep-generative-modeling.md), sections 9–10: the
   regularization term of a VAE.
+- [Lecture 6 — Language Models and New Frontiers](06-language-models-new-frontiers.md), sections 3 and 5:
+  the universal approximation theorem's caveats and fitting random labels.

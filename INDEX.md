@@ -6,15 +6,16 @@ from the foundations of neural networks — the single neuron, training by gradi
 backpropagation — up to recent advances in large language models. Course site:
 <https://introtodeeplearning.com/>.
 
-**Coverage: lectures 1–5 only.** This knowledge base covers **lectures 1–5 of the 2026 edition**:
+**Coverage: lectures 1–6 only.** This knowledge base covers **lectures 1–6 of the 2026 edition**:
 "Introduction to Deep Learning" (Alexander Amini) and "Recurrent Neural Networks, Transformers, and
 Attention" (Ava Amini), both delivered 5 January 2026, and "Convolutional Neural Networks" (Alexander
 Amini; the deck's title is "Deep Computer Vision") and "Deep Generative Modeling" (Ava Amini), both
 delivered 6 January 2026, and "Reinforcement Learning" (Alexander Amini; the deck's title is "Deep
-Reinforcement Learning"), delivered 7 January 2026. The Cairn catalog for this course lists 90 recordings — the 2026 edition's
+Reinforcement Learning") and "Language Models and New Frontiers" (Ava Amini; the deck's title is "Deep
+Learning Limitations and New Frontiers"), both delivered 7 January 2026. The Cairn catalog for this course lists 90 recordings — the 2026 edition's
 lectures (positions 1–9) followed by the 2018–2025 editions — and none of the others is in this KB yet.
-Do not cite it as the whole course: for any other lecture (language models, diffusion models and the
-rest), say it is not covered. Vision transformers, which lecture 2 says
+Do not cite it as the whole course: for any other lecture — the 2026 guest lectures (positions 7–9) or
+any earlier edition — say it is not covered. Vision transformers, which lecture 2 says
 lecture 3 will cover, are not discussed in lecture 3.
 
 ## How to use this knowledge base
@@ -28,17 +29,18 @@ lecture 3 will cover, are not discussed in lecture 3.
 
 ## Images
 
-All five lectures have slide images: **34 for lecture 1**, **33 for lecture 2**, **33 for lecture
-3**, **39 for lecture 4** and **19 for lecture 5**. Each is embedded where it is used: in the lecture page
+All six lectures have slide images: **34 for lecture 1**, **33 for lecture 2**, **33 for lecture
+3**, **39 for lecture 4**, **19 for lecture 5** and **24 for lecture 6**. Each is embedded where it is used: in the lecture page
 ([lecture 1](wiki/01-introduction.md), [lecture 2](wiki/02-rnns-transformers-attention.md),
 [lecture 3](wiki/03-convolutional-neural-networks.md), [lecture 4](wiki/04-deep-generative-modeling.md),
-[lecture 5](wiki/05-reinforcement-learning.md))
+[lecture 5](wiki/05-reinforcement-learning.md), [lecture 6](wiki/06-language-models-new-frontiers.md))
 beside the passage that cites the slide, in some topic pages, and under the matching `## Slide N`
 heading of the slide transcription ([lecture 1](raw/slides/01-introduction.md),
 [lecture 2](raw/slides/02-rnns-transformers-attention.md),
 [lecture 3](raw/slides/03-convolutional-neural-networks.md),
 [lecture 4](raw/slides/04-deep-generative-modeling.md),
-[lecture 5](raw/slides/05-reinforcement-learning.md)).
+[lecture 5](raw/slides/05-reinforcement-learning.md),
+[lecture 6](raw/slides/06-language-models-new-frontiers.md)).
 They are whole slides, every one that carries a distinct figure; slides without an image are text, code
 or tables the transcription reproduces exactly, logistics, logos, stock photographs, video stills,
 repeats of a rendered figure, or build steps contained in a rendered slide. No other lecture is in this KB, so no other lecture has images.
@@ -91,13 +93,21 @@ repeats of a rendered figure, or build steps contained in a rendered slide. No o
   gradients, discrete and continuous action spaces and a Gaussian policy; the self-driving training
   algorithm, the policy-gradient loss and update, exploration versus exploitation; why real-world
   training needs simulation (VISTA); AlphaGo; preference alignment of language models.
+- [Lecture 6 — Language Models and New Frontiers](wiki/06-language-models-new-frontiers.md) — the whole
+  lecture in order: the universal approximation theorem and its caveats; AI's waves of hype; networks that
+  fit randomly labelled data; function approximation away from the training data; "garbage in, garbage
+  out", colorization and autopilot failures, uncertainty; adversarial attacks and the adversarial-image
+  update; algorithmic bias and the list of limitations; diffusion models: one-shot versus iterative
+  generation, forward noising, reverse denoising and its loss, sampling, text conditioning, molecular
+  design; large language models: tokens, next-token prediction and cross-entropy, from base model to
+  chatbot, capabilities, limitations and emergent abilities with scale.
 
 ### Topics
 
 - [What is deep learning?](wiki/what-is-deep-learning.md) — AI, machine learning and deep learning
   defined and nested; learned hierarchical features versus hand-engineered ones, including lecture 3's
-  case for vision; supervised, unsupervised and reinforcement learning; why now (big data, hardware, software) and
-  the 1952–1995 timeline.
+  case for vision; supervised, unsupervised and reinforcement learning; why now (big data, hardware, software),
+  the 1952–1995 timeline and lecture 6's waves of AI hype; LLMs as a class of deep learning.
 - [The perceptron](wiki/perceptron.md) — the single neuron: weighted sum, bias, non-linearity, the
   vector form $\hat{y} = g(w_0 + \boldsymbol{X}^T \boldsymbol{W})$, and the worked example showing a
   neuron's decision boundary is a line.
@@ -112,16 +122,19 @@ repeats of a rendered figure, or build steps contained in a rendered slide. No o
   outputs; per-time-step losses summed over a sequence; softmax over many classes, and the
   negative-log-likelihood loss of lecture 3's driving model; losses without labels: the autoencoder's
   reconstruction loss, the VAE's two terms and the GAN's min-max objective; the Q-loss and the
-  policy-gradient loss of reinforcement learning.
+  policy-gradient loss of reinforcement learning; the cross-entropy of next-token prediction and the
+  denoising loss of diffusion models.
 - [Gradient descent, learning rates and mini-batches](wiki/gradient-descent.md) — loss optimization,
   the gradient descent algorithm, choosing the learning rate, adaptive optimizers (SGD, Adam, Adadelta,
-  Adagrad, RMSProp), stochastic and mini-batch gradient descent; the policy-gradient update.
+  Adagrad, RMSProp), stochastic and mini-batch gradient descent; the policy-gradient update; the same
+  update turned on the input to make adversarial examples.
 - [Backpropagation](wiki/backpropagation.md) — computing the gradient with the chain rule, worked on a
   one-neuron-per-layer network, why it propagates backwards, backpropagation through time for RNNs, and
   the reparametrization trick for backpropagating through a VAE's sampling step.
 - [Sequence modeling](wiki/sequence-modeling.md) — sequential data, the four input/output shapes of
   sequence tasks, the design criteria a sequence model must meet (worked through next-word prediction),
-  and embeddings: vocabulary, indexing, one-hot versus learned; convolutions over sequences.
+  and embeddings: vocabulary, indexing, one-hot versus learned; convolutions over sequences; next-token
+  prediction in large language models.
 - [Recurrent neural networks](wiki/recurrent-neural-networks.md) — the internal state and recurrence
   relation $h_t = f_W(x_t, h_{t-1})$, the state-update and output equations, unrolling across time,
   backpropagation through time, exploding and vanishing gradients, gradient clipping, LSTMs and gates,
@@ -135,13 +148,15 @@ repeats of a rendered figure, or build steps contained in a rendered slide. No o
   classification in code.
 - [Computer vision](wiki/computer-vision.md) — what vision is, images as numbers, regression and
   classification, why features must be learned, and the tasks one CNN body serves: classification,
-  object detection, semantic segmentation and continuous control.
+  object detection, semantic segmentation and continuous control; colorization failures and adversarial
+  examples.
 - [Overfitting and regularization](wiki/regularization.md) — underfitting versus overfitting,
   regularization, dropout (including the per-mini-batch question from class) and early stopping; the
-  different sense of regularizing a VAE's latent space.
+  different sense of regularizing a VAE's latent space; networks that perfectly fit random labels.
 - [Generative modeling](wiki/generative-modeling.md) — learning a data distribution: supervised versus
   unsupervised learning, density estimation and sample generation, why it is useful (debiasing, outlier
-  detection, generative AI), latent variables, and choosing between autoencoders, GANs and diffusion.
+  detection, generative AI), latent variables, and choosing between autoencoders, GANs and diffusion
+  models.
 - [Autoencoders and VAEs](wiki/autoencoders-and-vaes.md) — the encoder, decoder and reconstruction
   loss; the latent bottleneck; VAEs' mean and standard deviation vectors, $q_{\phi}(z \mid x)$ and
   $p_{\theta}(x \mid z)$, the regularization term and Normal prior, continuity and completeness, the
@@ -159,6 +174,17 @@ repeats of a rendered figure, or build steps contained in a rendered slide. No o
 - [Policy gradients](wiki/policy-gradients.md) — a network that outputs a distribution over actions
   and samples from it; continuous actions with a Gaussian policy; the five-step training algorithm; the
   loss $-\log P(a_t|s_t)\thinspace R_t$ and the policy-gradient update; exploration; training in simulation.
+- [Limitations of deep learning](wiki/limitations-of-deep-learning.md) — the universal approximation theorem
+  and its two caveats; fitting random labels; behaviour away from the training data; garbage in, garbage
+  out; over-represented and out-of-distribution data; uncertainty; adversarial examples and the update
+  that makes them; algorithmic bias; the slide's list of limitations, and those of LLMs.
+- [Diffusion models](wiki/diffusion-models.md) — why move beyond VAEs and GANs; one-shot versus iterative
+  generation; forward noising and reverse denoising; training by predicting the noise; sampling new data;
+  whether the noise is really noise; conditioning on text; molecules and proteins.
+- [Large language models](wiki/large-language-models.md) — LLMs as very large networks trained on very
+  large text; data and tokens; next-token prediction and its cross-entropy loss; base model to chatbot;
+  capabilities and limitations (hallucination, jailbreaks, confidence, planning); emergent abilities with
+  scale; foundation models.
 
 ## Raw materials
 
@@ -167,14 +193,16 @@ repeats of a rendered figure, or build steps contained in a rendered slide. No o
   [lecture 2](raw/slides/02-rnns-transformers-attention.md) (83 slides),
   [lecture 3](raw/slides/03-convolutional-neural-networks.md) (70 slides),
   [lecture 4](raw/slides/04-deep-generative-modeling.md) (84 slides),
-  [lecture 5](raw/slides/05-reinforcement-learning.md) (58 slides).
+  [lecture 5](raw/slides/05-reinforcement-learning.md) (58 slides),
+  [lecture 6](raw/slides/06-language-models-new-frontiers.md) (81 slides).
 - [`raw/transcripts/`](raw/transcripts/) — the lecture transcripts, copy-edited from YouTube captions,
   with `[MM:SS]` paragraph marks and `[Ed: …]` notes where the captions are unclear or differ from a
   slide: [lecture 1](raw/transcripts/01-introduction.md),
   [lecture 2](raw/transcripts/02-rnns-transformers-attention.md),
   [lecture 3](raw/transcripts/03-convolutional-neural-networks.md),
   [lecture 4](raw/transcripts/04-deep-generative-modeling.md),
-  [lecture 5](raw/transcripts/05-reinforcement-learning.md). The verbatim captions are in
+  [lecture 5](raw/transcripts/05-reinforcement-learning.md),
+  [lecture 6](raw/transcripts/06-language-models-new-frontiers.md). The verbatim captions are in
   `raw/transcripts/original/`.
 - [`raw/images/`](raw/images/) — the slide images described above.
 - [`sources.md`](sources.md) — every document the course site links, with its canonical URL. The PDFs

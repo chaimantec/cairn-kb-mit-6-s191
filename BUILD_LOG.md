@@ -17,6 +17,7 @@ slide file or transcript it concerns. The rules every build follows are in
 | 3 Convolutional Neural Networks (2026) | [Lecture 3](#lecture-3--convolutional-neural-networks-2026--built-2026-10-18), 2026-10-18 |
 | 4 Deep Generative Modeling (2026) | [Lecture 4](#lecture-4--deep-generative-modeling-2026--built-2026-10-18), 2026-10-18 |
 | 5 Reinforcement Learning (2026) | [Lecture 5](#lecture-5--reinforcement-learning-2026--built-2026-10-18), 2026-10-18 |
+| 6 Language Models and New Frontiers (2026) | [Lecture 6](#lecture-6--language-models-and-new-frontiers-2026--built-2026-10-18), 2026-10-18 |
 
 ## Lecture 1 — Introduction to Deep Learning (2026) — built 2026-10-11
 
@@ -629,3 +630,115 @@ each one 1280×720 JPEG (DCTDecode), no text layer (macOS Quartz PDFContext, cre
 - [x] verify_kb.py clean, and its review section read
 - [x] Commit and push (54ba1ea)
 - [x] Move this section to BUILD_LOG.md
+
+## Lecture 6 — Language Models and New Frontiers (2026) — built 2026-10-18
+
+**Pointers.** Catalog position 6, video `ev7cLSd-ySE` (56:17), delivered 7 January 2026 by Ava Amini, the
+last lecture by the two instructors before the guest lectures. Deck
+<https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L6.pdf>, 81 pages, downloaded in the lecture 1
+crawl (same size as on the server, 5,321,498 bytes; Last-Modified 2026-08-17). The title slide reads "Deep
+Learning Limitations and New Frontiers", "Ava Amini", "January 7, 2026"; slide 3's schedule calls it "New
+Frontiers"; the catalog title is "Language Models and New Frontiers", which the wiki and slide file use as
+their heading. PDF metadata: author "A. Amini, A.P. Amini. MIT 6.S191", producer "PyFPDF 1.7.2", created
+2026-01-10.
+
+**Deck format and numbering.** Every page is one 1280×720 JPEG (DCTDecode), no text layer. A strip of the
+bottom 10% of pages 2, 9, 17, 25, 33, 41, 49, 57, 65, 73, 80 and 81 showed the standard footer with "1/7/26"
+and no slide number (credits "Zhang+ *ICLR* 2017." on 17 and "OpenAI. Ramesh+ *arXiv* 2022" on 65 beside
+it); 9 is a blue divider, 80 a film still and 81 black. Pages 80 and 81 are byte-for-byte copies of 78 and
+79 (MD5 of the page JPEGs). Slide N = PDF page N, checked with a plain 1..81 heading sequence.
+
+**Licence.** No per-slide licence notices. Footer credits: "Hornik+ *Neural Networks* 1989." (12–13),
+"Zhang+ *ICLR* 2017." (16–22), "U. Muller, 6.S191 2018." (29), "P. Isola 6.869." (30–31), "ABC News."
+(32), "Despois "Adversarial examples" 2017." (34), "Goodfellow+ *NIPS* 2014." (39), "Athalye+ *ICML*
+2018." (42), "Sohl-Dickstein+ *ICML* 2015; Ho+ *NeurIPS* 2020." (51), "Ho+ *NeurIPS* 2020." (54),
+"Ramesh+ *arXiv* 2022" (64), "OpenAI. Ramesh+ *arXiv* 2022" (65), "Wei+ TMLR 2022." (75), "Google AI
+blog." (76); in-slide citations on 66 and "Wang+ *arXiv* 2023." on 74. Uncredited third-party imagery: the
+prize photographs (4–5), guest portraits and company logos (7), staff photographs (8), slide 10's news
+collage, slide 11's brain image, slide 29's alchemist painting, slide 33's photographs, slide 43's
+headlines, the domed-building photograph of 49–54, slide 49's generated cats, the dog of 55–61, slide 68's
+ChatGPT screenshot and OpenAI logo, the Yoda film still (78, 80) and the T-shirt (2, 79, 81). LICENSE.md
+lists what is in the images.
+
+**Slide transcription.** The 81 page JPEGs were extracted with `get_image_info(xrefs=True)` and read by
+three Sonnet agents in parallel (1–27, 28–54, 55–81; the second and third read the page before their range
+for build-step context), each appending as it went; the parent merged the parts, wrote the header, section
+table and Images note, and moved the watermark mention into the header. 61 slides are tagged
+`*Figure: yes*`. No math changes were needed (`check_math.mjs` clean).
+
+**Figure audit.** A separate Sonnet agent checked slides 5, 6, 12, 14, 21, 22, 23, 28, 33, 36, 38, 39, 41,
+42, 50, 53, 54, 60, 61, 66, 70, 71, 74, 75 and 76 against the page JPEGs with enlarged crops. Nothing
+described was absent from its page. Exact: slide 5's bullets and the "RTX 5080" card under the caption
+"NVIDIA 5070 GPU"; slide 6's faded earlier text; slide 14's years and labels; slides 21–22's bars and
+annotation; slide 33's tags; the formulas, highlights and callouts of 36–41; slide 42's 24 border colours
+row by row (1 green, 17 red, 6 black); slide 53's table; slides 60–61's labels; slide 66's citations; slide
+71's arrows; slide 74's garbled prompt; slide 75's three charts (ticks, baselines, series and values within
+about 0.2 decade). Discrepancies on **4 pages**, all fixed: slide 12's node columns are 8, 9, 9, 9 and 4
+(not 9, 10, 10, 10, 4); slides 23 and 28 have 17 dots (not 18 and "about 18"); slide 28's second subtitle
+line is regular weight; slide 54's magenta underline includes "T,". The parent looked at the images of
+slides 41 (the adversarial-image update and its callout, exactly as transcribed, bold θ against the
+formula's $W$) and 75 (the charts, as transcribed), and at a crop of slide 30: the student's "Green on the
+ear" (≈20:17) pointed at a detail the reader had not described, and slide 30's entry now gives the
+green-tinted left ear and the pink patch below the nose.
+
+**Printed slips and as-printed oddities**, all reproduced as printed:
+
+- Slide 41's callout says "Fix your weights $\boldsymbol{\theta}$," while every formula on 36–41 writes $W$.
+- Slides 60 and 61 label the same final sampled image "T0 (end)" and "T-5 (end)"; slide 53 numbers the
+  forward process $T = 0$ (clean) to $T = 4$ (noise), and slide 54 prints "T-1" with a hyphen.
+- Slide 5's photographed card reads "RTX 5080" under the caption "NVIDIA 5070 GPU".
+- Slide 6 is a frame caught mid-animation: its faded Option 1 text is an earlier version ("3 minutes
+  (strict)", "Friday, Jan 29", "Submit groups by Wednesday…") under the new Option 2.
+- Slide 12's unlabelled network has five columns of nodes beside the statement "a single layer".
+- Slides 79 and 81 print the deadline line without an item number.
+
+**Spoken vs printed.** The pitch length "between three to five minutes" (≈2:27) against slide 5's "5
+minutes (strict)" (an [Ed] note in the transcript); the theorem's "single hidden layer" (≈8:40) against
+slide 12's "single layer"; "model collapse" (≈29:37) against slide 48's "Mode collapse"; and the
+time-step labels above. The wiki lists them in a "Spoken versus printed" section, with the slides not
+discussed aloud (12's drawing, 64–65, 68, 73, 76's "8 billion parameters").
+
+**Transcript.** YouTube auto-captions, already punctuated. Copy-edited by a Sonnet agent against the slide
+file: 29 "uh"/"um", the `>>` marks, stutters and false starts removed; "Matthias" to Mathias (4:47), "Jax"
+to JAX (5:33; the captions already write JAX once), "web text" to WebText (44:52). Student turns marked at
+20:17 ("Green on the ear", run into the lecturer's speech by the captions, and confirmed by slide 30's
+image), 34:58 (two answers), 38:01–38:47 (closed and reopened across the mark), 39:34 (two questions) and
+41:51. The agent added one [Ed] note (34:58: the student's "T3" and "T1" against slide 53's T = 0 for the
+clean image). The parent added a second at 2:27 (the pitch length, which the agent had checked and
+deliberately left without a note, contrary to the rule), removed a leftover "the the" at 41:51, and
+corrected the header. Checks re-run by the parent: 73 of 73 `[MM:SS]` marks identical, number inventory
+identical, per-paragraph word ratio 0.93–1.00. Every restored proper noun is printed in the deck (Mathias,
+WebText); JAX, ImageNet, Gemini and Copilot are as captioned.
+
+**Coverage gaps.** Slide 44's list is read only in part ("not comprehensive at all", ≈27:18); slides 64–65's
+text-to-image examples, slide 68's ChatGPT screenshot, slide 73's capabilities and slide 76's tree are shown
+without being discussed. The claim that well-calibrated language models will necessarily hallucinate
+(≈51:43) and the tuning of base models into chatbots (≈49:25) have no slide. The lecture names no loss
+formula for diffusion or next-token prediction, and does not discuss the architecture of LLMs; the wiki
+writes none and says so.
+
+**Images.** 24 of 81 pages, copied byte for byte from the deck's own JPEGs (1.6 MB): 14, 18, 22, 26, 28, 29,
+30, 31, 34, 42, 49, 50, 51, 53, 54, 61, 64, 65, 66, 69, 71, 72, 75, 76. All 24 are embedded in
+`wiki/06-language-models-new-frontiers.md` by hand, in the passage citing each, and under their headings in
+the slide file (by `embed_slide_images.py`); the three new topic pages reuse three or four each. Not rendered, and
+why:
+
+- Title, logistics, prize, staff and guest-lecturer slides: 1–8; the closing lab and announcement slides
+  78–81 (a film still and a T-shirt, 80–81 repeating 78–79).
+- Section dividers: 9, 15, 47, 67.
+- News, stock and product imagery whose text is transcribed: 10 (a news collage), 11 (a stock brain image
+  between "Data" and "Decision"), 32 (ABC News coverage of the autopilot crash; its point is carried in the
+  prose, as lecture 1's slide 6 was), 33 (example photographs), 43 (headlines), 68 (a ChatGPT screenshot and
+  logo).
+- Slide 12's unlabelled, generic network drawing (the theorem's statement is transcribed; the drawing's
+  five columns are noted).
+- Text, equations or generic icons transcribed exactly: 13, 36–41 (the two update rules and their
+  highlights), 44–46, 73, 74, 77.
+- Build steps contained in an included slide: 16–17 (→18), 19 (18's relabelling restyled, without the
+  dice), 20–21 (→22), 23–25 (→26), 27 (→28), 35 (34 faded), 48 (→49; its lists are transcribed), 52 (→53),
+  55–60 (→61; 57–60 caught mid-animation); and 70, which 72 repeats.
+- Two full-frame noise frames: 62, 63.
+
+**AGENTS.md lessons** (general form): send every count a transcription states to the audit; where the talk
+points at a detail of a figure, check the slide file describes it. The deck-format bullet now covers
+lecture 6.

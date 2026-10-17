@@ -108,8 +108,21 @@ With the loss $-\log P(a_t|s_t)\thinspace R_t$, a step down the loss is a step u
 actions that earned high reward. The boxed term, the gradient of the policy itself, is the "policy
 gradient" that names the method.
 
+## Turning the update on the input: adversarial examples
+
+[Lecture 6](06-language-models-new-frontiers.md) uses the update to explain **adversarial attacks**
+(slides 36–41, ≈24:58–25:45). Training holds the image $x$ and its label $y$ fixed and moves the weights
+$W$ to *decrease* the loss, $W \leftarrow W - \eta \frac{\partial J(W, x, y)}{\partial W}$. An adversarial
+image holds the weights and label fixed and moves the input to *increase* it:
+
+$$x \leftarrow x + \eta \frac{\partial J(W, x, y)}{\partial x}$$
+
+A small, imperceptible change of this kind can flip a network's prediction (slide 34). See
+[limitations of deep learning](limitations-of-deep-learning.md).
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 11, 13 and 14.
 - [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), sections 4 and 6: an RNN's three weight matrices are learned by gradient descent, with gradients from backpropagation through time; gradient clipping keeps exploding gradients in check.
 - [Lecture 5 — Reinforcement Learning](05-reinforcement-learning.md), section 19: the gradient-descent update of a policy network.
+- [Lecture 6 — Language Models and New Frontiers](06-language-models-new-frontiers.md), section 10: the adversarial-image update.

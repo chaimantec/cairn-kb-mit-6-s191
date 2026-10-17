@@ -105,6 +105,16 @@ commands, because the right action can be multimodal, such as turning left or ri
 
 *Lecture 3, slide 65 — convolutional branches for cameras and map, concatenated, giving a mixture over steering commands.*
 
+## When vision models fail
+
+[Lecture 6](06-language-models-new-frontiers.md) uses vision models to show limitations of neural
+networks. A CNN trained to colorize black-and-white photos reproduces what its data over-represent,
+giving a dog a reddish tongue because so many training photos show dogs with their tongues out (slides
+30–31, ≈19:29–21:03). An **adversarial example** adds an imperceptible perturbation that changes a CNN's
+classification from "Temple (97%)" to "Ostrich (98%)" (slide 34), and 3D-printed objects can be built
+to fool a classifier from many viewpoints (slide 42, ≈23:24–26:31). See
+[limitations of deep learning](limitations-of-deep-learning.md).
+
 ## Where this comes up
 
 - [Lecture 3 — Convolutional Neural Networks](03-convolutional-neural-networks.md), sections 1–3 and
@@ -114,3 +124,5 @@ commands, because the right action can be multimodal, such as turning left or ri
 - [Lecture 5 — Reinforcement Learning](05-reinforcement-learning.md), sections 13 and 20: a CNN
   reading Atari screens as a deep Q network, and lecture 3's autonomous car driven by a policy trained
   with reinforcement learning in the VISTA simulator.
+- [Lecture 6 — Language Models and New Frontiers](06-language-models-new-frontiers.md), sections 8 and 10:
+  colorization failures and adversarial examples.

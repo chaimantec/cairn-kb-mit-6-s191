@@ -543,7 +543,9 @@ Google DeepMind's AlphaGo aimed not only to beat existing AIs but to outperform 
 
 ## 22. Beyond imitation: language models, and learning from scratch (53:53–57:42)
 
-Amini draws the parallel to large language models, to be covered later in the course: LLMs are first
+Amini draws the parallel to large language models, to be covered later in the course (lecture 6
+covers next-token prediction and says only that base models are then tuned to act as chatbots; see
+[large language models](large-language-models.md)): LLMs are first
 trained to imitate text from the internet by next-word prediction, exactly like AlphaGo's first stage,
 and then face a "preference alignment problem" — going beyond imitation to optimize for what humans like
 and dislike in their answers. The thumbs up and thumbs down you give a chatbot "are exactly training a

@@ -117,6 +117,17 @@ $$\mathbf{loss} = -\log P(a_t|s_t)\thinspace R_t$$
 
 so that actions followed by high rewards become more likely and those followed by low rewards less so.
 
+## Next-token prediction and denoising
+
+Two losses in [lecture 6](06-language-models-new-frontiers.md) reuse the earlier ones. A
+[large language model](large-language-models.md) predicts a probability for every token in its
+vocabulary; since the vocabulary is a discrete set, next-token prediction is a classification problem,
+trained with a **cross-entropy loss** between the predicted probabilities and the true next token, "just as
+we saw in lecture one with losses that define classification" (slide 71, ≈47:54). The text provides its own
+labels. A [diffusion model](diffusion-models.md) is trained on pairs of images one noising step apart with
+"a mean squared error style loss" on their pixel differences; predicting that difference, which is the
+noise, is a very effective way to train it (≈35:43). Lecture 6 writes out neither loss.
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 9–11.
@@ -127,3 +138,5 @@ so that actions followed by high rewards become more likely and those followed b
   the reconstruction loss, the VAE's regularization term, and the GAN's min-max objective.
 - [Lecture 5 — Reinforcement Learning](05-reinforcement-learning.md), sections 11 and 19: the
   Q-loss and the policy-gradient loss.
+- [Lecture 6 — Language Models and New Frontiers](06-language-models-new-frontiers.md), sections 16 and 23:
+  the denoising loss of diffusion models and the cross-entropy loss of next-token prediction.
