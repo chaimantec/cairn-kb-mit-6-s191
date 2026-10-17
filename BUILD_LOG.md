@@ -351,3 +351,25 @@ six each. Not rendered, and why:
 list items in lecture 1's files (`raw/slides/01-introduction.md` lines 380–400 and 587,
 `wiki/01-introduction.md` lines 327, 333 and 467): GitHub renders them as inline math. They predate this
 run; TODO.md carries the fix.
+
+**Cost.** Measured with `measure_run_cost.py` after the lecture push: \$10.93 for the whole lecture. The Opus parent cost \$8.52 (84 calls, ending at 217k context) and the four Sonnet agents \$2.41 (22%): two slide readers at \$0.61 and \$0.64, the audit \$0.81 and the copy-edit \$0.35. Another ~\$0.25 of output is logged incompletely and not counted. The closing bookkeeping commit is not included.
+
+#### Run checklist (moved verbatim from TODO.md)
+
+_Run 3 — lecture 3 (Convolutional Neural Networks, 2026)_
+
+Catalog position 3, video pqIcoskUuWs (56:46). Deck `slides/6S191_MIT_DeepLearning_L3.pdf`: 70 pages,
+each one 1280×720 JPEG, no text layer, footer "1/6/26" with no slide number (checked on a strip of 8
+footers; some footers carry citations at bottom right): slide N = page N.
+
+- [x] Verbatim captions → raw/transcripts/original/03-convolutional-neural-networks.md (74 marks)
+- [x] raw/slides/03-convolutional-neural-networks.md — two Sonnet readers (1–35, 35–70), merged, header (64 figure slides)
+- [x] Figure audit (Sonnet) of chart-, table-, code- and equation-heavy pages; parent checks two images (19 pages; fixes on 29, 53–54, 57, 61, 10–12; parent: crop of 53, images of 57 and 65, crop of 65's loss)
+- [x] raw/transcripts/03-convolutional-neural-networks.md — Sonnet copy-edit; marks, numbers, ratios checked (74/74, identical, 0.86–1.08)
+- [x] raw/images/03-convolutional-neural-networks/ — native page JPEGs of figure slides, embedded (33 of 70, 2.4 MB)
+- [x] wiki/03-convolutional-neural-networks.md
+- [x] Topic pages: new (convolutional-neural-networks, computer-vision) and extended (neural-network-layers, activation-functions, what-is-deep-learning, sequence-modeling, loss-functions, attention-and-transformers; lecture 2 page)
+- [x] INDEX.md, AGENTS.md image table, LICENSE.md, sources.md, kb.json, BUILD_LOG.md
+- [x] verify_kb.py clean, and its review section read
+- [x] Commit and push (4fe25bf)
+- [x] Move this section to BUILD_LOG.md
