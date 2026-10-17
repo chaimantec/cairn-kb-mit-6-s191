@@ -222,3 +222,25 @@ one to three each. Not rendered, and why:
   25 (→26), 35 (→36), 43 (→44), 45–47 (→48), 51–52 (→53), 59–60 (→61), 62 (61's diagram with a
   text list), 63 (→64), 70 (→71), 78 (77's diagram with a closing line).
 - Slide 58: two tweets by individuals, transcribed in full, beside slide 57's diagram.
+
+**Cost.** Measured with `measure_run_cost.py` after the push: \$7.11 for the whole lecture. The Opus parent cost \$5.22 (49 calls, ending at 176k context) and the five Sonnet agents \$1.89 (27%): three slide readers at \$0.41–0.46 each, the audit \$0.31 and the copy-edit \$0.26. Another ~\$0.12 of output is logged incompletely and not counted.
+
+#### Run checklist (moved verbatim from TODO.md)
+
+_Run 2 — lecture 2 (Recurrent Neural Networks, Transformers, and Attention, 2026)_
+
+Catalog position 2, video d02VkQ9MP44 (57:34). Deck `slides/6S191_MIT_DeepLearning_L2.pdf`: 83 pages,
+each one 1280×720 JPEG, no text layer, footer "1/5/26" with no slide number (checked on a strip of 8
+footers): slide N = page N.
+
+- [x] Verbatim captions → raw/transcripts/original/02-rnns-transformers-attention.md (75 marks)
+- [x] raw/slides/02-rnns-transformers-attention.md — three Sonnet readers (1–28, 29–56, 57–83), merged, header (67 figure slides)
+- [x] Figure audit (Sonnet) of chart-, table-, code- and equation-heavy pages; parent checks two images (18 pages, 2 small discrepancies fixed; parent checked 77 and 79)
+- [x] raw/transcripts/02-rnns-transformers-attention.md — Sonnet copy-edit; marks, numbers, ratios checked (75/75, identical, 0.92–1.02)
+- [x] raw/images/02-rnns-transformers-attention/ — native page JPEGs of figure slides, embedded (33 of 83, 1.9 MB)
+- [x] wiki/02-rnns-transformers-attention.md
+- [x] Topic pages: new (sequence modeling, RNNs, attention/transformers…) and extended (backpropagation, …)
+- [x] INDEX.md, AGENTS.md image table, LICENSE.md, sources.md, kb.json, BUILD_LOG.md
+- [x] verify_kb.py clean, and its review section read
+- [x] Commit and push
+- [x] Move this section to BUILD_LOG.md
