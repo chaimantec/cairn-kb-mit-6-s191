@@ -19,6 +19,7 @@ slide file or transcript it concerns. The rules every build follows are in
 | 5 Reinforcement Learning (2026) | [Lecture 5](#lecture-5--reinforcement-learning-2026--built-2026-10-18), 2026-10-18 |
 | 6 Language Models and New Frontiers (2026) | [Lecture 6](#lecture-6--language-models-and-new-frontiers-2026--built-2026-10-18), 2026-10-18 |
 | 7 The Three Laws of AI (2026) | [Lecture 7](#lecture-7--the-three-laws-of-ai-2026--built-2026-10-18), 2026-10-18 |
+| 8 AI for Science (2026) | [Lecture 8](#lecture-8--ai-for-science-2026--built-2026-10-18), 2026-10-18 |
 
 ## Lecture 1 — Introduction to Deep Learning (2026) — built 2026-10-11
 
@@ -965,3 +966,156 @@ Printed slide numbers equal PDF pages (`slide_number_map.py`: 1:1; pages 1, 13, 
 - [x] verify_kb.py clean, and its review section read (check_math --github: 0 errors; the 9 warnings are lecture 1's open item)
 - [x] Commit and push (c532791)
 - [x] Move this section to BUILD_LOG.md
+
+## Lecture 8 — AI for Science (2026) — built 2026-10-18
+
+**Pointers.** Catalog position 8, video `rZACoZD8AG8` (59:10), a guest lecture by Chris Bishop, Technical
+Fellow at Microsoft Research AI for Science, introduced by a member of the course staff (the captions have
+Bishop thank "Alida"). The course site's page source dates it 8 January 2026 in a comment and displays "May
+18, 2026" (lecture 7: 9 January, displayed "May 11, 2026"); the introduction calls Bishop the first guest
+speaker, so it was delivered before lecture 7. Deck
+<https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L8.pdf>, 31 pages, downloaded in the lecture 1
+crawl (same size as on the server, 8,445,006 bytes; Last-Modified 2026-08-17). PDF metadata: creator
+"Acrobat PDFMaker 25 for PowerPoint", producer "Adobe PDF Library 25.1.5", author "Neeltje Berger", created
+2026-01-20. The site's abstract: "how modern deep learning methods are being integrated into discovery
+pipelines, focusing on concrete examples from atmospheric modelling, materials design, and drug discovery".
+
+**Deck format and numbering.** A third kind of deck: a PowerPoint export (960×540 pt) with vector pages,
+pasted pictures on 28 pages, and a sparse text layer (2,420 characters) holding the slide titles and the
+deck's own labels but none of the pictures' text. `slide_number_map.py` finds no printed number on any page,
+and the readers confirmed there is none and no footer, so slide N = PDF page N, checked as a plain 1..31
+sequence. Readers got 1280×720 renders and a per-page text-layer dump.
+
+**Licence.** The deck carries no licence notice. As for lecture 7, it was treated as covered by the site's
+MIT licence, and LICENSE.md credits it to Chris Bishop as well as to the course. Credits and sources printed
+on the slides:
+
+- slide 4: "Paul Dirac, 1929" for the quotation (the portrait is uncaptioned);
+- slide 8: the essay's own heading, "The Bitter Lesson", "Rich Sutton", "March 13, 2019";
+- slides 12, 15 and 29: Nature article first pages with DOIs (Aurora, MatterGen, AI²BMD);
+- slide 20: "Photo from the Nobel Foundation archive.", "Walter Kohn";
+- slide 22: the Science web page of Mattsson (2002), with its DOI;
+- slide 24: arXiv:2506.14665;
+- slide 28: "Figure from “Cell Biology by the numbers”";
+- slide 30: the Science cover of 14 August 2025; slide 31: the Springer book cover and BishopBook.com.
+
+Uncredited: the renderings and illustrations, slide 14's photographs, slide 20's bar and pie charts, slide
+21's photograph, slide 22's word cloud, and slides 23 and 25's charts.
+
+**Slide transcription.** One Sonnet reader for all 31 pages, appending in chunks of 5–8. It tagged 27
+slides `*Figure: yes*`. The parent tagged slide 4's portrait as a figure too (28), gave the untitled slides
+(4, 8, 11, 12, 16, 17, 21, 25, 30) descriptive headings saying so, and wrote the header. The reader
+reported no printed slips, and these layer-versus-page points:
+
+- slide 23's layer holds "Weighted MAE (kcal/mol)", which the page does not show (confirmed by the audit);
+- slide 20's layer garbles the cost formulas, which were read from the page;
+- the pictures of slides 8, 12, 15, 22 and 29 have no text in the layer.
+
+**Figure audit.** A separate Sonnet agent checked every slide from 2 to 31 against crops rendered from
+the PDF at 600–800 dpi. Nothing described was absent from its page. These were exact:
+
+- the equations of slides 2, 7, 9 and 27, character by character ($j\neq i$ and $i=1$ under the inner
+  sums, $\epsilon_0$ against Maxwell's $\varepsilon_0$, the boxed $-\nabla_i U$);
+- slide 3's digits and error bars;
+- slide 8's essay text word for word, with its two-backtick opening quote before "brute force" and the cut-off;
+- the Aurora and AI²BMD article pages of slides 12 and 29, all authors and superscripts;
+- slide 17's 12 × 22 grid, slide 19's counts, and slide 25's eight points and legends.
+
+Discrepancies on **8 pages**, all fixed:
+
+- **Slide 9.** The input layer has 4 circles, not about 5.
+- **Slide 14.** The energy-storage photograph shows "H₂", not "H"; the drug structure has three rings.
+- **Slide 15.** Five author superscripts (Smith 3, Lu 6, Yang 4, Li 4, and envelopes after Tomioka and Xie)
+  and one reference number (31, not 13).
+- **Slide 20.** The bar values: first bar 1987, about 10,500 at 2015, 16,800 at 2020, 17,800 at the last
+  bar (2022). The pie has 13 slices, seven of them unlabelled, not about eleven.
+- **Slide 22.** The breadcrumb's quotes are straight. The word cloud's small words, "illegible at
+  1280×720" according to the reader, were legible; the article text was legible too.
+- **Slide 23.** No y-axis label confirmed; noted beside the layer's string.
+- **Slide 28.** The "desired simulation timespan" banner runs from about the $10^{-9}$ tick to just past
+  $10^0$.
+- **Slide 31.** The book pages were legible: running heads "392  12. TRANSFORMERS" and "12.3. Transformer
+  Language Models  393", Figures 12.20 and 12.21.
+
+The parent then looked at the audit's crops of slide 22. The header was as reported, and the word cloud
+held "MCY06", a mid-sized word that neither the reader (who listed the large words) nor the auditor (who
+listed the small) had given. It also looked at the rendered images of slides 20 and 25: the bar heights,
+the 13-slice pie and all eight scatter points matched. It did not adopt the auditor's "(sic)" reading of
+the book's Figure 12.21 caption.
+
+**Printed slips and as-printed oddities**, reproduced as printed: slide 23's "N³ ( larger prefactor)",
+with a space after the parenthesis; slide 22's mix of straight quotes (web page) and curly quotes (scanned
+article) around "Divine"; slide 8's two backticks opening "brute force" (the essay's own style). No other slip was found by reader or
+audit.
+
+**Spoken vs printed.** The wiki's "Spoken versus printed" section lists:
+
+- "agree to 13 significant figures" (≈2:31), against slide 3's values, which share 12 and differ by 40 in
+  the last two digits, inside the theory's ±86 (arithmetic on the printed numbers only);
+- Aurora and AI²BMD, named only on the slides;
+- slide 23's unlabelled y-axis, which Bishop calls the error in kcal/mol;
+- slide 25's "Error on atomization energies", which Bishop calls "the total energy of the molecule";
+- "up to about 10,000 atoms" aloud, against "more than 10,000 atoms" in slide 29's abstract;
+- the book's year, captioned "2003", against slide 31's "best-selling book of 2024 and 2025".
+
+**Transcript.** YouTube auto-captions, already punctuated, copy-edited by a Sonnet agent against the slide
+file. Restorations:
+
+- "Scala" to Skala (37:05, 38:36, 39:22; slide 24);
+- "MatGen" and "Maturation" to MatterGen (23:16–25:35; slide 15);
+- "Schrodinger" to Schrödinger (slide 22);
+- "stitch signatures" to "stitched signatures" (46:15; slide 31);
+- the parent added "complimentary" to "complementary" (7:07).
+
+Ten [Ed] notes in nine paragraphs: 0:59 (the name "Alida"), 25:35 ("Matta Sim", not on the slides), 26:21,
+38:36, 40:53, 45:29 (the book's year), 50:05 (the student's "no free lunch theorem"), 54:41 (two) and
+55:27. The parent rewrote the 45:29 note to cite the lecturer's own "2 years running since this was
+published" instead of only the slide, and corrected the header's sources for already-correct terms
+(several it had attributed to slides are spoken only). Student turns at 47:00–47:47, 50:05–50:51,
+53:55–55:27 and 56:58, closed and reopened across marks. The staff member's Q&A moderation (47:00, 53:55,
+56:58, 58:31) is unmarked, as lecture 7's introducer was, and listed in the header. Checks re-run by the
+parent: 77 of 77 `[MM:SS]` marks identical, number inventory identical, per-paragraph word ratio 0.84–1.01.
+Skala, MatterGen, Schrödinger and "stitched signatures" are printed in the deck.
+
+**Coverage gaps.**
+
+- Aurora and AI²BMD are not named aloud, and the screening emulator is named only as captioned ("Matta
+  Sim").
+- The captions are garbled at 26:21 ("the service of magnet"), 38:36 (how much more data than before) and
+  54:41.
+- The denoising video (slide 16) and any other animation exist in the PDF as single frames.
+- Shown without discussion: slide 11's storm, slide 14's application areas, the article pages of slides
+  12, 15 and 29, and slide 31's book pages.
+
+**Images.** 18 of 31 pages: 5–7, 9, 13, 15 and 17–28. They are 1400×788 renders by
+`extract_slide_images.py --format auto`; 16 came out JPEG and two PNG (slides 5 and 6, flat diagrams),
+1.7 MB in all. All 18 are embedded in `wiki/08-ai-for-science.md` by hand, and under their headings in the
+slide file by `embed_slide_images.py`. Not rendered, and why:
+
+- The title: 1.
+- Equations reproduced in the slide file, and text or numbers transcribed exactly: 2, 3, 10.
+- A portrait beside a quotation: 4.
+- Screenshots of an essay and of journal articles whose text is transcribed: 8, 12, 29 (29's protein
+  rendering is generic beside the article).
+- An unlabelled picture of a storm, not discussed: 11.
+- Photographs of application areas whose captions are transcribed: 14.
+- A still from the MatterGen denoising video: 16.
+- A journal cover and a book cover with an online reader: 30, 31.
+
+**Math rendering.** `check_math.mjs` flagged 61 GitHub warnings in the slide file, none in the wiki: `$`
+after a quote mark or a letter (labels such as `"$N^3$"`, `CO$_2$`, `r$^2$SCAN`) and `_` after `}`. Labels were
+rewritten in Unicode or unquoted, and subscripts spaced (`\mathbf{x}_ i`); 0 warnings after.
+
+**Wiki.** New topic page: ai-for-science. Extended: diffusion-models (MatterGen), large-language-models,
+generative-modeling, attention-and-transformers and reinforcement-learning ("Where this comes up"). Lecture
+6's list of guest lectures now links to lecture 8.
+
+**AGENTS.md lessons** (general form):
+
+- The deck-format bullet now describes three kinds of deck; the third is read like a vector deck and
+  numbered like an image-only one.
+- A list read off a picture needs the parent's own look at a crop, because reader and auditor split it by
+  size and both can miss a middle item.
+- A name printed on a slide but never spoken is attributed to the slide.
+- A short printed label with a sub- or superscript beside a quote or a letter is written in Unicode.
+

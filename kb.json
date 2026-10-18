@@ -3,18 +3,18 @@
   "course": {
     "code": "MIT 6.S191",
     "title": "Introduction to Deep Learning",
-    "instructor": "Alexander Amini and Ava Amini, with guest lecturers (lecture 7: Douglas Blank, Comet ML)",
+    "instructor": "Alexander Amini and Ava Amini, with guest lecturers (lecture 7: Douglas Blank, Comet ML; lecture 8: Chris Bishop, Microsoft Research AI for Science)",
     "term": "2026 edition (5-9 January 2026); the catalog also holds the 2018-2025 editions",
     "catalogId": "ba3b8a5f-6666-4376-baec-be2232de643b",
     "courseUrl": "https://introtodeeplearning.com/"
   },
   "coverage": {
-    "lecturesCovered": 7,
+    "lecturesCovered": 8,
     "lecturesTotal": 90,
-    "transcripts": 7,
-    "wikiLecturePages": 7,
-    "wikiTopicPages": 25,
-    "note": "Lectures 1-7 of the 2026 edition only (catalog positions 1-7). The catalog's 90 recordings are the 2026 edition (positions 1-9) followed by the 2018-2025 editions; none of the others is covered."
+    "transcripts": 8,
+    "wikiLecturePages": 8,
+    "wikiTopicPages": 26,
+    "note": "Lectures 1-8 of the 2026 edition only (catalog positions 1-8). The catalog's 90 recordings are the 2026 edition (positions 1-9) followed by the 2018-2025 editions; none of the others is covered."
   },
   "license": {
     "file": "LICENSE.md",
@@ -25,22 +25,22 @@
     "primary": "slides",
     "slideDecks": {
       "available": 9,
-      "transcribed": 7
+      "transcribed": 8
     },
     "method": "page-images",
     "figuresAudited": true,
     "figureAudit": {
-      "decksAudited": 7,
-      "decksTotal": 7,
-      "note": "decksTotal counts transcribed decks; 'available' counts the 2026 edition's nine decks only. All seven decks were transcribed by Sonnet (decks 1-6 from their native 1280x720 page JPEGs, deck 7 from 1280x720 renders of its vector pages) and audited by a separate Sonnet agent with enlarged crops. Lecture 1: 14 table-, chart-, number- and code-heavy pages, 0 discrepancies; the parent also checked slides 39 and 106 and a crop of slide 86. Lecture 2: 18 diagram-, equation-, code- and heat-map pages (7, 8, 24, 26, 27, 28, 36, 44, 53, 54, 56, 63, 72, 75-77, 79, 80), 2 small discrepancies fixed (a code-indentation note on slide 28, an ellipsis that is not on slide 63); the parent also checked slides 77 and 79. Lecture 3: 19 matrix-, kernel-, formula-, code-, chart- and diagram-heavy pages (12, 13, 16, 27, 29, 30, 36, 40, 41, 46, 47, 49, 53, 54, 57, 61, 63, 65, 68), discrepancies on 6 of them, all fixed: slide 12's stated digit uncertainty was unfounded (all 192 cells matched); slide 29's X is 9x9, not 8x8; the green boxes on slides 53-54 and slide 53's mixed quote marks; slide 57 has five reader points per panel, not four, and only panel b labels its y-axis; slide 61's dots. The parent also checked slides 57 and 65 and found slide 65's loss printed with one closing parenthesis, which reader and auditor had both balanced. Lecture 4: 22 equation-, chart-, diagram- and photograph-heavy pages (5, 7, 17, 23, 28, 29, 31, 35-37, 41, 55-57, 62, 70, 72, 74, 76, 79, 80, 84), discrepancies on 6, all fixed: the scatter plots' tick labels on slides 28-29 were readable after all (-4 to 4), and slide 29's colour bar has twelve colours, not ten; slide 62's point order; slide 74's N is upright; slide 76's noise points and strip backgrounds; slide 80's play button and logo. Nothing described was absent from its page. The parent also checked slides 70 and 29 (the GAN objective and the KL expansion, both exactly as printed) and a crop of slide 77. Lecture 5: 22 chart-, table-, equation- and diagram-heavy pages (7, 15, 17-19, 22, 26, 28, 30-33, 37-40, 42, 46, 48, 52, 53, 56), discrepancies on 6, all fixed: slide 32's second convolution block; slide 33's three tildes were error-bar caps, the grey bar exceeds the blue on four games rather than one, and the legend's form; the position of the braces on slides 37 and 40; slide 38's axis arrowheads and bar ratio; slide 48's frame list. Nothing described was absent from its page; slide 33's 49 labels and slide 52's table were exact. The parent also checked slides 33 and 46 (the policy-gradient loss and update, exactly as transcribed) and a crop of slide 33's labels. Lecture 6: 25 chart-, table-, formula-, count- and diagram-heavy pages (5, 6, 12, 14, 21, 22, 23, 28, 33, 36, 38, 39, 41, 42, 50, 53, 54, 60, 61, 66, 70, 71, 74, 75, 76), discrepancies on 4, all fixed: the node counts of slide 12's network, the dot counts of slides 23 and 28 (17, not 18), slide 28's subtitle weight, and the extent of slide 54's underline. Nothing described was absent from its page; slide 53's table, slide 42's 24 border colours and slide 75's three charts were exact. The parent also checked slides 41 (the adversarial-image update, exactly as transcribed, with the callout's theta against the formula's W) and 75, and a crop of slide 30, which added the green-tinted ear a student points out. Lecture 7: 18 figure-, screenshot-, table-, code- and quotation pages (4, 10, 11, 12, 14, 16, 20, 21, 22, 25, 26, 28, 29, 35, 40, 42, 43, 44), discrepancies on 5, all fixed: slide 4's advertisement copy was legible after all and is now transcribed; two chevron colours of slide 16's bottom row; the values of slide 20's star-history curve; slide 25's 'Variables' is a group header, not a column; and slide 40's comment reads 'Don't build it then', where the reader had reported a missing 'it'. Nothing described was absent from its page; slide 21's sidebar counts and the quotations of slides 28-29 were exact. The parent also checked the rendered images of slides 16 and 20."
+      "decksAudited": 8,
+      "decksTotal": 8,
+      "note": "decksTotal counts transcribed decks; 'available' counts the 2026 edition's nine decks only. All eight decks were transcribed by Sonnet (decks 1-6 from their native 1280x720 page JPEGs, decks 7 and 8 from 1280x720 renders of their vector pages) and audited by a separate Sonnet agent with enlarged crops. Lecture 1: 14 table-, chart-, number- and code-heavy pages, 0 discrepancies; the parent also checked slides 39 and 106 and a crop of slide 86. Lecture 2: 18 diagram-, equation-, code- and heat-map pages (7, 8, 24, 26, 27, 28, 36, 44, 53, 54, 56, 63, 72, 75-77, 79, 80), 2 small discrepancies fixed (a code-indentation note on slide 28, an ellipsis that is not on slide 63); the parent also checked slides 77 and 79. Lecture 3: 19 matrix-, kernel-, formula-, code-, chart- and diagram-heavy pages (12, 13, 16, 27, 29, 30, 36, 40, 41, 46, 47, 49, 53, 54, 57, 61, 63, 65, 68), discrepancies on 6 of them, all fixed: slide 12's stated digit uncertainty was unfounded (all 192 cells matched); slide 29's X is 9x9, not 8x8; the green boxes on slides 53-54 and slide 53's mixed quote marks; slide 57 has five reader points per panel, not four, and only panel b labels its y-axis; slide 61's dots. The parent also checked slides 57 and 65 and found slide 65's loss printed with one closing parenthesis, which reader and auditor had both balanced. Lecture 4: 22 equation-, chart-, diagram- and photograph-heavy pages (5, 7, 17, 23, 28, 29, 31, 35-37, 41, 55-57, 62, 70, 72, 74, 76, 79, 80, 84), discrepancies on 6, all fixed: the scatter plots' tick labels on slides 28-29 were readable after all (-4 to 4), and slide 29's colour bar has twelve colours, not ten; slide 62's point order; slide 74's N is upright; slide 76's noise points and strip backgrounds; slide 80's play button and logo. Nothing described was absent from its page. The parent also checked slides 70 and 29 (the GAN objective and the KL expansion, both exactly as printed) and a crop of slide 77. Lecture 5: 22 chart-, table-, equation- and diagram-heavy pages (7, 15, 17-19, 22, 26, 28, 30-33, 37-40, 42, 46, 48, 52, 53, 56), discrepancies on 6, all fixed: slide 32's second convolution block; slide 33's three tildes were error-bar caps, the grey bar exceeds the blue on four games rather than one, and the legend's form; the position of the braces on slides 37 and 40; slide 38's axis arrowheads and bar ratio; slide 48's frame list. Nothing described was absent from its page; slide 33's 49 labels and slide 52's table were exact. The parent also checked slides 33 and 46 (the policy-gradient loss and update, exactly as transcribed) and a crop of slide 33's labels. Lecture 6: 25 chart-, table-, formula-, count- and diagram-heavy pages (5, 6, 12, 14, 21, 22, 23, 28, 33, 36, 38, 39, 41, 42, 50, 53, 54, 60, 61, 66, 70, 71, 74, 75, 76), discrepancies on 4, all fixed: the node counts of slide 12's network, the dot counts of slides 23 and 28 (17, not 18), slide 28's subtitle weight, and the extent of slide 54's underline. Nothing described was absent from its page; slide 53's table, slide 42's 24 border colours and slide 75's three charts were exact. The parent also checked slides 41 (the adversarial-image update, exactly as transcribed, with the callout's theta against the formula's W) and 75, and a crop of slide 30, which added the green-tinted ear a student points out. Lecture 7: 18 figure-, screenshot-, table-, code- and quotation pages (4, 10, 11, 12, 14, 16, 20, 21, 22, 25, 26, 28, 29, 35, 40, 42, 43, 44), discrepancies on 5, all fixed: slide 4's advertisement copy was legible after all and is now transcribed; two chevron colours of slide 16's bottom row; the values of slide 20's star-history curve; slide 25's 'Variables' is a group header, not a column; and slide 40's comment reads 'Don't build it then', where the reader had reported a missing 'it'. Nothing described was absent from its page; slide 21's sidebar counts and the quotations of slides 28-29 were exact. The parent also checked the rendered images of slides 16 and 20. Lecture 8: all of slides 2-31 against crops rendered from the PDF, discrepancies on 8, all fixed: slide 9's input layer has 4 circles; slide 14's 'H2' and drug structure; slide 15's superscripts and one reference number; slide 20's bar values and the pie's 13 slices (not about 11); slide 22's straight breadcrumb quotes, its word cloud (the small words were legible after all) and the article text; slide 23's missing y-axis label confirmed; slide 28's banner extent; slide 31's book pages, legible after all. Nothing described was absent from its page; the equations of slides 2, 7 and 27, the essay text of slide 8 and the article pages of slides 12 and 29 were exact. The parent also checked crops of slide 22 (adding a word both agents missed) and the rendered images of slides 20 and 25."
     },
     "images": {
-      "lecturesWithImages": 7,
+      "lecturesWithImages": 8,
       "lecturesWithoutImages": [],
-      "lecturesTotal": 7,
-      "files": 186,
-      "megabytes": 11.5,
-      "format": "whole slides: for lectures 1-6 the deck's own 1280x720 page JPEGs extracted byte for byte; for lecture 7, whose deck has vector pages, 1400x788 renders; named slide-N by PDF page number",
+      "lecturesTotal": 8,
+      "files": 204,
+      "megabytes": 13.3,
+      "format": "whole slides: for lectures 1-6 the deck's own 1280x720 page JPEGs extracted byte for byte; for lectures 7 and 8, whose decks have vector pages, 1400x788 renders (JPEG, or PNG where smaller: two of lecture 8's); named slide-N by PDF page number",
       "discovery": "inline in wiki/ and raw/slides/; no index file",
       "byLecture": {
         "1": 34,
@@ -49,9 +49,10 @@
         "4": 39,
         "5": 19,
         "6": 24,
-        "7": 4
+        "7": 4,
+        "8": 18
       },
-      "note": "Lecture 1: 34 of 108 pages; lecture 2: 33 of 83 pages; lecture 3: 33 of 70 pages; lecture 4: 39 of 84 pages; lecture 5: 19 of 58 pages; lecture 6: 24 of 81 pages; lecture 7: 4 of 44 pages (a mostly text deck); in each, every slide with a distinct figure. Not included: logistics, logos, portraits and prize/stock/application photos, decorative slides, text-only slides, code and tables transcribed exactly, video stills, repeats of an included figure, and build steps contained in an included slide; the lists are in BUILD_LOG.md. No other lecture is in this KB, so none has images."
+      "note": "Lecture 1: 34 of 108 pages; lecture 2: 33 of 83 pages; lecture 3: 33 of 70 pages; lecture 4: 39 of 84 pages; lecture 5: 19 of 58 pages; lecture 6: 24 of 81 pages; lecture 7: 4 of 44 pages (a mostly text deck); lecture 8: 18 of 31 pages; in each, every slide with a distinct figure. Not included: logistics, logos, portraits and prize/stock/application photos, decorative slides, text-only slides, code and tables transcribed exactly, video stills, repeats of an included figure, and build steps contained in an included slide; the lists are in BUILD_LOG.md. No other lecture is in this KB, so none has images."
     }
   },
   "provenance": {
@@ -60,10 +61,10 @@
       "claude-sonnet-5-5"
     ],
     "caveats": [
-      "Covers lectures 1-7 of the 2026 edition only: 7 of the catalog's 90 recordings.",
-      "The decks of lectures 1-6 are flattened PDFs with no text layer and no printed slide numbers; slide N is PDF page N, and everything in their raw/slides/ files was read visually from 1280x720 page images, with no higher-resolution source. Lecture 7's deck is a Google Slides export with vector pages, a text layer and printed slide numbers equal to the pages; it was read from 1280x720 renders, with the text layer used for the spelling of printed prose.",
+      "Covers lectures 1-8 of the 2026 edition only: 8 of the catalog's 90 recordings.",
+      "The decks of lectures 1-6 are flattened PDFs with no text layer and no printed slide numbers; slide N is PDF page N, and everything in their raw/slides/ files was read visually from 1280x720 page images, with no higher-resolution source. Lecture 7's deck is a Google Slides export with vector pages, a text layer and printed slide numbers equal to the pages; it was read from 1280x720 renders, with the text layer used for the spelling of printed prose. Lecture 8's deck is a PowerPoint export with vector pages and pasted pictures, a text layer that holds none of the pictures' text, and no printed slide numbers; slide N is PDF page N, and it was read from 1280x720 renders.",
       "Transcripts are YouTube auto-captions, lightly copy-edited. The verbatim captions are in raw/transcripts/original/.",
-      "Slide images are 1280x720, the native resolution of decks 1-6, below the 1400px used in sibling KBs; lecture 7's are 1400x788 renders.",
+      "Slide images are 1280x720, the native resolution of decks 1-6, below the 1400px used in sibling KBs; lecture 7's and lecture 8's are 1400x788 renders.",
       "Some slide code and formulas are reproduced as printed, including the slides' own slips (lecture 1: slide 82's tf.keras.optimizer, slide 86's update step; lecture 2: slide 27 writes matrix products with *, slide 28's 'from tf.keras.layers import SimpleRNN'; lecture 3: slides 53-54 pass filter_size where slide 47 uses kernel_size, slide 54 calls nn.Sequential with only torch imported, slide 65's loss has an unclosed parenthesis; lecture 4: slide 29's KL-divergence expansion carries a leading minus sign that makes it never positive, slide 41 overprints two labels and leaves an empty box where beta would go; lecture 5: slide 42 labels its third point (s_2, a_3, r_2); lecture 6: slide 41's callout names the weights theta while its formula writes W, and slides 60 and 61 label the same final image 'T0 (end)' and 'T-5 (end)'; lecture 7: slide 16's timeline labels GPT-3 '(2020)' but dates it 2022, and slide 28's quotation ends with an unmatched closing quote); the slide files note each one.",
       "Lecture 2's slides and lecturer call the scaled dot product of query and key the 'cosine similarity', and give its denominator only as 'scaling'; the wiki reports this as the course states it.",
       "Lecture 2 says vision transformers will be covered in lecture 3; lecture 3 as delivered covers convolutional networks and does not mention them.",
@@ -73,7 +74,9 @@
       "Lecture 5 showed, in answer to a question, a slide on training game-playing agents from scratch that is not in the published deck; the wiki describes it from the talk alone.",
       "Lecture 6 states the universal approximation theorem for 'a single layer' (slide 12) and 'a single hidden layer' aloud, and draws it with an unlabelled five-column network; it calls VAE/GAN failure 'Mode collapse' on slide 48 and 'model collapse' aloud. It prints no formula for the diffusion loss or the next-token cross-entropy, and the wiki writes none.",
       "Lecture 7 is a guest lecture (Douglas Blank, Comet ML) built around live demonstrations in Comet's Opik platform. The password-checking metric, the four-model comparison chart (GPT-4o Mini 78%, GPT-4o 94%, GPT-5 100%; no score stated for Gemini 2.5 Flash) and the agent's tool code were shown on screen and are not in the deck; the wiki reports them from the talk alone. The captions garble the first naming of the four models (restored from later in the talk, with an [Ed] note) and break off briefly at about 8:44 and 42:52.",
-      "Lecture 7's deck carries no licence notice of its own; it is hosted on the course site, which states that all its materials are under the MIT licence, and LICENSE.md credits it to Douglas Blank as well as to the course."
+      "Lecture 7's deck carries no licence notice of its own; it is hosted on the course site, which states that all its materials are under the MIT licence, and LICENSE.md credits it to Douglas Blank as well as to the course.",
+      "Lecture 8 is a guest lecture (Chris Bishop, Microsoft Research AI for Science). Several models and papers it covers (Aurora, AI2BMD) are named only on its slides, not aloud; the wiki attributes those names to the slides. The captions give the book's publication year as 2003, which the transcript keeps with an [Ed] note; the slides print no year. Two chart axes are described aloud differently from the slides (slide 23 prints no y-axis label; slide 25's is 'Error on atomization energies'), and the wiki states both.",
+      "Lecture 8's deck carries no licence notice of its own; it is hosted on the course site, which states that all its materials are under the MIT licence, and LICENSE.md credits it to Chris Bishop as well as to the course."
     ]
   },
   "entryPoint": "INDEX.md",

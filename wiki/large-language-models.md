@@ -141,3 +141,6 @@ technology that augments and accelerates human capabilities (≈54:02–54:49).
   next-word prediction, embeddings and self-attention.
 - [Lecture 5 — Reinforcement Learning](05-reinforcement-learning.md), section 22: preference alignment.
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md): cross-entropy loss, and lab 3.
+- [Lecture 8 — AI for Science](08-ai-for-science.md), section 5: LLMs as the data-heavy end of the no free
+  lunch balance, with attention as their "fairly lightweight" inductive bias, against scientific models
+  with scarce data and rich prior knowledge.

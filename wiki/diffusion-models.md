@@ -116,8 +116,18 @@ just as it does over pixel values. Slide 66 shows a molecule emerging from noise
 Molecules in 3D") and generated protein structures ("Biology: Generating Novel Proteins"), with their
 citations, and marks the topic for a guest lecture.
 
+In [lecture 8](08-ai-for-science.md), Chris Bishop's guest lecture, **MatterGen** applies the same idea
+to crystals (slide 15, ≈23:16–24:50). A crystal is specified by its unit cell: the cell's axes, and the
+types, number and positions of its atoms. Known stable structures are noised, and a network learns to
+denoise them, starting from random and ending in a stable arrangement of atoms. MatterGen is a
+**conditional** diffusion model: it takes desired electronic, magnetic or mechanical properties as input,
+so that it generates new crystals with those properties rather than at random (slide 17). See
+[AI for science](ai-for-science.md).
+
 ## Where this comes up
 
 - [Lecture 6 — Language Models and New Frontiers](06-language-models-new-frontiers.md), sections 13–20.
 - [Lecture 4 — Deep Generative Modeling](04-deep-generative-modeling.md), sections 12 and 21, where
   diffusion models are announced.
+- [Lecture 8 — AI for Science](08-ai-for-science.md), section 11: MatterGen, conditional diffusion for
+  crystals.

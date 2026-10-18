@@ -48,6 +48,10 @@ Lecture 7 is a guest lecture. Its deck, "The Three Laws of AI", is by Douglas Bl
 hosted on the course site and linked from its 2026 schedule, and carries no licence notice of its own;
 material derived from it is credited to him as well as to the course.
 
+Lecture 8 is also a guest lecture. Its deck, "AI for Science", is by Chris Bishop (Microsoft Research AI
+for Science). It is hosted on the course site and linked from its 2026 schedule, and carries no licence
+notice of its own; material derived from it is credited to him as well as to the course.
+
 The original writing in this repository (the wiki prose, the slide descriptions, and the transcript
 copy-edits) is offered under the same MIT licence, with the attribution above retained.
 
@@ -240,3 +244,35 @@ of slides 11–12; slide 19's Opik logo; slide 35's terminal screenshot; slide 4
 YouTube comments by individuals; and slide 44's QR code. Their text is transcribed in `raw/slides/`, as is
 the news article quoted on slides 28–29 (SFGate, whose URL the slides print) and the Gemini answer quoted
 on slide 33.
+
+Each image in `raw/images/08-ai-for-science/`, named `slide-N.jpg` or `slide-N.png`, is page N of the
+lecture 8 deck,
+[`6S191_MIT_DeepLearning_L8.pdf`](https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L8.pdf),
+the guest lecture by Chris Bishop. That deck has vector pages with pasted pictures, so each image is the
+whole page rendered at 1400×788 by `extract_slide_images.py`, not modified otherwise. 18 of the deck's 31
+pages are included: slides 5–7, 9, 13, 15 and 17–28. Attribution for every one is the course line above,
+with "Chris Bishop, AI for Science". Third-party material on them, as the slides credit it (most carry no
+credit):
+
+- **Slides 7, 15, 17, 19, 22, 24, 26 and 27**'s molecule, crystal and protein renderings and
+  illustrations carry no credit. Slide 18's cartoon ship and slide 24's ladder cartoon carry none either.
+- **Slide 13**'s globe rendering, titled "Aurora", carries no credit.
+- **Slide 15** shows the first page of the Nature article "A generative model for inorganic materials
+  design" (Zeni et al.; https://doi.org/10.1038/s41586-025-08628-5, marked "Open access" on the page).
+- **Slide 20**'s photograph of Walter Kohn is captioned "Photo from the Nobel Foundation archive."; the
+  Nobel medal image, the citations-per-year bar chart and the supercomputer-workload pie chart carry no
+  credit.
+- **Slide 21**'s photograph of a ball-and-stick model and its shadow carries no credit.
+- **Slide 22** shows a word cloud of density-functional names (no credit) and a screenshot of the Science
+  web page of Ann E. Mattsson, "In Pursuit of the "Divine" Functional", Science 298 (2002), pp. 759–760,
+  DOI 10.1126/science.1077710.
+- **Slides 23 and 25**'s charts carry no credit; slide 24 cites arXiv:2506.14665 for the Skala functional.
+- **Slide 28**'s timeline is credited on the slide "Figure from “Cell Biology by the numbers”".
+
+Not included from lecture 8, among others: slide 4's portrait beside the Dirac quotation; slide 8's
+screenshot of Rich Sutton's essay "The Bitter Lesson"; slide 11's picture of a storm; slide 12's
+screenshot of the Nature article "A foundation model for the Earth system"; slide 14's photographs of
+application areas; slide 16, a still from a video; slide 29's protein rendering and screenshot of the
+Nature article "Ab initio characterization of protein molecular dynamics with AI²BMD"; slide 30's cover of
+Science (14 August 2025); and slide 31's cover of *Deep Learning: Foundations and Concepts* (Springer) and
+its screenshot of an online reader. Their text is transcribed in `raw/slides/`.

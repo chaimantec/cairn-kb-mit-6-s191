@@ -101,3 +101,5 @@ generated and the room could not tell which one was real (slide 2, ≈0:51–2:2
   facial detection and debiasing lab.
 - [Lecture 6 — Language Models and New Frontiers](06-language-models-new-frontiers.md), sections 13–20: the
   limitations of VAEs and GANs, and diffusion models.
+- [Lecture 8 — AI for Science](08-ai-for-science.md), sections 11 and 20: generating new crystals with
+  MatterGen, and sampling a protein's equilibrium shapes directly.

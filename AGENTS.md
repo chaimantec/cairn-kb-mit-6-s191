@@ -35,7 +35,7 @@ printed slips, which slides were rendered and why) goes in
   catalog position (`01-…`, `10-…`), and give each lecture's page its year. The 2026 decks are
   `https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_LN.pdf`; earlier editions' decks are
   linked from the per-year archive pages (`/2025/index.html`, …), which the crawl has not yet visited.
-- **Two kinds of deck.** The decks of lectures 1–6 are image-only exports (PyFPDF for
+- **Three kinds of deck so far.** The decks of lectures 1–6 are image-only exports (PyFPDF for
   1–4 and 6, macOS Quartz for 5): every page is one 1280×720 JPEG, with **no text layer** and **no printed slide numbers** (the footer's "1/5/26" is
   the lecture date). So `slide_number_map.py` finds nothing and `--verify` does not apply: use slide N =
   PDF page N, and check headings with a plain `1..N` sequence check. Check each new deck's text layer
@@ -45,7 +45,10 @@ printed slips, which slides were rendered and why) goes in
   out); transcribe them as they are, saying so, rather than reconstructing either state.
   Lecture 7's deck (a guest lecture) is the other kind: a Google Slides export with vector pages, a text
   layer, and printed slide numbers equal to the pages, so `--verify` applies and the raster test means
-  something again. Check each new deck's producer, text layer and footer before assuming either kind.
+  something again. Lecture 8's deck (also a guest lecture) is a third kind: a PowerPoint export (Acrobat
+  PDFMaker) with vector pages and pasted pictures, a text layer holding the deck's own text but none of
+  any picture's, and no printed slide numbers. It is read like a vector deck and numbered like an
+  image-only one. Check each new deck's producer, text layer and footer before assuming any kind.
 - **For an image-only deck, read the native page JPEGs, not PDF page renders.** Extract each page's embedded JPEG
   (`page.get_image_info(xrefs=True)` — not `get_images()`, which lists the shared resource dictionary,
   i.e. every image in the deck, on every page). They are ~1.2k tokens each to an agent, and they are
@@ -80,7 +83,9 @@ subscripts into italics on github.com: write them `\_\_\_` in any paragraph that
 separate Sonnet agent against the page JPEGs (with enlarged crops), targeting tables, charts, worked
 numbers, code and every count the file states; the parent then looks at two rendered images itself. Where
 the talk points at a detail of a figure (a student's answer, "notice the…"), check that the slide file
-describes that detail: readers give a figure's gist and miss the detail under discussion. Readers and auditors both tend
+describes that detail: readers give a figure's gist and miss the detail under discussion. A list read off a picture (a word
+cloud, a diagram's labels) needs the parent's own look at a crop: the reader tends to list the large
+items and the auditor the small ones, and both can miss one in between. Readers and auditors both tend
 to normalize slips in printed formulas and code (an unclosed parenthesis, mixed straight and curly
 quotes) and report "exact", and readers also invent slips that are not on the page, so send every slip a
 reader claims to the audit, tell both to keep real ones, and read the formulas and code on the
@@ -110,6 +115,7 @@ in `BUILD_LOG.md`.
 | 5 Reinforcement Learning (2026) | 19 of 58 pages | page JPEGs of `6S191_MIT_DeepLearning_L5.pdf` |
 | 6 Language Models and New Frontiers (2026) | 24 of 81 pages | page JPEGs of `6S191_MIT_DeepLearning_L6.pdf` |
 | 7 The Three Laws of AI (2026) | 4 of 44 pages | 1400px renders of `6S191_MIT_DeepLearning_L7.pdf` |
+| 8 AI for Science (2026) | 18 of 31 pages | 1400px renders of `6S191_MIT_DeepLearning_L8.pdf` |
 
 ## Conventions
 
@@ -118,7 +124,8 @@ in `BUILD_LOG.md`.
   An unindexed page is effectively invisible.
 - **Relative links only** (`[gradient descent](gradient-descent.md)`). Absolute GitHub URLs break when
   the repo is renamed or forked. Decks are linked at their course-site URL, never `raw/pdfs/`.
-- **Cite everything.** Claims trace back to a transcript timestamp or a slide.
+- **Cite everything.** Claims trace back to a transcript timestamp or a slide. A name the slides print
+  but the lecturer never says (a model, a paper) is attributed to the slide, not put in the lecturer's mouth.
 - **Never invent course content.** If the transcript is unclear at some point,
   say so on the page. Do not fill the gap from outside knowledge — the chat
   presents these pages as authoritative material from this course.
@@ -128,7 +135,9 @@ in `BUILD_LOG.md`.
   Cairn's chat and on github.com. Never inside a code fence — that shows the
   source instead of the formula. Define each symbol on first use, and follow the
   course's own notation ($\hat{y}$, $g$, $z$, $\boldsymbol{W}^{(k)}$, $J(\boldsymbol{W})$, $\eta$)
-  rather than a tidier one. Matrices use `\cr` between rows, not `\\`.
+  rather than a tidier one. Matrices use `\cr` between rows, not `\\`. A short printed label with a sub-
+  or superscript that sits against a quote mark or a letter (CO₂, r²SCAN, "N³") is written in Unicode,
+  because `$` there does not open math on github.com.
 - **Transcripts keep notation spoken.** Captions spell notation out as speech ("dJ dW2");
   reconstructing it as LaTeX belongs in `wiki/`, not in `raw/transcripts/`.
 

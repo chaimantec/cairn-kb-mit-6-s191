@@ -88,3 +88,6 @@ networks and does not mention them.
   sections 10–13.
 - [Large language models](large-language-models.md): lecture 6 covers how LLMs are trained and used,
   without discussing the architecture inside them.
+- [Lecture 8 — AI for Science](08-ai-for-science.md), section 5: attention as the "fairly lightweight",
+  very general inductive bias of large language models, against the rich prior knowledge of scientific
+  models.
