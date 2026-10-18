@@ -32,6 +32,8 @@ It is naturally temporal, maximizing rewards over the horizon of a sequence (≈
 Lecture 5 builds the terms around one loop diagram (slides 8–17, ≈5:28–10:04):
 
 - The **agent** "takes actions": a delivery drone, Super Mario in his game, or a person in the world.
+  (Lecture 7 uses "agent" in a different sense, for a language model that calls tools on a user's behalf;
+  see [AI agents](ai-agents.md).)
 - The **environment** is "the world in which the agent exists and operates".
 - An **action** is "a move the agent can make in the environment"; the **action space** $A$ is "the set
   of possible actions an agent can make in the environment" — for simplicity, a finite set, such as

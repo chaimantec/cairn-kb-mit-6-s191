@@ -44,6 +44,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+Lecture 7 is a guest lecture. Its deck, "The Three Laws of AI", is by Douglas Blank (Comet ML). It is
+hosted on the course site and linked from its 2026 schedule, and carries no licence notice of its own;
+material derived from it is credited to him as well as to the course.
+
 The original writing in this repository (the wiki prose, the slide descriptions, and the transcript
 copy-edits) is offered under the same MIT licence, with the attribution above retained.
 
@@ -214,3 +218,25 @@ articles, slide 11's brain image, slide 32's ABC News coverage of an autopilot c
 News.", with photographs marked "COURTESY OF TESLA" and "GOOGLE STREET VIEW"), slide 33's photographs,
 slide 43's news headlines, slide 68's ChatGPT screenshot and OpenAI logo, the film still of slides 78 and
 80, and the T-shirt photographs of slides 2, 79 and 81.
+
+Each image in `raw/images/07-three-laws-of-ai/`, named `slide-N.jpg`, is page N of the lecture 7 deck,
+[`6S191_MIT_DeepLearning_L7.pdf`](https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L7.pdf),
+the guest lecture by Douglas Blank. That deck has vector pages rather than page images, so each image is
+the whole page rendered at 1400×788 by `extract_slide_images.py`, not modified otherwise. 4 of the deck's
+44 pages are included: slides 16, 20, 21 and 25. Attribution for every one is the course line above,
+with "Douglas Blank, The Three Laws of AI". Third-party material on them:
+
+- **Slide 16**'s timeline infographic carries no credit.
+- **Slide 20**'s star-history chart is credited on the slide to "star-history.com". Its contributors strip
+  shows the GitHub avatars of contributors to Comet's open-source Opik project, no names legible, and the
+  GitHub logo.
+- **Slides 21 and 25** are screenshots of Comet's Opik web interface; the Opik name and logo are Comet
+  ML's.
+
+Not included from lecture 7, among others: slide 3's photograph of the Atlas robot (captioned "Atlas,
+Boston Dynamics"); slide 4's 1982 Radio Shack advertisement featuring Isaac Asimov (captioned "Tandy Color
+Computer advertisement from Personal Computing August 1982, featuring Isaac Asimov"); the table picture
+of slides 11–12; slide 19's Opik logo; slide 35's terminal screenshot; slide 40's screenshot of three
+YouTube comments by individuals; and slide 44's QR code. Their text is transcribed in `raw/slides/`, as is
+the news article quoted on slides 28–29 (SFGate, whose URL the slides print) and the Gemini answer quoted
+on slide 33.

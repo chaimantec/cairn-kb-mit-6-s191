@@ -18,6 +18,7 @@ slide file or transcript it concerns. The rules every build follows are in
 | 4 Deep Generative Modeling (2026) | [Lecture 4](#lecture-4--deep-generative-modeling-2026--built-2026-10-18), 2026-10-18 |
 | 5 Reinforcement Learning (2026) | [Lecture 5](#lecture-5--reinforcement-learning-2026--built-2026-10-18), 2026-10-18 |
 | 6 Language Models and New Frontiers (2026) | [Lecture 6](#lecture-6--language-models-and-new-frontiers-2026--built-2026-10-18), 2026-10-18 |
+| 7 The Three Laws of AI (2026) | [Lecture 7](#lecture-7--the-three-laws-of-ai-2026--built-2026-10-18), 2026-10-18 |
 
 ## Lecture 1 — Introduction to Deep Learning (2026) — built 2026-10-11
 
@@ -765,3 +766,178 @@ pages 80–81 repeat 78–79 byte for byte): slide N = page N.
 - [x] verify_kb.py clean, and its review section read (13 github math errors in new captions fixed first)
 - [x] Commit and push (409b8bf)
 - [x] Move this section to BUILD_LOG.md
+
+## Lecture 7 — The Three Laws of AI (2026) — built 2026-10-18
+
+**Pointers.** Catalog position 7, video `XKOpA7iaJvg` (51:49), delivered 9 January 2026 by Douglas Blank,
+Head of Research at Comet ML. It is a guest lecture, introduced by Ava Amini. Deck
+<https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L7.pdf>, 44 pages, downloaded in the lecture 1
+crawl (same size as on the server, 1,546,665 bytes; Last-Modified 2026-08-17). The title slide reads "The Three
+Laws of AI", "Douglas Blank, Ph.D.", "January 9, 2026, Boston, MA, USA". The course site's schedule lists it as
+Lecture 7, 9 January 2026, with the abstract that slide 2 reproduces. PDF metadata: title "The Three Laws of
+AI", creator "Google", no producer or dates.
+
+**Deck format and numbering.** Unlike decks 1–6, a Google Slides export (720×405 pt) with vector pages and a
+text layer (13,590 characters). Rasters sit on 12 pages only: 3, 4, 11, 12, 16, 19, 20, 21, 25, 35, 40 and 44.
+`slide_number_map.py` reads the printed numbers 1:1 with the pages. Pages 1, 13 and 14 print none where it
+looks; slide 14 prints "14" at top left, in the older template of slides 13–14. `--verify` passes. There are no
+page JPEGs to extract, so the readers got 1280×720 renders and a text-layer dump per page.
+
+**Licence.** The deck carries no licence notice. The site's FAQ says "All materials are open-sourced to the
+world for free and are copyrighted under the MIT license". The deck was treated as covered, and LICENSE.md
+credits it to Douglas Blank as well as to the course. Credits and sources printed on the slides:
+
+- slide 3: "Atlas, Boston Dynamics";
+- slide 4: "Tandy Color Computer advertisement from Personal Computing August 1982, featuring Isaac Asimov";
+- slide 20: "star-history.com";
+- slides 28–29: an SFGate article URL;
+- slides 30–31: github.com/dsblank/developing-agentic-ai/blob/main/Recommendations.md;
+- slide 33: "- Gemini" for the quoted definition;
+- slides 36–37: the "Based on ideas from" list of frameworks.
+
+Uncredited: slide 16's infographic, slide 40's screenshot of YouTube comments by individuals, and slide
+44's QR code.
+
+**Slide transcription.** Two Sonnet readers (1–22 and 23–44), each appending as it went. Each got the renders
+and the per-page text layer, the latter for the spelling of printed prose only, with the page image as the
+authority. They reported these layer-versus-page differences:
+
+- slide 1's layer holds the footer line, which the page does not show;
+- the layer puts slide 43's "-1." label and slide 44's caption last;
+- the pictures on 4, 11–12, 16, 20–21, 25, 35 and 40 have no text in the layer.
+
+The parent merged the parts and wrote the header: numbering, footer, Images note and contents. It also made
+these fixes:
+
+- moved slide 1's layer note out of its Text line;
+- dropped a reader's guess that slide 16's infographic "looks AI-generated";
+- fixed slide 22's doubled quote marks;
+- relabelled the mislabelled "Build step" lines of slides 29 and 40;
+- escaped the advertisement's three dollar signs (`\$399⁹⁵`, `\$98`), which would otherwise pair into inline
+  math.
+
+12 slides are tagged `*Figure: yes*`.
+
+**Figure audit.** A separate Sonnet agent checked 18 pages against enlarged crops rendered from the vector
+PDF: 4, 10, 11, 12, 14, 16, 20, 21, 22, 25, 26, 28, 29, 35, 40, 42, 43 and 44. Nothing described was absent
+from its page. These were exact:
+
+- slide 10's code;
+- slide 11's six rows, and slide 12's box (the 1990s and 2000s rows);
+- slide 14's columns and the position of its number;
+- slide 21's eleven sidebar counts;
+- slides 22 and 26;
+- the quotations of slides 28–29, including the unmatched quote;
+- slide 35's terminal text;
+- the boxes of slides 42–43;
+- slide 44.
+
+Discrepancies on **5 pages**, all fixed:
+
+- **Slide 4.** The advertisement's body copy, which the reader called too small, is legible in a crop and
+  is now transcribed in full. The monitor screen is yellow-green, not green.
+- **Slide 16.** The bottom row's chevron colours differ from the top row's at positions 5 and 8.
+- **Slide 20.** The curve values: about 4K at the 2025 tick, 10K about 40% of the way through 2025, and 17K
+  at 2026.
+- **Slide 25.** "Variables" is a group header, not a column. The question wraps over five lines, and the
+  variable names are underlined.
+- **Slide 40.** The reply reads "Don't build it then", where the reader had reported a missing "it" as a
+  printed slip. All three comments have a three-dot menu.
+
+The parent looked at the rendered images of slide 16 (labels, dates and inconsistencies as transcribed) and
+slide 20. On slide 20 it independently moved the 10K point from "late in 2025" to mid-2025, as the audit also
+did.
+
+**Printed slips and as-printed oddities**, all reproduced as printed:
+
+- Slides 6–7 write "AI systems … given to it" and "protect its own existence". Law 0 on slide 7 and law
+  −1 on slide 43 have no full stop.
+- Slide 9: "Very influential the areas of". Slide 10: "the semantic of the laws".
+- Slide 16's timeline:
+  - "Breakthough";
+  - "ChatGPT" garbled;
+  - GPT-3 labelled "(2020)" but dated 2022;
+  - the third and seventh stages labelled with years, the third dated 2020.
+- Slide 17: "Shoulders Of Giants". Slide 20: lowercase "github".
+- Slide 26: "a LLM" and "each which has been evaluated". Slide 27: "So, Can".
+- Slide 28's quotation ends with an unmatched closing quote after "Xanax."
+- Slide 40's reply "yaa, its correct". Slide 43's box cuts through "humanity".
+
+**Spoken vs printed.** The wiki's "Spoken versus printed" section lists:
+
+- slide 2's "Three New Laws" against versions with three laws plus one, and four plus two;
+- "the last 10" (26:27) against "the last three" (27:14), an [Ed] note in the transcript;
+- law 0 spoken as "don't build it. Don't deploy it" against slide 42's "don't deploy it";
+- the live agent's "January 12th" for next Thursday, which the lecturer calls wrong;
+- slide 35's screenshot, which is a different session from the live demonstration.
+
+**Transcript.** YouTube auto-captions, already punctuated, copy-edited by a Sonnet agent against the slide
+file. Restorations:
+
+- "Opic", "OPIC" and "Opaque" to Opik; the lecturer spells it at 13:22.
+- comet-ml/opik (14:07).
+- "slides 28 and 29" (1:44).
+- Tandy Color Computer, and A Tale of Two AIs.
+- "the LLM" (23:22).
+- "six bears" (24:56, 31:54).
+- ChatGPT, and GPT-4o Mini (29:35).
+- Ethically Aligned Design (46:45).
+- Gemini and "agentic" at 35:47, where the captions read "Jim and I, what is a genic AI"; an [Ed] note.
+- The 28:49 model list "4o Mini, 4o 5" to GPT-4o Mini, GPT-4o, GPT-5, which the captions name at 30:22; an
+  [Ed] note.
+
+Eight [Ed] notes in all: 8:44, 16:26, 17:14, 27:14, 28:49, 32:41, 35:47 and 43:41. Student turns are marked at
+18:00–18:47 (closed and reopened across the mark), 19:32 (two students), 29:35, 38:59 and 39:44. The header
+notes that 0:12–0:57 is Ava Amini's introduction.
+
+The parent accepted the Gemini and model-list restorations, which slide 33 and the captions at 30:22 support.
+It reverted a comma the agent had put into "the new Atlas Boston Dynamics robot" and a capital S in "slides 28
+and 29". Checks re-run by the parent: 67 of 67 `[MM:SS]` marks identical, number inventory identical,
+per-paragraph word ratio 0.83–0.99. Opik, comet-ml/opik, Tandy, Gemini, Ethically Aligned Design and
+"six-bears" are printed in the deck. GPT-4o and GPT-5 are as captioned. "Ryan Hodges" and "Karan Lowe" are
+kept as spoken (slide 40 prints the handles @RyanHodges-u3n and @KaranLo-fi4673).
+
+**Coverage gaps.**
+
+- The demonstrations' Python metric, four-model chart and tool code were shown on screen only. Gemini 2.5
+  Flash's score is not stated aloud.
+- The captions break off at ≈8:44 ("a very symbol") and ≈42:52, where part of the sentence on tools as an
+  emergent layer is lost.
+- Shown without discussion: slides 14, 16 and 19, and recommendations 1–4 and 6–8 of slide 30.
+- The Q&A after 51:20 is not in the recording.
+
+The wiki names the YouTube commenters only as "a commenter"; the slide file and transcript keep the handles
+as printed and spoken.
+
+**Images.** 4 of 44 pages: 16, 20, 21 and 25. They are 1400×788 renders by `extract_slide_images.py --format
+auto`, all of which came out JPEG (0.39 MB). All four are embedded in `wiki/07-three-laws-of-ai.md` by hand,
+and under their headings in the slide file by `embed_slide_images.py`. Not rendered, and why:
+
+- Title and abstract: 1–2.
+- Photographs and advertising whose text is transcribed: 3 (Atlas), 4 (the 1982 advertisement).
+- Text and code slides, including the section-title slides and the old talk's slides 13–14: 5–10, 13–15,
+  17–18, 22–24, 26–34, 36–39 and 41–43.
+- The table pasted as a picture, transcribed exactly with slide 12's highlight: 11–12.
+- The Opik logo: 19.
+- Text screenshots transcribed exactly: 35 (a terminal) and 40 (YouTube comments by individuals).
+- The contact slide's QR code: 44.
+
+**Wiki.** New topic pages: ai-safety, llm-evaluation and ai-agents. Extended:
+
+- large-language-models, with a new section "Prompts, jailbreaks and tools in practice";
+- what-is-deep-learning, with lecture 7's history;
+- limitations-of-deep-learning, with a link on jailbreaks;
+- reinforcement-learning, with the other sense of "agent".
+
+Lecture 6's list of guest lectures now links to lecture 7.
+
+**AGENTS.md lessons** (general form):
+
+- The deck-format bullet now describes two kinds of deck: image-only, and vector with a text layer.
+- For a vector deck, readers get renders, and the text layer serves only for the spelling of prose.
+  Audit crops are rendered from the PDF, and images are rendered at 1400px.
+- Readers invent printed slips as well as normalise real ones, so every slip a reader claims goes to the
+  audit.
+
+**Cost.** Measured after the push; added in the closing bookkeeping commit.
+

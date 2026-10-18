@@ -6,15 +6,16 @@ from the foundations of neural networks — the single neuron, training by gradi
 backpropagation — up to recent advances in large language models. Course site:
 <https://introtodeeplearning.com/>.
 
-**Coverage: lectures 1–6 only.** This knowledge base covers **lectures 1–6 of the 2026 edition**:
+**Coverage: lectures 1–7 only.** This knowledge base covers **lectures 1–7 of the 2026 edition**:
 "Introduction to Deep Learning" (Alexander Amini) and "Recurrent Neural Networks, Transformers, and
 Attention" (Ava Amini), both delivered 5 January 2026, and "Convolutional Neural Networks" (Alexander
 Amini; the deck's title is "Deep Computer Vision") and "Deep Generative Modeling" (Ava Amini), both
 delivered 6 January 2026, and "Reinforcement Learning" (Alexander Amini; the deck's title is "Deep
 Reinforcement Learning") and "Language Models and New Frontiers" (Ava Amini; the deck's title is "Deep
-Learning Limitations and New Frontiers"), both delivered 7 January 2026. The Cairn catalog for this course lists 90 recordings — the 2026 edition's
+Learning Limitations and New Frontiers"), both delivered 7 January 2026, and the guest lecture "The Three
+Laws of AI" (Douglas Blank, Comet ML), delivered 9 January 2026. The Cairn catalog for this course lists 90 recordings — the 2026 edition's
 lectures (positions 1–9) followed by the 2018–2025 editions — and none of the others is in this KB yet.
-Do not cite it as the whole course: for any other lecture — the 2026 guest lectures (positions 7–9) or
+Do not cite it as the whole course: for any other lecture — the 2026 guest lectures at positions 8–9 or
 any earlier edition — say it is not covered. Vision transformers, which lecture 2 says
 lecture 3 will cover, are not discussed in lecture 3.
 
@@ -22,33 +23,37 @@ lecture 3 will cover, are not discussed in lecture 3.
 
 - Start from the lecture page or the topic page below. Lecture pages follow the lecture in order, with
   timestamps such as (≈24:10) into the transcript and slide citations.
-- **"Slide N" means page N of the PDF.** The decks print no slide numbers.
+- **"Slide N" means page N of the PDF.** The decks of lectures 1–6 print no slide numbers; lecture 7's
+  deck prints them, and they equal the page numbers.
 - For exact wording, numbers, code and equations as printed, read the slide transcription in
   `raw/slides/`. For what was said, read the copy-edited transcript in `raw/transcripts/` (not the
   verbatim captions in `raw/transcripts/original/`, which are kept only as a reference).
 
 ## Images
 
-All six lectures have slide images: **34 for lecture 1**, **33 for lecture 2**, **33 for lecture
-3**, **39 for lecture 4**, **19 for lecture 5** and **24 for lecture 6**. Each is embedded where it is used: in the lecture page
+All seven lectures have slide images: **34 for lecture 1**, **33 for lecture 2**, **33 for lecture
+3**, **39 for lecture 4**, **19 for lecture 5**, **24 for lecture 6** and **4 for lecture 7**. Each is embedded where it is used: in the lecture page
 ([lecture 1](wiki/01-introduction.md), [lecture 2](wiki/02-rnns-transformers-attention.md),
 [lecture 3](wiki/03-convolutional-neural-networks.md), [lecture 4](wiki/04-deep-generative-modeling.md),
-[lecture 5](wiki/05-reinforcement-learning.md), [lecture 6](wiki/06-language-models-new-frontiers.md))
+[lecture 5](wiki/05-reinforcement-learning.md), [lecture 6](wiki/06-language-models-new-frontiers.md),
+[lecture 7](wiki/07-three-laws-of-ai.md))
 beside the passage that cites the slide, in some topic pages, and under the matching `## Slide N`
 heading of the slide transcription ([lecture 1](raw/slides/01-introduction.md),
 [lecture 2](raw/slides/02-rnns-transformers-attention.md),
 [lecture 3](raw/slides/03-convolutional-neural-networks.md),
 [lecture 4](raw/slides/04-deep-generative-modeling.md),
 [lecture 5](raw/slides/05-reinforcement-learning.md),
-[lecture 6](raw/slides/06-language-models-new-frontiers.md)).
+[lecture 6](raw/slides/06-language-models-new-frontiers.md),
+[lecture 7](raw/slides/07-three-laws-of-ai.md)).
 They are whole slides, every one that carries a distinct figure; slides without an image are text, code
 or tables the transcription reproduces exactly, logistics, logos, stock photographs, video stills,
-repeats of a rendered figure, or build steps contained in a rendered slide. No other lecture is in this KB, so no other lecture has images.
+repeats of a rendered figure, or build steps contained in a rendered slide. Lecture 7's deck is mostly
+text, so it has four images: a timeline, a chart and two screenshots of the Opik platform. No other lecture is in this KB, so no other lecture has images.
 
 - **Use an image path you have actually read in a file. Never construct one from the pattern**, and
   never assume a slide has an image because a neighbouring slide does. Reading an image path returns
   its displayable URL.
-- Prefer the slide transcription for numbers and code; the images are 1280×720.
+- Prefer the slide transcription for numbers and code; the images are 1280×720 (lecture 7's, 1400×788).
 - Show one image at a time, and keep its slide citation.
 
 ## Contents
@@ -101,13 +106,22 @@ repeats of a rendered figure, or build steps contained in a rendered slide. No o
   generation, forward noising, reverse denoising and its loss, sampling, text conditioning, molecular
   design; large language models: tokens, next-token prediction and cross-entropy, from base model to
   chatbot, capabilities, limitations and emergent abilities with scale.
+- [Lecture 7 — The Three Laws of AI](wiki/07-three-laws-of-ai.md) — Douglas Blank's guest lecture, in
+  order: Asimov's Three Laws of Robotics restated for AI, and the 1956 hope of writing them as code; AI
+  history from symbolic reasoning and expert systems to statistics and deep learning, and the AI winter
+  ("A Tale of Two AIs"); the Opik platform; a live jailbreak challenge (a system prompt hiding a password);
+  messages, chat prompts, traces, spans and projects; datasets, metrics, experiments and LLM-as-a-judge;
+  four models compared on a 123-item jailbreak dataset; prompt optimization; safety drift in long
+  conversations (the Sam Nelson case) and eight recommendations; agents, and building one from tools in 90
+  seconds; modern laws of AI, version 1 (from regulations) and version 2 (practices), with law 0 and law −1.
 
 ### Topics
 
 - [What is deep learning?](wiki/what-is-deep-learning.md) — AI, machine learning and deep learning
   defined and nested; learned hierarchical features versus hand-engineered ones, including lecture 3's
   case for vision; supervised, unsupervised and reinforcement learning; why now (big data, hardware, software),
-  the 1952–1995 timeline and lecture 6's waves of AI hype; LLMs as a class of deep learning.
+  the 1952–1995 timeline and lecture 6's waves of AI hype; lecture 7's history from symbolic AI and expert
+  systems to statistics and deep learning, and the AI winter; LLMs as a class of deep learning.
 - [The perceptron](wiki/perceptron.md) — the single neuron: weighted sum, bias, non-linearity, the
   vector form $\hat{y} = g(w_0 + \boldsymbol{X}^T \boldsymbol{W})$, and the worked example showing a
   neuron's decision boundary is a line.
@@ -183,8 +197,20 @@ repeats of a rendered figure, or build steps contained in a rendered slide. No o
   whether the noise is really noise; conditioning on text; molecules and proteins.
 - [Large language models](wiki/large-language-models.md) — LLMs as very large networks trained on very
   large text; data and tokens; next-token prediction and its cross-entropy loss; base model to chatbot;
-  capabilities and limitations (hallucination, jailbreaks, confidence, planning); emergent abilities with
-  scale; foundation models.
+  capabilities and limitations (hallucination, jailbreaks, confidence, planning); system and user prompts,
+  a live jailbreak and four models compared, and tools; emergent abilities with scale; foundation models.
+
+- [AI safety](wiki/ai-safety.md) — Asimov's laws and why they could not be coded; what goes wrong
+  (adversarial examples, bias, jailbreaks, safety drift in long conversations, agents acting on mistakes);
+  preference alignment; the eight recommendations against safety drift; lecture 7's modern laws of AI,
+  versions 1 and 2, with law 0 ("If you can't guarantee safety and security, don't deploy it") and law −1.
+- [Evaluating LLMs](wiki/llm-evaluation.md) — messages, chat prompts, traces, spans and projects;
+  turning informal testing into experiments with a dataset and a metric; the password-jailbreak worked
+  example; LLM-as-a-judge; comparing models (GPT-4o Mini 78%, GPT-4o 94%, GPT-5 100%); prompt
+  optimization; testing long conversations.
+- [AI agents](wiki/ai-agents.md) — an AI agent as "a software system that can do things on behalf of the
+  user"; why an LLM needs tools; building one from Python functions in 90 seconds; why agents must be
+  tested and traced; how this differs from the agent of reinforcement learning.
 
 ## Raw materials
 
@@ -194,7 +220,8 @@ repeats of a rendered figure, or build steps contained in a rendered slide. No o
   [lecture 3](raw/slides/03-convolutional-neural-networks.md) (70 slides),
   [lecture 4](raw/slides/04-deep-generative-modeling.md) (84 slides),
   [lecture 5](raw/slides/05-reinforcement-learning.md) (58 slides),
-  [lecture 6](raw/slides/06-language-models-new-frontiers.md) (81 slides).
+  [lecture 6](raw/slides/06-language-models-new-frontiers.md) (81 slides),
+  [lecture 7](raw/slides/07-three-laws-of-ai.md) (44 slides).
 - [`raw/transcripts/`](raw/transcripts/) — the lecture transcripts, copy-edited from YouTube captions,
   with `[MM:SS]` paragraph marks and `[Ed: …]` notes where the captions are unclear or differ from a
   slide: [lecture 1](raw/transcripts/01-introduction.md),
@@ -202,7 +229,8 @@ repeats of a rendered figure, or build steps contained in a rendered slide. No o
   [lecture 3](raw/transcripts/03-convolutional-neural-networks.md),
   [lecture 4](raw/transcripts/04-deep-generative-modeling.md),
   [lecture 5](raw/transcripts/05-reinforcement-learning.md),
-  [lecture 6](raw/transcripts/06-language-models-new-frontiers.md). The verbatim captions are in
+  [lecture 6](raw/transcripts/06-language-models-new-frontiers.md),
+  [lecture 7](raw/transcripts/07-three-laws-of-ai.md). The verbatim captions are in
   `raw/transcripts/original/`.
 - [`raw/images/`](raw/images/) — the slide images described above.
 - [`sources.md`](sources.md) — every document the course site links, with its canonical URL. The PDFs

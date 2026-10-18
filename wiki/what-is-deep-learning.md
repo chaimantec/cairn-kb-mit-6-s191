@@ -75,6 +75,23 @@ Hype" in 1974, "AI winter I" in 1980, "New Hopes" in 1987, "AI winter II" in 199
 Growth". There were times when these models were under heavy scrutiny from the scientific community, and
 like any technology, deep learning goes through waves of growth and of criticism (≈10:58–12:33).
 
+Lecture 7's guest lecturer, Douglas Blank, tells the same history as a sequence of ideas (lecture 7,
+≈7:09–11:47; slides 11–16). After the term "artificial intelligence" was coined in 1956, the first
+decades were dominated by symbolic reasoning, rules of the form "if this, then that". From the 1970s
+came expert systems, symbolic systems made domain-specific. Then the field moved "away from symbols and
+into numbers", toward machine learning and statistics (slide 11 tables the dominant funded areas by
+decade).
+
+He lived through the second AI winter as a neural-network researcher. He finished his PhD in 1997, sent
+out a hundred job applications and got very few responses, in a field that did not yet accept neural
+networks as AI. His 2005 talk "A Tale of Two AIs" set formal, discrete, rule-based systems against
+informal, real-valued, distributed ones (slides 13–14).
+
+His reasons for the 2010–2017 breakthrough overlap lecture 1's (slide 15). Data got huge, GPUs got fast,
+networks got deeper, and algorithms got better (automatic differentiation). Industry invested heavily,
+and breakthroughs arrived in every major domain at once. Since 2017 the big impact rests on the
+transformer (≈11:47; slide 16).
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 1, 2 and 4: the pace of
@@ -87,4 +104,6 @@ like any technology, deep learning goes through waves of growth and of criticism
   learning as the third class of learning problems.
 - [Lecture 6 — Language Models and New Frontiers](06-language-models-new-frontiers.md), sections 2, 4 and 21:
   data to decision and back, AI's waves of hype, and LLMs as a class of deep learning.
+- [Lecture 7 — The Three Laws of AI](07-three-laws-of-ai.md), sections 4–7: AI history from symbolic
+  reasoning to deep learning, and the AI winter as a neural-network researcher saw it.
 - The building block every later idea rests on is the [perceptron](perceptron.md).

@@ -35,7 +35,7 @@ printed slips, which slides were rendered and why) goes in
   catalog position (`01-…`, `10-…`), and give each lecture's page its year. The 2026 decks are
   `https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_LN.pdf`; earlier editions' decks are
   linked from the per-year archive pages (`/2025/index.html`, …), which the crawl has not yet visited.
-- **Decks are flattened images.** The 2026 decks (lectures 1–6, at least) are image-only exports (PyFPDF for
+- **Two kinds of deck.** The decks of lectures 1–6 are image-only exports (PyFPDF for
   1–4 and 6, macOS Quartz for 5): every page is one 1280×720 JPEG, with **no text layer** and **no printed slide numbers** (the footer's "1/5/26" is
   the lecture date). So `slide_number_map.py` finds nothing and `--verify` does not apply: use slide N =
   PDF page N, and check headings with a plain `1..N` sequence check. Check each new deck's text layer
@@ -43,10 +43,17 @@ printed slips, which slides were rendered and why) goes in
   citations, and the PDF raster test for "has a figure" is meaningless (every page is a raster).
   Some pages are frames caught mid-animation (two labels printed over each other, a panel half faded
   out); transcribe them as they are, saying so, rather than reconstructing either state.
-- **Read the native page JPEGs, not PDF page renders.** Extract each page's embedded JPEG
+  Lecture 7's deck (a guest lecture) is the other kind: a Google Slides export with vector pages, a text
+  layer, and printed slide numbers equal to the pages, so `--verify` applies and the raster test means
+  something again. Check each new deck's producer, text layer and footer before assuming either kind.
+- **For an image-only deck, read the native page JPEGs, not PDF page renders.** Extract each page's embedded JPEG
   (`page.get_image_info(xrefs=True)` — not `get_images()`, which lists the shared resource dictionary,
   i.e. every image in the deck, on every page). They are ~1.2k tokens each to an agent, and they are
-  the highest resolution that exists; rendering at higher DPI only upscales.
+  the highest resolution that exists; rendering at higher DPI only upscales. **For a vector deck**, render
+  pages at 1280×720 for the readers, and give them each page's text layer for the spelling of printed
+  prose only: the page image is the authority, and a string the layer holds but the page does not show
+  is reported, not transcribed. Pictures pasted into such a deck (tables, screenshots) are not in the
+  layer. The auditor renders enlarged crops from the PDF, which here do add detail.
 - **Licence.** The site licenses all materials under the MIT licence and asks for the attribution
   line quoted in `LICENSE.md`. Third-party figures on the slides stay their owners'; credit them in
   `LICENSE.md` as the slide credits them.
@@ -75,7 +82,8 @@ numbers, code and every count the file states; the parent then looks at two rend
 the talk points at a detail of a figure (a student's answer, "notice the…"), check that the slide file
 describes that detail: readers give a figure's gist and miss the detail under discussion. Readers and auditors both tend
 to normalize slips in printed formulas and code (an unclosed parenthesis, mixed straight and curly
-quotes) and report "exact", so tell both to keep such slips, and read the formulas and code on the
+quotes) and report "exact", and readers also invent slips that are not on the page, so send every slip a
+reader claims to the audit, tell both to keep real ones, and read the formulas and code on the
 parent's two images character by character. When a printed formula looks wrong, say so on the wiki only
 from the course's own material — another slide, the lecturer's reading, or arithmetic on the formula
 itself — never by quoting the standard form from outside the course.
@@ -83,7 +91,8 @@ itself — never by quoting the standard form from outside the course.
 ### Images
 
 Every slide with a distinct figure is included as `raw/images/NN-<slug>/slide-N.jpg`, N the PDF page:
-the deck's own page JPEG, copied byte for byte (no re-render). Not included: logistics, logos, staff
+the deck's own page JPEG, copied byte for byte (no re-render), or for a vector deck a 1400px render by
+`extract_slide_images.py`. Not included: logistics, logos, staff
 photos, prize and stock photographs, decorative title/lab slides, slides whose content is text, code or
 a table the slide file reproduces exactly, and build steps wholly contained in a later included slide.
 Run `embed_slide_images.py` for the slide file. In the wiki, place images by hand in the passage that
@@ -100,6 +109,7 @@ in `BUILD_LOG.md`.
 | 4 Deep Generative Modeling (2026) | 39 of 84 pages | page JPEGs of `6S191_MIT_DeepLearning_L4.pdf` |
 | 5 Reinforcement Learning (2026) | 19 of 58 pages | page JPEGs of `6S191_MIT_DeepLearning_L5.pdf` |
 | 6 Language Models and New Frontiers (2026) | 24 of 81 pages | page JPEGs of `6S191_MIT_DeepLearning_L6.pdf` |
+| 7 The Three Laws of AI (2026) | 4 of 44 pages | 1400px renders of `6S191_MIT_DeepLearning_L7.pdf` |
 
 ## Conventions
 

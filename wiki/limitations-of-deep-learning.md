@@ -116,7 +116,8 @@ change in the input increase our loss". (Slide 41's callout names the fixed weig
 though its formula writes $W$.) The attack also works on physical objects: slide 42 (credited "Athalye+
 *ICML* 2018.") shows a 3D-printed turtle, photographed from 24 viewpoints, classified as a rifle in 17 of
 them (≈25:45–26:31). For language models the equivalent is the **jailbreak**, which probes a model to
-expose these adversarial failure modes (≈23:24, ≈51:43).
+expose these adversarial failure modes (≈23:24, ≈51:43). Lecture 7 demonstrates jailbreaks live and shows
+how to test for them (see [AI safety](ai-safety.md) and [evaluating LLMs](llm-evaluation.md)).
 
 ## Algorithmic bias
 
@@ -144,6 +145,8 @@ hallucination, jailbreaks, long-term planning and logic — are listed on slide 
 ## Where this comes up
 
 - [Lecture 6 — Language Models and New Frontiers](06-language-models-new-frontiers.md), sections 3–11 and 25.
+- [Lecture 7 — The Three Laws of AI](07-three-laws-of-ai.md), sections 9–15: jailbreaks, testing for them,
+  and safety drift in long conversations.
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md): overfitting, which the theorem's second
   caveat recalls.
 - [Lecture 4 — Deep Generative Modeling](04-deep-generative-modeling.md): debiasing and outlier detection
