@@ -1272,3 +1272,31 @@ describes the KB as covering the whole 2026 edition.
   size as well as producer, text layer and footer.
 - Page JPEGs much larger than 1280×720 go to readers as ~1600px downscales, with native crops for detail.
 - Images from an image-only deck whose JPEGs are wider than 1400px are 1400px renders, not byte copies.
+
+**Cost.** Measured with `measure_run_cost.py` after the lecture push: \$8.20 for the whole lecture. The
+Opus parent cost \$6.14 (62 calls, ending at 190k context) and the three Sonnet agents \$2.06 (25%): the
+slide reader \$0.67, the figure audit \$0.95 (31 calls; it checked all 22 pages) and the copy-edit \$0.44.
+Another ~\$0.22 of output is logged incompletely and not counted. The closing bookkeeping commit is not
+included.
+
+#### Run checklist (moved verbatim from TODO.md)
+
+_Run 9 — lecture 9 (Secrets of Massively Parallel Training, 2026)_
+
+Catalog position 9, video UZZD9d9YqnQ (52:40), a guest lecture by Mathias Lechner (co-founder and CTO, Liquid
+AI). Deck `slides/6S191_MIT_DeepLearning_L9.pdf`: 22 pages, image-only (no producer; PDF title "slides_only"),
+each page one 3524×1984 JPEG with no text layer — the same kind as decks 1–6 but at 2.75× their resolution.
+Slide N = PDF page N, check headings with a plain 1..N sequence check. Readers get 1600px downscales of the
+page JPEGs; the auditor crops the native JPEGs; images are 1400px downscales (the native files average 316 KB).
+
+- [x] Verbatim captions → raw/transcripts/original/09-massively-parallel-training.md (69 marks)
+- [x] raw/slides/09-massively-parallel-training.md — Sonnet reader (1–22), merged, header (19 figure slides; 1–22 sequence checked)
+- [x] Figure audit (Sonnet) of figure, chart and table pages; parent checks two images (slides 1–22; fixes on 3, 7, 11, 14, 17, 18, 19, 22; parent images below)
+- [x] raw/transcripts/09-massively-parallel-training.md — Sonnet copy-edit; marks, numbers, ratios checked (69/69, five recorded removals, 0.80–1.00; 8 [Ed] notes)
+- [x] raw/images/09-massively-parallel-training/ — figure slides, embedded (12 of 22, 1.13 MB: 5, 7–9, 11, 13–19; slide file by script, wiki by hand)
+- [x] wiki/09-massively-parallel-training.md
+- [x] Topic pages, new and extended (new: distributed-training; extended: large-language-models, attention-and-transformers, gradient-descent, backpropagation, what-is-deep-learning; lecture 6 links to lecture 9)
+- [x] INDEX.md, AGENTS.md (deck-format bullet, image table), LICENSE.md, sources.md, kb.json, BUILD_LOG.md (sources.md already listed the deck; INDEX now covers the whole 2026 edition)
+- [x] verify_kb.py clean, and its review section read (check_math --github: 0 errors; the 9 warnings are lecture 1's open item; 12 notation warnings in the new pages fixed)
+- [x] Commit and push (dcb06d2)
+- [x] Move this section to BUILD_LOG.md
