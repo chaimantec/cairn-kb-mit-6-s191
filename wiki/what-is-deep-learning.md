@@ -92,6 +92,14 @@ networks got deeper, and algorithms got better (automatic differentiation). Indu
 and breakthroughs arrived in every major domain at once. Since 2017 the big impact rests on the
 transformer (≈11:47; slide 16).
 
+Lecture 9's guest lecturer, Mathias Lechner, puts numbers on the hardware reason (lecture 9, section 3,
+slide 3). Training is mostly matrix multiplication. AlexNet, one of the first networks trained fully end to
+end on a GPU and, in his words, the spark of the deep learning revolution, was trained in 2011 on two GTX
+580 GPUs for about two weeks; a CPU of the time was about 16 times slower, so on CPUs it would have taken
+"basically a year". Slide 3 times one 8.6-billion-operation multiplication at about 86 ms on a 2011 CPU,
+5.4 ms on the GTX 580 and 8.7 µs on a 2022 H100. Today's models need not one GPU but thousands; see
+[distributed training at scale](distributed-training.md).
+
 ## Where this comes up
 
 - [Lecture 1 — Introduction to Deep Learning](01-introduction.md), sections 1, 2 and 4: the pace of
@@ -106,4 +114,6 @@ transformer (≈11:47; slide 16).
   data to decision and back, AI's waves of hype, and LLMs as a class of deep learning.
 - [Lecture 7 — The Three Laws of AI](07-three-laws-of-ai.md), sections 4–7: AI history from symbolic
   reasoning to deep learning, and the AI winter as a neural-network researcher saw it.
+- [Lecture 9 — Secrets of Massively Parallel Training](09-massively-parallel-training.md), section 3:
+  why deep learning trains on GPUs.
 - The building block every later idea rests on is the [perceptron](perceptron.md).

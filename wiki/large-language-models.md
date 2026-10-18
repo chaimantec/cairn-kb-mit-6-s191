@@ -112,6 +112,33 @@ It's just predicting, you know, what the next word should be" (lecture 7, ≈38:
 it can call, it becomes an [agent](ai-agents.md) that does things on the user's behalf. It is then all
 the more in need of testing (≈39:44–44:26).
 
+## Scaling laws, and the cost of training
+
+Lecture 9's guest lecturer, Mathias Lechner of Liquid AI, starts from Meta's published training curves for
+Llama 2 (lecture 9, section 4). Training perplexity keeps falling as the 7B model processes more tokens, up
+to 2 trillion; and of the four sizes Meta trained — 7B, 13B, 34B and 70B — the larger model has the lower
+loss at every token count (lecture 9, slides 4–5). These trends are captured by **scaling laws**, which
+the slides credit to Kaplan et al. (2020): loss decreases as a power law with dataset size and with model
+size. Hence the "scaling imperative": larger models, more data (slide 6, which also cites Chinchilla,
+Hoffmann et al., 2022).
+
+Yet the industry's examples grow in data and shrink in size: GPT-3 (2020) had 175B parameters and 300B
+tokens, Llama 2 (2023) 70B parameters and 2T tokens, and Liquid AI's LFM2.5-1.2B (2026) 1.2B parameters and
+28T tokens (lecture 9, section 5). The scaling laws concern only training. A model used by millions is
+trained once and run constantly, so inference dominates its lifetime compute, and that pushes toward
+efficient models that run on a phone or even a Raspberry Pi (lecture 9, ≈7:43–8:29). A mixture of experts
+is another route to capacity without compute: Liquid AI's LFM2-8B-A1B has 8.3B parameters, of which 1.5B
+are active per token (lecture 9, section 15).
+
+Training on tens of trillions of tokens raises the question of data quality (lecture 9, section 21). The
+first trillion or so tokens of high-quality data are easy to find; the further along the token axis, the
+harder. Liquid AI filters Common Crawl with smaller filter models and runs data ablations. Synthetic data
+helps but needs care: a model trained only on synthetic data collapses much of the training dynamics —
+"people call it like the model has no soul". **Distillation**, in which a model learns to predict a
+teacher model's distribution over the next token rather than only the next token, gives a richer training
+signal. How such models are trained across thousands of GPUs is the subject of
+[distributed training at scale](distributed-training.md).
+
 ## Emergent abilities
 
 Over the past couple of years, LLMs have been seen to **generalize** to tasks that stretch their
@@ -144,3 +171,6 @@ technology that augments and accelerates human capabilities (≈54:02–54:49).
 - [Lecture 8 — AI for Science](08-ai-for-science.md), section 5: LLMs as the data-heavy end of the no free
   lunch balance, with attention as their "fairly lightweight" inductive bias, against scientific models
   with scarce data and rich prior knowledge.
+- [Lecture 9 — Secrets of Massively Parallel Training](09-massively-parallel-training.md), sections 4–5,
+  15 and 21: scaling laws, why deployed models are getting smaller, mixtures of experts, data quality and
+  distillation.

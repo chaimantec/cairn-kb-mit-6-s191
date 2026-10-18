@@ -44,6 +44,14 @@ parameter for every data point, which is the motivation for mini-batches (slide 
 `tf.GradientTape` records the forward pass and returns the gradient of the loss with respect to the
 weights (slides 63–64).
 
+Backpropagation also costs memory. The backward signal arriving at a layer is multiplied by that layer's
+activations from the forward pass, so every layer's activations must be kept until the backward pass
+reaches it; in lecture 9's example of a 1-billion-parameter model they are the largest item, about 16 GB
+of a 28 GB total (lecture 9, section 7, slide 8). **Activation checkpointing** trades compute for that
+memory: keep only some layers' activations (say every fourth) and recompute the others from the nearest
+checkpoint when the backward pass needs them, at the cost of one extra forward pass (lecture 9, section 8,
+slide 9). See [distributed training at scale](distributed-training.md).
+
 ## Through time: training recurrent networks
 
 [Lecture 2](02-rnns-transformers-attention.md) (section 6, ≈30:04–33:57) applies the same algorithm to
@@ -80,3 +88,5 @@ encoder's weights $\phi$ (slides 36–37, ≈29:34–30:20).
 - [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), section 6.
 - [Lecture 4 — Deep Generative Modeling](04-deep-generative-modeling.md), section 11: backpropagating
   through a sampled latent variable.
+- [Lecture 9 — Secrets of Massively Parallel Training](09-massively-parallel-training.md), sections 7–8:
+  the memory backpropagation needs, and activation checkpointing.

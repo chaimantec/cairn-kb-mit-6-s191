@@ -6,40 +6,43 @@ from the foundations of neural networks — the single neuron, training by gradi
 backpropagation — up to recent advances in large language models. Course site:
 <https://introtodeeplearning.com/>.
 
-**Coverage: lectures 1–8 only.** This knowledge base covers **lectures 1–8 of the 2026 edition**:
+**Coverage: the 2026 edition only (lectures 1–9).** This knowledge base covers **all nine lectures of the
+2026 edition**:
 "Introduction to Deep Learning" (Alexander Amini) and "Recurrent Neural Networks, Transformers, and
 Attention" (Ava Amini), both delivered 5 January 2026, and "Convolutional Neural Networks" (Alexander
 Amini; the deck's title is "Deep Computer Vision") and "Deep Generative Modeling" (Ava Amini), both
 delivered 6 January 2026, and "Reinforcement Learning" (Alexander Amini; the deck's title is "Deep
 Reinforcement Learning") and "Language Models and New Frontiers" (Ava Amini; the deck's title is "Deep
-Learning Limitations and New Frontiers"), both delivered 7 January 2026, and two guest lectures: "AI for
-Science" (Chris Bishop, Microsoft Research AI for Science), delivered 8 January 2026, and "The Three Laws
-of AI" (Douglas Blank, Comet ML), delivered 9 January 2026. The Cairn catalog for this course lists 90
-recordings — the 2026 edition's lectures (positions 1–9) followed by the 2018–2025 editions — and none
-of the others is in this KB yet.
-Do not cite it as the whole course: for any other lecture — the 2026 guest lecture at position 9 or any
-earlier edition — say it is not covered. Vision transformers, which lecture 2 says
+Learning Limitations and New Frontiers"), both delivered 7 January 2026, and three guest lectures: "AI for
+Science" (Chris Bishop, Microsoft Research AI for Science), delivered 8 January 2026, "The Three Laws
+of AI" (Douglas Blank, Comet ML), delivered 9 January 2026, and "Secrets of Massively Parallel Training"
+(Mathias Lechner, Liquid AI; the deck's title is "Massively Parallel Training"). The Cairn catalog for this
+course lists 90 recordings — the 2026 edition's lectures (positions 1–9) followed by the 2018–2025
+editions — and none of the earlier editions is in this KB yet.
+Do not cite it as the whole catalog: for any lecture of an earlier edition (2018–2025), say it is not
+covered. Vision transformers, which lecture 2 says
 lecture 3 will cover, are not discussed in lecture 3.
 
 ## How to use this knowledge base
 
 - Start from the lecture page or the topic page below. Lecture pages follow the lecture in order, with
   timestamps such as (≈24:10) into the transcript and slide citations.
-- **"Slide N" means page N of the PDF.** The decks of lectures 1–6 and 8 print no slide numbers; lecture
-  7's deck prints them, and they equal the page numbers.
+- **"Slide N" means page N of the PDF.** The decks of lectures 1–6, 8 and 9 print no slide numbers;
+  lecture 7's deck prints them, and they equal the page numbers.
 - For exact wording, numbers, code and equations as printed, read the slide transcription in
   `raw/slides/`. For what was said, read the copy-edited transcript in `raw/transcripts/` (not the
   verbatim captions in `raw/transcripts/original/`, which are kept only as a reference).
 
 ## Images
 
-All eight lectures have slide images: **34 for lecture 1**, **33 for lecture 2**, **33 for lecture
-3**, **39 for lecture 4**, **19 for lecture 5**, **24 for lecture 6**, **4 for lecture 7** and **18 for
-lecture 8**. Each is embedded where it is used: in the lecture page
+All nine lectures have slide images: **34 for lecture 1**, **33 for lecture 2**, **33 for lecture
+3**, **39 for lecture 4**, **19 for lecture 5**, **24 for lecture 6**, **4 for lecture 7**, **18 for
+lecture 8** and **12 for lecture 9**. Each is embedded where it is used: in the lecture page
 ([lecture 1](wiki/01-introduction.md), [lecture 2](wiki/02-rnns-transformers-attention.md),
 [lecture 3](wiki/03-convolutional-neural-networks.md), [lecture 4](wiki/04-deep-generative-modeling.md),
 [lecture 5](wiki/05-reinforcement-learning.md), [lecture 6](wiki/06-language-models-new-frontiers.md),
-[lecture 7](wiki/07-three-laws-of-ai.md), [lecture 8](wiki/08-ai-for-science.md))
+[lecture 7](wiki/07-three-laws-of-ai.md), [lecture 8](wiki/08-ai-for-science.md),
+[lecture 9](wiki/09-massively-parallel-training.md))
 beside the passage that cites the slide, in some topic pages, and under the matching `## Slide N`
 heading of the slide transcription ([lecture 1](raw/slides/01-introduction.md),
 [lecture 2](raw/slides/02-rnns-transformers-attention.md),
@@ -48,19 +51,20 @@ heading of the slide transcription ([lecture 1](raw/slides/01-introduction.md),
 [lecture 5](raw/slides/05-reinforcement-learning.md),
 [lecture 6](raw/slides/06-language-models-new-frontiers.md),
 [lecture 7](raw/slides/07-three-laws-of-ai.md),
-[lecture 8](raw/slides/08-ai-for-science.md)).
+[lecture 8](raw/slides/08-ai-for-science.md),
+[lecture 9](raw/slides/09-massively-parallel-training.md)).
 They are whole slides, every one that carries a distinct figure; slides without an image are text, code
 or tables the transcription reproduces exactly, logistics, logos, portraits, stock photographs, video
 stills, screenshots of text, journal and book covers, repeats of a rendered figure, or build steps
 contained in a rendered slide. Lecture 7's deck is mostly text, so it has four images: a timeline, a
-chart and two screenshots of the Opik platform. No other lecture is in this KB, so no other lecture has
-images.
+chart and two screenshots of the Opik platform. No lecture of an earlier edition is in this KB, so none
+has images.
 
 - **Use an image path you have actually read in a file. Never construct one from the pattern**, and
   never assume a slide has an image because a neighbouring slide does. Reading an image path returns
   its displayable URL.
 - Prefer the slide transcription for numbers and code; the images are 1280×720 (lectures 7 and 8,
-  1400×788).
+  1400×788; lecture 9, 1400×789).
 - Show one image at a time, and keep its slide citation.
 
 ## Contents
@@ -131,6 +135,16 @@ images.
   learned Skala functional; sequence, structure and function; molecular dynamics, the curse of
   sequentiality and protein emulators; his book; questions on protein dynamics, data augmentation and
   simulated versus real data.
+- [Lecture 9 — Secrets of Massively Parallel Training](wiki/09-massively-parallel-training.md) — Mathias
+  Lechner's guest lecture, in order: why train on GPUs (AlexNet; one matrix multiplication timed on a 2011
+  CPU, a 2011 GPU and an H100); Llama 2's training curves and scaling laws; why deployed models are getting
+  smaller; data parallelism and the large-batch limit; the memory of training (parameters, gradients, Adam
+  states, activations: ~28 GB for 1B parameters); activation checkpointing; offloading and the bandwidth
+  problem; inside a GPU cluster (NVLink, InfiniBand, RDMA); sharding and optimizer state sharding; pipeline
+  parallelism, bubbles and micro-batching; tensor parallelism (column, row, the transformer MLP); sequence
+  and context parallelism; mixtures of experts and expert parallelism; DeepSpeed ZeRO stages 1–3, FSDP and
+  Megatron-LM compared; 5D parallelism and a 2048-GPU example; questions on decentralized training, small
+  models and distillation, data quality, on-device models and which framework to use.
 
 ### Topics
 
@@ -233,6 +247,10 @@ images.
   solved, the no free lunch theorem and inductive bias in science, the bitter lesson, training on
   simulator data and its benefits, the accuracy–speed–generality trilemma, and lecture 8's examples:
   Aurora, MatterGen, density functional theory with the Skala functional, and protein dynamics.
+- [Distributed training at scale](wiki/distributed-training.md) — why training needs many GPUs; the
+  memory of training and how to cut it (activation checkpointing, offloading, sharding, mixed precision);
+  the cluster's bandwidth hierarchy; data, pipeline, tensor, sequence/context and expert parallelism in one
+  table; combining them (5D parallelism); DeepSpeed ZeRO, FSDP and Megatron-LM.
 
 ## Raw materials
 
@@ -244,7 +262,8 @@ images.
   [lecture 5](raw/slides/05-reinforcement-learning.md) (58 slides),
   [lecture 6](raw/slides/06-language-models-new-frontiers.md) (81 slides),
   [lecture 7](raw/slides/07-three-laws-of-ai.md) (44 slides),
-  [lecture 8](raw/slides/08-ai-for-science.md) (31 slides).
+  [lecture 8](raw/slides/08-ai-for-science.md) (31 slides),
+  [lecture 9](raw/slides/09-massively-parallel-training.md) (22 slides).
 - [`raw/transcripts/`](raw/transcripts/) — the lecture transcripts, copy-edited from YouTube captions,
   with `[MM:SS]` paragraph marks and `[Ed: …]` notes where the captions are unclear or differ from a
   slide: [lecture 1](raw/transcripts/01-introduction.md),
@@ -254,7 +273,8 @@ images.
   [lecture 5](raw/transcripts/05-reinforcement-learning.md),
   [lecture 6](raw/transcripts/06-language-models-new-frontiers.md),
   [lecture 7](raw/transcripts/07-three-laws-of-ai.md),
-  [lecture 8](raw/transcripts/08-ai-for-science.md). The verbatim captions are in
+  [lecture 8](raw/transcripts/08-ai-for-science.md),
+  [lecture 9](raw/transcripts/09-massively-parallel-training.md). The verbatim captions are in
   `raw/transcripts/original/`.
 - [`raw/images/`](raw/images/) — the slide images described above.
 - [`sources.md`](sources.md) — every document the course site links, with its canonical URL. The PDFs

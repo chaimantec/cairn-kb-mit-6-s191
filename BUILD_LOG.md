@@ -20,6 +20,7 @@ slide file or transcript it concerns. The rules every build follows are in
 | 6 Language Models and New Frontiers (2026) | [Lecture 6](#lecture-6--language-models-and-new-frontiers-2026--built-2026-10-18), 2026-10-18 |
 | 7 The Three Laws of AI (2026) | [Lecture 7](#lecture-7--the-three-laws-of-ai-2026--built-2026-10-18), 2026-10-18 |
 | 8 AI for Science (2026) | [Lecture 8](#lecture-8--ai-for-science-2026--built-2026-10-18), 2026-10-18 |
+| 9 Secrets of Massively Parallel Training (2026) | [Lecture 9](#lecture-9--secrets-of-massively-parallel-training-2026--built-2026-10-18), 2026-10-18 |
 
 ## Lecture 1 — Introduction to Deep Learning (2026) — built 2026-10-11
 
@@ -1146,3 +1147,128 @@ sequence check. Readers get 1280×720 renders plus the per-page text layer; imag
 - [x] verify_kb.py clean, and its review section read (check_math --github: 0 errors; the 9 warnings are lecture 1's open item)
 - [x] Commit and push (40bc5dc)
 - [x] Move this section to BUILD_LOG.md
+
+## Lecture 9 — Secrets of Massively Parallel Training (2026) — built 2026-10-18
+
+**Pointers.** Catalog position 9, video `UZZD9d9YqnQ` (52:40), a guest lecture by Mathias Lechner,
+co-founder and CTO of Liquid AI, introduced by Alexander Amini (the lecturer thanks "Alexander"). The
+course site lists it as "Secrets to Massively Parallel Training", lecture 9; its page source dates it
+"Jan. 8, 2026" in a comment and displays "May 25, 2026". Its abstract (in the site's info modal, titled
+"Massively Parallel Training") lists the topics the deck follows and ends with "a case study of LFM2
+showing how these techniques combine in practice". Deck
+<https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L9.pdf>, 22 pages, downloaded in the lecture 1
+crawl (same size as on the server, 6,993,920 bytes; Last-Modified 2026-08-17). PDF metadata: title
+"slides_only", no creator or producer, created 2026-01-11.
+
+**Deck format and numbering.** Image-only, like decks 1–6, but each page (1692×952 pt) is one 3524×1984
+JPEG, 2.75 times their resolution, with no text layer. There is no footer, date, logo or printed slide
+number on any page (slide 2's Liquid AI logo is content). Slide N = PDF page N, checked as a plain 1..22
+sequence. The reader got 1600px downscales of the page JPEGs and was allowed native crops for small text
+(it used them on slides 7, 11, 14 and 17); the auditor cropped the native JPEGs.
+
+**Licence.** The deck carries no licence notice. As for lectures 7 and 8, it was treated as covered by the
+site's MIT licence, and LICENSE.md credits it to Mathias Lechner as well as to the course. Credits printed
+on the slides: "Kaplan et al. (2020)" (slides 4–6), "Chinchilla (Hoffmann et al., 2022)" (slide 6), and
+"Llama 2 … Meta's open-source large language model (2023)" for the training curves of slides 4–5, which
+carry no other credit. Everything else is drawn for the deck.
+
+**Slide transcription.** One Sonnet reader for all 22 pages, appending in chunks of about five. It tagged 19
+slides `*Figure: yes*` (all but 2, 10 and 20). The parent wrote the header and made slide 1's description
+neutral (the reader had said the decorative grid "stands for a cluster of devices"). The reader claimed no
+character-level slip and reported the within-deck inconsistencies listed below, all confirmed by the audit.
+The deck has no slide for the agenda's "Case Study: Training LFM2", and the talk has no separate part for
+it.
+
+**Figure audit.** A separate Sonnet agent checked slides 1–22 against crops of the native JPEGs. Nothing
+described was absent from its page. Exact: slide 5's four series (legend order matching curve order, values
+within about ±0.02), slide 4's faint curves, slide 9's checkpoint squares, slide 11's node layouts, labels
+and six bandwidths, slide 14's block counts, slide 18's every GB value and its table, and the tables of
+slides 3, 8, 13, 20 and 21. Discrepancies on **8 pages**, all small and fixed:
+
+- **Slide 3.** "~1000× since 2011" is centred under the H100 card only, not under the second and third.
+- **Slide 7.** The all-reduce label touches the cards beneath, which cut off the bottoms of its subscripts.
+- **Slide 11.** The red InfiniBand lines start at each node's bottom border, just below the CPU box.
+- **Slide 14.** "Bubble" straddles the bottom edge of GPU 2's dashed slot and sits above GPU 3's.
+- **Slide 17.** The MoE "Out" box is narrow and its word overflows it, rather than the box being clipped.
+- **Slide 18.** "Communication Patterns" does not overlap the columns; "Baseline (DDP)" is regular weight,
+  the ZeRO titles bold.
+- **Slide 19.** The heading's right end runs into the Backward Pass panel's lower-left corner.
+- **Slide 22.** "can’t" has a curly apostrophe.
+
+The auditor also found slide 18's "4x"/"8x reduction" inconsistent with the slide's own per-GPU figures
+(added to the slide file and the wiki). The parent looked at the rendered images of slides 5 and 18 (curve
+endpoints, every GB value and table cell as transcribed) and at native crops of slide 7's all-reduce label
+and slide 14's "Bubble: O((p-1)/m)", both exact.
+
+**Printed slips and inconsistencies**, reproduced as printed and noted in the slide file:
+
+- slide 9's "(128 layers total)" and "~8 GB activations" against slide 8's 256 layers and ~16 GB (slide 14's
+  stages, layers 0–127, match slide 9);
+- slide 8's activation working, "256 layers × batch 16 × hidden 1024 × 2 bytes", which multiplies out to about
+  8.4 MB, beside "~16 GB";
+- slide 18's "4x reduction" and "8x reduction" against 12 → 6 GB (2×) and 12 → 4.5 GB (about 2.7×);
+- slide 3's "~1000× since 2011" against its own 989 and 1.58 TFLOPS (about 626×), and slide 22's "GPUs:
+  ~600× faster than CPUs" against slide 3's 989 and 0.1 TFLOPS (about 9,890×).
+
+**Spoken vs printed.** The wiki's "Spoken versus printed" section lists the four above (as arithmetic on the
+slides' own figures only), the spoken "2,000 GPUs" for slide 21's 2048, the spoken "the activations are much
+more sensitive" (36:46) against slide 21's "bf16/fp8 for activations", DeepSpeed Ulysses named aloud only,
+and the missing case study. The wiki's section 19 also says the captions are muddled where Lechner explains
+"TP8" (38:18), which he first describes as data parallelism.
+
+**Transcript.** YouTube auto-captions, already punctuated, copy-edited by a Sonnet agent against the slide
+file. Restorations, each printed in the deck:
+
+- "Matthias" to Mathias (0:05, 0:51, 52:04; slide 1);
+- "LFM-2"/"LFM 2" to LFM2, "LFM 2.5 1.2B" to LFM2.5-1.2B (6:57), "LFM-2 8B 1 A1B" to LFM2-8B-A1B (29:08);
+- "Zero" to ZeRO and ZeRO-1/2/3, "zero shotting" to "ZeRO sharding", "sharts"/"shots" to "shards";
+- "Deep Seek V3" to DeepSeek-V3 and "12 pipe" to DualPipe (23:47; slide 14);
+- DeepSpeed, Megatron-LM, MoE, GeLU, FlashAttention, "cheap you" to GPU (4:40, 45:11);
+- the parent changed "FSDP in zero" to "FSDP and ZeRO" (42:10).
+
+Numbers removed, each recorded in the header: four numeric false starts ("20 2011", "30 34B", "40 64",
+and the "1" in "8B 1 A1B") and the "12" of "12 pipe". Eight [Ed] notes in eight paragraphs: 8:29 ("LFM 2.5B",
+kept as captioned; the parent replaced the agent's coined "LFM2.5B" with the captions' form and a note),
+9:16 ("TPU"), 32:13, 33:44, 36:01 (2,000 against 2048), 37:32, 43:40 (a garbled student passage naming
+DeepMind and Prime Intellect) and 46:43 (the distillation passage's "Llama 2" and "Llama 1 7B", where the
+speaker says "we"; left open). Student turns at 41:23–42:10, 42:55–44:25, 45:11–45:57, 46:43–47:28,
+49:00–49:46 and 50:32–51:18, closed and reopened across marks; Amini's introduction and Q&A moderation are
+unmarked and listed in the header. The parent removed a vague sentence from the header. Checks re-run by
+the parent: 69 of 69 `[MM:SS]` marks identical, number inventory identical apart from the five recorded
+removals, per-paragraph word ratio 0.80–1.00.
+
+**Coverage gaps.**
+
+- The agenda's LFM2 case study has no slide and no separate part in the talk.
+- The captions are garbled at 32:13 ("an S architecture"), 33:44, 37:32, 43:40 and 46:43, and the long-context
+  extension's token count (27:36) is unclear; the wiki says so where it matters.
+- Shown without discussion: slide 12's tiles beyond the spoken list, slide 16's "100K+" and "1M+" context
+  claims, and slide 14's bubble formula, whose symbols the slide does not define.
+
+**Images.** 12 of 22 pages: 5, 7–9, 11 and 13–19. They are 1400×789 renders by `extract_slide_images.py
+--format auto` (all came out JPEG), 1.13 MB in all; copying the native JPEGs byte for byte would have
+averaged 316 KB each. All 12 are embedded in `wiki/09-massively-parallel-training.md` by hand, and under
+their headings in the slide file by `embed_slide_images.py`. Not rendered, and why:
+
+- The title, with a decorative grid: 1.
+- The agenda: 2.
+- Cards, a small concept diagram, tiles and summary lists whose text is transcribed exactly: 3, 6, 12, 21, 22.
+- A build step of slide 5: 4.
+- Text or a table: 10, 20.
+
+**Math rendering.** `check_math.mjs` flagged 12 notation warnings in the new wiki pages (plain-text "×" in
+products); rewritten as math, 0 warnings after. The slide file had none.
+
+**Wiki.** New topic page: distributed-training. Extended: large-language-models (a new section on scaling
+laws, the cost of training, data quality and distillation), attention-and-transformers (splitting a
+transformer across GPUs), gradient-descent (splitting a mini-batch across GPUs, Adam's memory),
+backpropagation (the memory backpropagation needs, activation checkpointing) and what-is-deep-learning
+(lecture 9's GPU numbers). Lecture 6's list of guest lectures now links to lecture 9. INDEX.md now
+describes the KB as covering the whole 2026 edition.
+
+**AGENTS.md lessons** (general form):
+
+- The deck-format bullet notes that even an image-only deck varies in resolution and furniture: check image
+  size as well as producer, text layer and footer.
+- Page JPEGs much larger than 1280×720 go to readers as ~1600px downscales, with native crops for detail.
+- Images from an image-only deck whose JPEGs are wider than 1400px are 1400px renders, not byte copies.

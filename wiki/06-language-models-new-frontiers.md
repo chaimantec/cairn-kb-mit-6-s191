@@ -40,7 +40,7 @@ on clarity and on capturing the technical contribution, also due Friday (slide 6
 
 Slide 7 lists the guest lectures (≈4:01–5:33): Chris Bishop (Microsoft), on AI at the intersection with
 the natural sciences (his lecture is [lecture 8](08-ai-for-science.md) in this knowledge base); Mathias Lechner (Liquid AI), on what it takes to train language models today —
-Amini mentions the Liquid language models students have been using in Software Lab 3; Douglas Blank (Comet ML), on deploying AI in the
+Amini mentions the Liquid language models students have been using in Software Lab 3 (his lecture is [lecture 9](09-massively-parallel-training.md) in this knowledge base); Douglas Blank (Comet ML), on deploying AI in the
 wild (his lecture is [lecture 7](07-three-laws-of-ai.md) in this knowledge base); and Matt Johnson (Google DeepMind), one of the co-creators of JAX. Slide 8 thanks the course staff
 (≈5:33–6:21).
 

@@ -82,6 +82,16 @@ vision transformers in computer vision (slide 80, ≈54:54). Lecture 2 says visi
 lecture 3, but [lecture 3](03-convolutional-neural-networks.md) as delivered is about convolutional
 networks and does not mention them.
 
+## Splitting a transformer across GPUs
+
+Lecture 9 shows how a transformer is divided when it is trained on many GPUs. A transformer's MLP stacks
+two weight matrices with a non-linearity (GeLU) between them; **tensor parallelism** splits the first by
+columns and the second by rows, so the two layers cost a single all-reduce (lecture 9, section 13, slide
+15). Attention is harder to split along the sequence than the time-independent layers around it, which
+need no communication: **context parallelism** partitions the keys and values (the KV cache) across GPUs,
+with algorithms such as ring attention (section 14). FlashAttention, a cache-aware attention algorithm, is
+one of the further optimizations (section 19). See [distributed training at scale](distributed-training.md).
+
 ## Where this comes up
 
 - [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md),
@@ -91,3 +101,6 @@ networks and does not mention them.
 - [Lecture 8 — AI for Science](08-ai-for-science.md), section 5: attention as the "fairly lightweight",
   very general inductive bias of large language models, against the rich prior knowledge of scientific
   models.
+- [Lecture 9 — Secrets of Massively Parallel Training](09-massively-parallel-training.md), sections 13,
+  14 and 19: tensor parallelism in the transformer MLP, context parallelism for attention, and
+  FlashAttention.

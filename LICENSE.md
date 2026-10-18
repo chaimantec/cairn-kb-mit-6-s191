@@ -52,6 +52,10 @@ Lecture 8 is also a guest lecture. Its deck, "AI for Science", is by Chris Bisho
 for Science). It is hosted on the course site and linked from its 2026 schedule, and carries no licence
 notice of its own; material derived from it is credited to him as well as to the course.
 
+Lecture 9 is also a guest lecture. Its deck, "Massively Parallel Training", is by Mathias Lechner (Liquid
+AI). It is hosted on the course site and linked from its 2026 schedule, and carries no licence notice of
+its own; material derived from it is credited to him as well as to the course.
+
 The original writing in this repository (the wiki prose, the slide descriptions, and the transcript
 copy-edits) is offered under the same MIT licence, with the attribution above retained.
 
@@ -276,3 +280,19 @@ application areas; slide 16, a still from a video; slide 29's protein rendering 
 Nature article "Ab initio characterization of protein molecular dynamics with AI²BMD"; slide 30's cover of
 Science (14 August 2025); and slide 31's cover of *Deep Learning: Foundations and Concepts* (Springer) and
 its screenshot of an online reader. Their text is transcribed in `raw/slides/`.
+
+Each image in `raw/images/09-massively-parallel-training/`, named `slide-N.jpg`, is page N of the lecture 9
+deck,
+[`6S191_MIT_DeepLearning_L9.pdf`](https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L9.pdf),
+the guest lecture by Mathias Lechner. That deck's pages are single 3524×1984 images, so each image is the
+whole page rendered at 1400×789 by `extract_slide_images.py`, not modified otherwise. 12 of the deck's 22
+pages are included: slides 5, 7–9, 11 and 13–19. Attribution for every one is the course line above, with
+"Mathias Lechner, Massively Parallel Training". Third-party material on them, as the slides credit it:
+
+- **Slide 5**'s chart plots the training perplexity of Meta's Llama 2 models (7B, 13B, 34B, 70B); the
+  slide names "Llama 2" and cites "Kaplan et al. (2020)" for the power law, and gives no other credit for
+  the chart.
+- The other included slides are diagrams drawn for the deck, with no third-party credit.
+
+Not included from lecture 9, among others: slide 2's Liquid AI logo, and slide 4, a build step of slide 5
+showing the same Llama 2 chart with three curves faded. Their text is transcribed in `raw/slides/`.

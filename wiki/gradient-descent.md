@@ -94,6 +94,18 @@ and because a batch is computed in parallel they bring large speed-ups on GPUs (
 sizes are usually tens or hundreds — 32 is common — while large language models use millions; the
 batch size is the dial between accuracy and cost (≈47:05–48:38).
 
+## Splitting a mini-batch across GPUs
+
+Because the samples in a mini-batch are independent and only their gradients are averaged, a batch can be
+split across GPUs: each holds a full copy of the model, computes the gradient of its share, and one
+all-reduce averages the results. In lecture 9's example, 256 samples are split over four GPUs, 64 each
+(lecture 9, section 6, slide 7). This **data parallelism** scales throughput linearly, but it grows the
+effective batch with every GPU added, and past some point a very large batch hurts generalization: a model
+trained with a small batch does better on the test set than one trained with a gigantic batch on the same
+data (≈10:48). Lecture 9 also counts what an adaptive optimizer costs: Adam keeps two values per parameter,
+at 32 bits, so its states take 8 GB for a 1-billion-parameter model, four times the weights (slide 8).
+See [distributed training at scale](distributed-training.md).
+
 ## Updating a policy
 
 Lecture 5 trains a [policy-gradient](policy-gradients.md) network with the same update, written with
@@ -126,3 +138,4 @@ A small, imperceptible change of this kind can flip a network's prediction (slid
 - [Lecture 2 — Recurrent Neural Networks, Transformers, and Attention](02-rnns-transformers-attention.md), sections 4 and 6: an RNN's three weight matrices are learned by gradient descent, with gradients from backpropagation through time; gradient clipping keeps exploding gradients in check.
 - [Lecture 5 — Reinforcement Learning](05-reinforcement-learning.md), section 19: the gradient-descent update of a policy network.
 - [Lecture 6 — Language Models and New Frontiers](06-language-models-new-frontiers.md), section 10: the adversarial-image update.
+- [Lecture 9 — Secrets of Massively Parallel Training](09-massively-parallel-training.md), sections 6, 7 and 11: data parallelism, the large-batch limit, and the memory of Adam's optimizer states.

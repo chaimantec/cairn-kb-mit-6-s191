@@ -48,11 +48,15 @@ printed slips, which slides were rendered and why) goes in
   something again. Lecture 8's deck (also a guest lecture) is a third kind: a PowerPoint export (Acrobat
   PDFMaker) with vector pages and pasted pictures, a text layer holding the deck's own text but none of
   any picture's, and no printed slide numbers. It is read like a vector deck and numbered like an
-  image-only one. Check each new deck's producer, text layer and footer before assuming any kind.
+  image-only one. Lecture 9's deck (a guest lecture) is image-only again, but its page JPEGs are
+  3524×1984 and it has no footer at all, so even within a kind the resolution and furniture vary.
+  Check each new deck's producer, text layer, image size and footer before assuming any kind.
 - **For an image-only deck, read the native page JPEGs, not PDF page renders.** Extract each page's embedded JPEG
   (`page.get_image_info(xrefs=True)` — not `get_images()`, which lists the shared resource dictionary,
   i.e. every image in the deck, on every page). They are ~1.2k tokens each to an agent, and they are
-  the highest resolution that exists; rendering at higher DPI only upscales. **For a vector deck**, render
+  the highest resolution that exists; rendering at higher DPI only upscales. Where they are much larger
+  than 1280×720, give the readers ~1600px downscales and let them and the auditor crop the native files,
+  which there do add detail. **For a vector deck**, render
   pages at 1280×720 for the readers, and give them each page's text layer for the spelling of printed
   prose only: the page image is the authority, and a string the layer holds but the page does not show
   is reported, not transcribed. Pictures pasted into such a deck (tables, screenshots) are not in the
@@ -96,7 +100,8 @@ itself — never by quoting the standard form from outside the course.
 ### Images
 
 Every slide with a distinct figure is included as `raw/images/NN-<slug>/slide-N.jpg`, N the PDF page:
-the deck's own page JPEG, copied byte for byte (no re-render), or for a vector deck a 1400px render by
+the deck's own page JPEG, copied byte for byte (no re-render), or for a vector deck, or an image-only deck
+whose page JPEGs are wider than 1400px, a 1400px render by
 `extract_slide_images.py`. Not included: logistics, logos, staff
 photos, prize and stock photographs, decorative title/lab slides, slides whose content is text, code or
 a table the slide file reproduces exactly, and build steps wholly contained in a later included slide.
@@ -116,6 +121,7 @@ in `BUILD_LOG.md`.
 | 6 Language Models and New Frontiers (2026) | 24 of 81 pages | page JPEGs of `6S191_MIT_DeepLearning_L6.pdf` |
 | 7 The Three Laws of AI (2026) | 4 of 44 pages | 1400px renders of `6S191_MIT_DeepLearning_L7.pdf` |
 | 8 AI for Science (2026) | 18 of 31 pages | 1400px renders of `6S191_MIT_DeepLearning_L8.pdf` |
+| 9 Secrets of Massively Parallel Training (2026) | 12 of 22 pages | 1400px renders of `6S191_MIT_DeepLearning_L9.pdf` |
 
 ## Conventions
 
